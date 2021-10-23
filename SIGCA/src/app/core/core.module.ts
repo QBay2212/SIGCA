@@ -9,6 +9,7 @@ import { LoginComponent } from './presentation/view/login/login.component';
   declarations: [
     PagesLoginComponent,
     LoginComponent
+
   ],
   imports: [
     CommonModule
