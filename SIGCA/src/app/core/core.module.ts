@@ -12,6 +12,7 @@ import { LoginComponent } from './presentation/view/login/login.component';
   ],
   imports: [
     CommonModule
+
   ]
 })
 export class CoreModule { }

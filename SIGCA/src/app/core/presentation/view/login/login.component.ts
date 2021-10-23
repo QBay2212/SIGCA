@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'SIGCA-login',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:ActivatedRoute, private router:Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void{}
+
+  ingresarCuenta(){
+
+      this.router.navigate(["/home"],{relativeTo:this.route});
   }
-
 }
