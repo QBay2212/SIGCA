@@ -11,7 +11,7 @@ const routes : Routes =[
   {path: 'home', component:SidebarComponent},
   {path: '**', component: LoginComponent},
 ]
-
+//cambios
 @NgModule({
   declarations: [
     AppComponent
