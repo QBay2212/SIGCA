@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'SIGCA-sidebar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authSvc: AuthService) { }
 
   ngOnInit(): void {
+    const userData = {
+      username: 'Juan',
+      password: '123456'
+    };
+    this.authSvc.home(userData).subscribe((res: any) => console.log('Home'))
   }
-
 }
