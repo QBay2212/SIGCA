@@ -3,8 +3,7 @@ import { PrincipalComponent } from './home/principal/principal.component';
 
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {  RouterModule,Routes } from '@angular/router';
-
+import { RouterModule,Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SidebarModule } from 'ng-sidebar';
@@ -16,7 +15,7 @@ const routes : Routes =[
   {path: '', component:PagesLoginComponent},
   {path:'dashboard', component:PrincipalComponent}
 ]
-
+//cambios
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +29,8 @@ const routes : Routes =[
   ],
   providers: [],
   bootstrap: [AppComponent],
-   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+   schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }

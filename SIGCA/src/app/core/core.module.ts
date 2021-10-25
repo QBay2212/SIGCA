@@ -10,9 +10,15 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     PagesLoginComponent,
     LoginComponent
+
   ],
   imports: [
+<<<<<<< HEAD
     CommonModule,FormsModule
+=======
+    CommonModule
+
+>>>>>>> main
   ]
 })
 export class CoreModule { }

@@ -3,13 +3,23 @@
   height: 100vh;
 }
 
+<<<<<<< HEAD
 .size-1 {
   height: 10%;
   width: 100%;
+=======
+
+.size-1 {
+  height: 10%;
+>>>>>>> main
 }
 
 .size-2 {
   height: 90%;
+<<<<<<< HEAD
   width: 100%;
 }
 
+=======
+}
+>>>>>>> main

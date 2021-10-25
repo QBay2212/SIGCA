@@ -15,7 +15,7 @@ export class PrincipalComponent implements OnInit {
 
   recibirEstado(status:boolean){
     this.statusReceived=status;
-   // alert(this.statusReceived)
+    //alert(this.statusReceived);
   }
 
   

@@ -7,8 +7,8 @@ import { Component, Input, OnInit} from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   
-  @Input() public opened: boolean=false;
-  //estado:boolean=true;
+
+  @Input() opened:boolean=false;
 
   constructor() {
 
