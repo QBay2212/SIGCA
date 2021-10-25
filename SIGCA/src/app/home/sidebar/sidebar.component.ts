@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'SIGCA-sidebar',
@@ -7,9 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   
-  @Input() open:boolean=false;
+  @Input() public opened: boolean=false;
+  //estado:boolean=true;
 
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit(): void {
   }

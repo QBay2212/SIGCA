@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PagesLoginComponent } from './presentation/pages/pages-login/pages-login.component';
 import { LoginComponent } from './presentation/view/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,7 @@ import { LoginComponent } from './presentation/view/login/login.component';
     LoginComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,FormsModule
   ]
 })
 export class CoreModule { }

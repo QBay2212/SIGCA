@@ -1,0 +1,15 @@
+.margenes-costado {
+  padding: 0;
+  height: 100vh;
+}
+
+.size-1 {
+  height: 10%;
+  width: 100%;
+}
+
+.size-2 {
+  height: 90%;
+  width: 100%;
+}
+
