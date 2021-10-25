@@ -13,12 +13,7 @@ import { FormsModule } from '@angular/forms';
 
   ],
   imports: [
-<<<<<<< HEAD
     CommonModule,FormsModule
-=======
-    CommonModule
-
->>>>>>> main
   ]
 })
 export class CoreModule { }
