@@ -15,12 +15,24 @@
               <!-- Sign In Form -->
               <form>
                 <div class="form-floating mb-3">
-                  <input #documento type="text" class="form-control" id="floatingInput" placeholder="Text">
+                  <input
+                    #documento
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="Text"
+                  />
                   <label for="floatingInput">DNI</label>
                 </div>
 
                 <div class="form-floating mb-3">
-                  <input #contrasena type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <input
+                    #pass
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
                   <label for="floatingPassword">Contraseña</label>
                 </div>
 
@@ -37,9 +49,18 @@
                 </div>
 
                 <div class="d-grid">
-
-                  <button (click) = "ingresar(documento.value , contrasena.value)"
-                  class="btn btn-lg btn-secondary btn-login text-uppercase fw-bold mb-2" type="submit" (click) = 'ingresar'>Ingresar</button>
+                  <button
+                    (click)="ingresar(documento.value, pass.value)"
+                    class="
+                      btn btn-lg btn-secondary btn-login
+                      text-uppercase
+                      fw-bold
+                      mb-2
+                    "
+                    type="submit"
+                  >
+                    Ingresar
+                  </button>
                   <div class="text-center">
                     <a class="small" href="#">¿Olvidaste tu contraseña?</a>
                   </div>
