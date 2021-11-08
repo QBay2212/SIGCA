@@ -7,9 +7,13 @@ import { CuadrosCrearModuloComponent } from './crearModulo/cuadros-crear-modulo/
 import { RouterModule, Routes } from '@angular/router';
 import { UsuarioRutasComponent } from './usuario-rutas.component';
 import { MainCrearSeminarioComponent } from './crearSeminario/main-crear-seminario/main-crear-seminario.component';
+import { ReportesRutasComponent } from './reportes/reportes-rutas.component';
+import { ReportesModule } from './reportes/reportes.module';
+
 
 const routes : Routes =[
-  {path:'crearModulo', component:MainCrearModuloComponent}
+  {path:'crearModulo', component:MainCrearModuloComponent},
+  {path:'reportes', component:ReportesRutasComponent}
 ]
 
 @NgModule({
@@ -21,7 +25,7 @@ const routes : Routes =[
     MainCrearSeminarioComponent
   ],
   imports: [
-    CommonModule,FormsModule,RouterModule.forRoot(routes)
+    CommonModule,FormsModule,RouterModule.forRoot(routes),ReportesModule
   ]
 })
 export class EquipoTecnicoModule { }
