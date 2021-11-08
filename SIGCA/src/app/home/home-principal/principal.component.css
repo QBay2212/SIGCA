@@ -11,3 +11,7 @@
 .size-2 {
   height: 90%;
 }
+
+.main-info{
+  overflow-x: auto;
+}
