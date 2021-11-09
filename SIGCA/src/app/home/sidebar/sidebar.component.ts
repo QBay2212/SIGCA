@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'SIGCA-sidebar',
@@ -7,11 +7,57 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   
-  @Input() opened:boolean=false;
+  @Output() link:EventEmitter<string> = new EventEmitter;
+  @Input() opened:boolean=true;
+  @ViewChild('enlace') enlace:ElementRef | any; 
+  @ViewChild('enlace_dos') enlace_dos:ElementRef | any; 
+  estado_desplegar1:boolean=false;
+  estado_desplegar2:boolean=false;
 
-  constructor() { }
+  constructor(private ren2: Renderer2) {
+
+   }
 
   ngOnInit(): void {
   }
+
+
+  enviarCrearModulo():void{
+    this.link.emit('equipo-tecnico/crearModulo');
+  }
+  enviarParticipacion():void{
+    this.link.emit('equipo-tecnico/reportes/reporte-participacion');
+  }
+  enviarParticipantes():void{
+    this.link.emit('equipo-tecnico/reportes/reporte-participantes');
+  }
+
+  enviarSeminario():void{
+    this.link.emit('equipo-tecnico/reportes/reporte-seminario');
+  }
+
+  enviarCrearSeminario():void{
+    this.link.emit('equipo-tecnico/crearSeminario');
+  }
+
+desplegar(){
+    const a = this.enlace.nativeElement;
+    const sibling = this.ren2.nextSibling(a);
+    if ( sibling.classList.contains( 'mostrar' )) {
+      this.ren2.removeClass( sibling,'mostrar');
+    }else{
+       this.ren2.addClass(sibling,'mostrar')
+    }
+}
+
+desplegar2(){
+  const a = this.enlace_dos.nativeElement;
+  const sibling = this.ren2.nextSibling(a);
+  if ( sibling.classList.contains( 'mostrar' )) {
+      this.ren2.removeClass( sibling,'mostrar');
+    }else{
+       this.ren2.addClass(sibling,'mostrar')
+    }
+}
 
 }

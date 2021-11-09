@@ -8,7 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class NavTopComponent implements OnInit {
 
   @Output() statusSidebar:EventEmitter<boolean> = new EventEmitter();
-  estadoActual=false;
+  estadoActual=true;
 
   constructor() { }
 

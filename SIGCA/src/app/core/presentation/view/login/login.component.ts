@@ -8,17 +8,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  ingresar( documento: string, contrasena: string ) {
-    if (documento == "71285543" && contrasena == "123456") {
-      this.router.navigate(["/dashboard"],{relativeTo:this.route});
-    } else {
-      alert("DNI y/o contraseña incorrectos")
-    }
-
-    // console.log(documento)
-    // console.log(contrasena)
-  }
-
   constructor(private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void{}
@@ -27,4 +16,16 @@ export class LoginComponent implements OnInit {
 
   //     this.router.navigate(["/home"],{relativeTo:this.route});
   // }
+  ingresar( documento: string, pass: string ) {
+    if (documento == "123456" && pass == "123456") {
+      //alert(documento)
+     // alert(pass)
+      this.router.navigate(["/dashboard/equipoTecnico"],{relativeTo:this.route});
+    } else {
+      alert("DNI y/o contraseña incorrectos")
+    }
+
+    // console.log(documento)
+    // console.log(contrasena)
+  }
 }
