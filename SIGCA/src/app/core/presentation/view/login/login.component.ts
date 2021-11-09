@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   ingresar( documento: string, contrasena: string ) {
     if (documento == "71285543" && contrasena == "123456") {
-      this.router.navigate(["/home"],{relativeTo:this.route});
+      this.router.navigate(["/dashboard"],{relativeTo:this.route});
     } else {
       alert("DNI y/o contraseña incorrectos")
     }
