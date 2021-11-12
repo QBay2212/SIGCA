@@ -18,6 +18,7 @@ import { ReportesRutasComponent } from './equipo-tecnico/reportes/reportes-rutas
 import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte-participacion/reporte-participacion.component';
 import { ReporteParticipantesComponent } from './equipo-tecnico/reportes/reporte-participantes/reporte-participantes.component';
 import { ReporteSeminarioComponent } from './equipo-tecnico/reportes/reporte-seminario/reporte-seminario.component';
+import { MainAsignarBanco_Modulo } from './equipo-tecnico/asignacion/AsignarBanco_Modulo/main-asignar-banco-modulo.component';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
@@ -30,7 +31,10 @@ children:[
     {path:'reporte-participantes', component:ReporteParticipantesComponent},
     {path:'reporte-seminario', component:ReporteSeminarioComponent}
   ]},
-  {path:'crearSeminario', component: MainCrearSeminarioComponent}
+  {path:'crearSeminario', component: MainCrearSeminarioComponent},
+  {path:'asignacion', component: UsuarioRutasComponent, children:[
+    {path:'asignarBanco-Modulo', component: MainAsignarBanco_Modulo}
+  ]}
 ]}
 ];
 //cambios

@@ -9,11 +9,13 @@ import { UsuarioRutasComponent } from './usuario-rutas.component';
 import { MainCrearSeminarioComponent } from './crearSeminario/main-crear-seminario/main-crear-seminario.component';
 import { ReportesRutasComponent } from './reportes/reportes-rutas.component';
 import { ReportesModule } from './reportes/reportes.module';
+import { AsignacionRutasComponent } from './asignacion/asignacion-rutas.component';
 
 
 const routes : Routes =[
   {path:'crearModulo', component:MainCrearModuloComponent},
-  {path:'reportes', component:ReportesRutasComponent}
+  {path:'reportes', component:ReportesRutasComponent},
+  {path:'asignacion', component:AsignacionRutasComponent}
 ]
 
 @NgModule({
