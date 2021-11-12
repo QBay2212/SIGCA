@@ -27,7 +27,7 @@ reportes :  Reporte[]=[];
         distrito:"chaclacayo",
         banco:"Los geranios",
         fecha:"12/03/2021",
-        progreso:50
+        progreso:100
       },
       {
        
