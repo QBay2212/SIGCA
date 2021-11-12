@@ -18,10 +18,14 @@ import { ReportesRutasComponent } from './equipo-tecnico/reportes/reportes-rutas
 import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte-participacion/reporte-participacion.component';
 import { ReporteParticipantesComponent } from './equipo-tecnico/reportes/reporte-participantes/reporte-participantes.component';
 import { ReporteSeminarioComponent } from './equipo-tecnico/reportes/reporte-seminario/reporte-seminario.component';
+import { AsesorRutasComponent } from './asesor/asesor-rutas.component';
+import { AsesorModule } from './asesor/asesor.module';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
+  {path:'dashboard/asesor', component:AsesorRutasComponent},
   {path:'dashboard/equipoTecnico', component:PrincipalComponent},
+  
   {path:'equipo-tecnico', component:UsuarioRutasComponent,
 children:[
   {path:'crearModulo', component: MainCrearModuloComponent},
@@ -44,7 +48,8 @@ children:[
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),CoreModule,SidebarModule.forRoot(),FormsModule,
-    EquipoTecnicoModule
+    EquipoTecnicoModule,
+    AsesorModule
   ],
   providers: [],
   bootstrap: [AppComponent],

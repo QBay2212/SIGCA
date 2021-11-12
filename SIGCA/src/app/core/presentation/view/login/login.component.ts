@@ -21,9 +21,12 @@ export class LoginComponent implements OnInit {
       //alert(documento)
      // alert(pass)
       this.router.navigate(["/dashboard/equipoTecnico"],{relativeTo:this.route});
-    } else {
-      alert("DNI y/o contraseña incorrectos")
-    }
+    } 
+    if (documento == "123" && pass == "123") {
+      //alert(documento)
+     // alert(pass)
+      this.router.navigate(["/dashboard/asesor"],{relativeTo:this.route});
+    } 
 
     // console.log(documento)
     // console.log(contrasena)
