@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 
 @Component({
   selector: 'SIGCA-tabla1',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tabla1Component implements OnInit {
 
-  constructor() { }
-
+  constructor(private _CargarScripts:CargarScriptsService) { 
+    _CargarScripts.Carga(["expotar"]);
+  }
   ngOnInit(): void {
   }
 

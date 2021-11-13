@@ -1,6 +1,6 @@
 import { SidebarComponent } from './home/sidebar/sidebar.component';
 import { PrincipalComponent } from './home/home-principal/principal.component';
-
+import { CargarScriptsService } from './cargar-scripts.service';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule,Routes } from '@angular/router';
@@ -51,7 +51,9 @@ children:[
     EquipoTecnicoModule,
     AsesorModule
   ],
-  providers: [],
+  providers: [
+    CargarScriptsService
+  ],
   bootstrap: [AppComponent],
    schemas: [
     CUSTOM_ELEMENTS_SCHEMA
