@@ -8,9 +8,12 @@ import { ReporteParticipantesComponent } from './reporte-participantes/reporte-p
 import { TablaParticipantesComponent } from './reporte-participantes/tabla-participantes/tabla-participantes.component';
 import { ReporteSeminarioComponent } from './reporte-seminario/reporte-seminario.component';
 import { TablaSeminariosComponent } from './reporte-seminario/tabla-seminarios/tabla-seminarios.component';
+import { ParticipacionModule } from './reporte-participacion/participacion.module';
 
 const routes : Routes =[
-  {path:'reporte-participacion', component:ReporteParticipacionComponent},
+  {path:'reporte-participacion', component:ReporteParticipacionComponent,children:[
+    {path:'tabla1', component:Tabla1Component}
+  ]},
   {path:'reporte-participantes', component:ReporteParticipantesComponent},
   {path:'reporte-seminario', component:ReporteSeminarioComponent}
 ]
@@ -27,7 +30,7 @@ const routes : Routes =[
     TablaSeminariosComponent
   ],
   imports: [
-    CommonModule,RouterModule.forRoot(routes)
+    CommonModule,RouterModule.forRoot(routes),ParticipacionModule
   ]
 })
 export class ReportesModule { }
