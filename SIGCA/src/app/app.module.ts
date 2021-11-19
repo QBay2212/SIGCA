@@ -1,6 +1,6 @@
 import { SidebarComponent } from './home/sidebar/sidebar.component';
 import { PrincipalComponent } from './home/home-principal/principal.component';
-
+import { CargarScriptsService } from './cargar-scripts.service';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule,Routes } from '@angular/router';
@@ -18,15 +18,22 @@ import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte
 import { ReporteParticipantesComponent } from './equipo-tecnico/reportes/reporte-participantes/reporte-participantes.component';
 import { ReporteSeminarioComponent } from './equipo-tecnico/reportes/reporte-seminario/reporte-seminario.component';
 import { MainAsignarBanco_Modulo } from './equipo-tecnico/asignacion/AsignarBanco_Modulo/main-asignar-banco-modulo.component';
+import { AsesorRutasComponent } from './asesor/asesor-rutas.component';
+import { AsesorModule } from './asesor/asesor.module';
+import { Tabla1Component } from './equipo-tecnico/reportes/reporte-participacion/tabla1/tabla1.component';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
+  {path:'dashboard/asesor', component:AsesorRutasComponent},
   {path:'dashboard/equipoTecnico', component:PrincipalComponent},
+  
   {path:'equipo-tecnico', component:UsuarioRutasComponent,
 children:[
   {path:'crearModulo', component: MainCrearModuloComponent},
   {path:'reportes', component: ReportesRutasComponent, children:[
-    {path:'reporte-participacion', component:ReporteParticipacionComponent},
+    {path:'reporte-participacion', component:ReporteParticipacionComponent, children:[
+      {path:'tabla1',component:Tabla1Component}
+    ]},
     {path:'reporte-participantes', component:ReporteParticipantesComponent},
     {path:'reporte-seminario', component:ReporteSeminarioComponent}
   ]},
@@ -47,9 +54,12 @@ children:[
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),CoreModule,SidebarModule.forRoot(),FormsModule,
-    EquipoTecnicoModule
+    EquipoTecnicoModule,
+    AsesorModule
   ],
-  providers: [],
+  providers: [
+    CargarScriptsService
+  ],
   bootstrap: [AppComponent],
    schemas: [
     CUSTOM_ELEMENTS_SCHEMA
