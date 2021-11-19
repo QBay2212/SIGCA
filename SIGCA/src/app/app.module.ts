@@ -10,7 +10,6 @@ import { SidebarModule } from 'ng-sidebar';
 import { PagesLoginComponent } from './core/presentation/pages/pages-login/pages-login.component';
 import { FormsModule } from '@angular/forms';
 import { NavTopComponent } from './home/nav-top/nav-top.component';
-import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { UsuarioRutasComponent } from './equipo-tecnico/usuario-rutas.component';
 import { ReportesRutasComponent } from './equipo-tecnico/reportes/reportes-rutas.component';
 import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte-participacion/reporte-participacion.component';
@@ -51,7 +50,6 @@ children:[
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),CoreModule,SidebarModule.forRoot(),FormsModule,
-    EquipoTecnicoModule,
     AsesorModule
   ],
   providers: [
