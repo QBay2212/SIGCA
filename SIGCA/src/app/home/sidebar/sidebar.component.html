@@ -17,10 +17,10 @@
         <li class="nav__item">
           <a class="item__link" #enlace (click)="desplegar()">
             <i class="fas fa-check-square decoration"></i> Asignación
-            <i class="fas fa-angle-down margenes"></i
-          ></a>
-          <ul class="submenu nav__item w-100 mostrar">
-            <li class="nav__item w-100">
+            <i class="fas fa-angle-down margenes"></i>
+          </a>
+          <ul class="submenu nav__item w-100 mostrar" >
+            <li class="nav__item w-100" (click)="enviarAsignarBanco_Modulo()">
               <a class="item__link d-block">Asignar Banco-Modulo </a>
             </li>
           </ul>
@@ -37,7 +37,7 @@
           ></a>
           <ul class="submenu mostrar">
             <li class="nav__item w-100">
-              <a class="item__link d-block" 
+              <a class="item__link d-block"
                 >Desarrollo de modulos por bancos
               </a>
             </li>
@@ -48,7 +48,7 @@
               <a class="item__link item__link:alineacion" (click)="enviarParticipantes()" >Participantes</a>
             </li>
             <li class="nav__item">
-              <a class="item__link item__link:alineacion" (click)="enviarSeminario()" 
+              <a class="item__link item__link:alineacion" (click)="enviarSeminario()"
                 >Participación Seminario</a
               >
             </li>
