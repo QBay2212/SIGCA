@@ -11,6 +11,8 @@ export class SidebarComponent implements OnInit {
   @Input() opened:boolean=true;
   @ViewChild('enlace') enlace:ElementRef | any; 
   @ViewChild('enlace_dos') enlace_dos:ElementRef | any; 
+  @ViewChild('submenu') submenu:ElementRef | any; 
+  @ViewChild('submenu2') submenu2:ElementRef | any; 
   estado_desplegar1:boolean=false;
   estado_desplegar2:boolean=false;
 
@@ -42,21 +44,29 @@ export class SidebarComponent implements OnInit {
 
 desplegar(){
     const a = this.enlace.nativeElement;
+    const submenu = this.submenu.nativeElement;
+    const height = submenu.scrollHeight;
     const sibling = this.ren2.nextSibling(a);
     if ( sibling.classList.contains( 'mostrar' )) {
       this.ren2.removeClass( sibling,'mostrar');
+      this.ren2.removeAttribute(submenu,"style");
     }else{
-       this.ren2.addClass(sibling,'mostrar')
+       this.ren2.addClass(sibling,'mostrar');
+       this.ren2.setStyle(submenu,"height",height+"px");
     }
 }
 
 desplegar2(){
   const a = this.enlace_dos.nativeElement;
+  const submenu2 = this.submenu2.nativeElement;
+  const height = submenu2.scrollHeight;
   const sibling = this.ren2.nextSibling(a);
   if ( sibling.classList.contains( 'mostrar' )) {
       this.ren2.removeClass( sibling,'mostrar');
+      this.ren2.removeAttribute(submenu2,"style");
     }else{
-       this.ren2.addClass(sibling,'mostrar')
+       this.ren2.addClass(sibling,'mostrar');
+       this.ren2.setStyle(submenu2,"height",height+"px");
     }
 }
 
