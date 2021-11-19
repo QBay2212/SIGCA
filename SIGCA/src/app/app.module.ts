@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { NavTopComponent } from './home/nav-top/nav-top.component';
 import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { UsuarioRutasComponent } from './equipo-tecnico/usuario-rutas.component';
-import { MainCrearModuloComponent } from './equipo-tecnico/crearModulo/main-crear-modulo/main-crear-modulo.component';
 import { MainCrearSeminarioComponent } from './equipo-tecnico/crearSeminario/main-crear-seminario/main-crear-seminario.component';
 import { ReportesRutasComponent } from './equipo-tecnico/reportes/reportes-rutas.component';
 import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte-participacion/reporte-participacion.component';
@@ -21,6 +20,7 @@ import { ReporteSeminarioComponent } from './equipo-tecnico/reportes/reporte-sem
 import { AsesorRutasComponent } from './asesor/asesor-rutas.component';
 import { AsesorModule } from './asesor/asesor.module';
 import { Tabla1Component } from './equipo-tecnico/reportes/reporte-participacion/tabla1/tabla1.component';
+import { MaincrearModuloComponent } from './equipo-tecnico/crearModulo/maincrear-modulo/maincrear-modulo.component';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
@@ -29,7 +29,7 @@ const routes : Routes =[
   
   {path:'equipo-tecnico', component:UsuarioRutasComponent,
 children:[
-  {path:'crearModulo', component: MainCrearModuloComponent},
+  {path:'crearModulo', component: MaincrearModuloComponent},
   {path:'reportes', component: ReportesRutasComponent, children:[
     {path:'reporte-participacion', component:ReporteParticipacionComponent, children:[
       {path:'tabla1',component:Tabla1Component}
