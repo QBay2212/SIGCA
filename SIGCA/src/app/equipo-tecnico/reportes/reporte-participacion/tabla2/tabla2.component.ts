@@ -2,18 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 
 @Component({
-  selector: 'SIGCA-tabla1',
-  templateUrl: './tabla1.component.html',
-  styleUrls: ['./tabla1.component.css']
+  selector: 'SIGCA-tabla2',
+  templateUrl: './tabla2.component.html',
+  styleUrls: ['./tabla2.component.css']
 })
-export class Tabla1Component implements OnInit {
+export class Tabla2Component implements OnInit {
 
   constructor(private _CargarScripts:CargarScriptsService) { 
     _CargarScripts.Carga(["expotar"]);
   }
+
   ngOnInit(): void {
   }
 
 }
-
-

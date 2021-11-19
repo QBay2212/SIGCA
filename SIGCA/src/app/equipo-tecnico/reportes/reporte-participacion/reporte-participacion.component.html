@@ -1,14 +1,15 @@
 <div class="container-fluid " >
-    <div class="row contenedor">
+    
+    <div class="row contenedor" >
         <div class="col-8">
             <h1 class="titulo1">Genenrar Reporte/ Participacion</h1>
         </div>
         <div class="col-4 contenedor-boton">
-         <button type="button" class="btn btn-success">Enviar</button>
+         <button type="button" class="btn btn-success" (click)="go(sesion.value)">Enviar</button>
      </div>
      <div class="contenedor-opciones row">
          <div class="col-2">
-             <select class="form-select" aria-label="Default select example">
+             <select class="form-select" aria-label="Default select example"    >
                  <option selected>SEDE</option>
                  <option value="1">APCE</option>
                  <option value="2">APCN</option>
@@ -40,17 +41,18 @@
                </select>
          </div>
          <div class="col-3">
-             <select class="form-select" aria-label="Default select example">
-                 <option selected>SESION</option>
+             <select class="form-select" aria-label="Default select example" #sesion >
+                 <option value="0">SESION</option>
                  <option value="1">Sesion 1</option>
                  <option value="2">Sesion 2</option>
                  <option value="3">Sesion 3</option>
                </select>
+            
          </div>
      
      </div>
      <div class="col-12 tabla">
-        <SIGCA-tabla1></SIGCA-tabla1>
+       <iframe src="tabla1"  id="tablas" class="col-12"> </iframe>
      </div>
     
     </div>
