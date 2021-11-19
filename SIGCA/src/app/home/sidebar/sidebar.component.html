@@ -6,7 +6,7 @@
       <ul class="d-flex flex-column p-0">
         <li class="nav__item" (click)="enviarCrearModulo()">
           <a class="item__link"
-            ><i class="fas fa-address-book decoration"></i> Crear Módulo</a
+            ><i class="fas fa-address-book decoration"></i>Crear Modulo</a
           >
         </li>
         <li class="nav__item" (click)="enviarCrearSeminario()">
@@ -15,15 +15,8 @@
           </a>
         </li>
         <li class="nav__item">
-          <a class="item__link" #enlace (click)="desplegar()">
-            <i class="fas fa-check-square decoration"></i> Asignación
             <i class="fas fa-angle-down margenes"></i>
-          </a>
-          <ul class="submenu nav__item w-100 mostrar" >
-            <li class="nav__item w-100" (click)="enviarAsignarBanco_Modulo()">
               <a class="item__link d-block">Asignar Banco-Modulo </a>
-            </li>
-          </ul>
         </li>
         <li class="nav__item">
           <a class="item__link">
@@ -35,7 +28,7 @@
             <i class="far fa-clipboard decoration"></i> Reportes
             <i class="fas fa-angle-down margenes"></i
           ></a>
-          <ul class="submenu mostrar">
+          <ul #submenu2 class="submenu">
             <li class="nav__item w-100">
               <a class="item__link d-block"
                 >Desarrollo de modulos por bancos
