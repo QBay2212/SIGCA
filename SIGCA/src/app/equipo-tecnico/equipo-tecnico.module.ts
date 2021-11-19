@@ -6,12 +6,9 @@ import { FormularioCrearModuloComponent } from './crearModulo/formulario-crear-m
 import { CuadrosCrearModuloComponent } from './crearModulo/cuadros-crear-modulo/cuadros-crear-modulo.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UsuarioRutasComponent } from './usuario-rutas.component';
-
 import { ReportesRutasComponent } from './reportes/reportes-rutas.component';
 import { ReportesModule } from './reportes/reportes.module';
-
 import { AsignacionRutasComponent } from './asignacion/asignacion-rutas.component';
-
 import { CrearSeminarioPrincipalComponent } from './crearSeminario/crear-seminario-principal/crear-seminario-principal.component';
 import { CrearSeminarioFormulario2Component } from './crearSeminario/crear-seminario-formulario2/crear-seminario-formulario2.component';
 import { CrearSeminarioFormulario3Component } from './crearSeminario/crear-seminario-formulario3/crear-seminario-formulario3.component';
