@@ -18,59 +18,59 @@ export class SidebarComponent implements OnInit {
 
   constructor(private ren2: Renderer2) {
 
-   }
-
-  ngOnInit(): void {
   }
 
+ ngOnInit(): void {
+ }
 
-  enviarCrearModulo():void{
-    this.link.emit('equipo-tecnico/crearModulo');
-  }
-  enviarParticipacion():void{
-    this.link.emit('equipo-tecnico/reportes/reporte-participacion');
-  }
-  enviarParticipantes():void{
-    this.link.emit('equipo-tecnico/reportes/reporte-participantes');
-  }
 
-  enviarSeminario():void{
-    this.link.emit('equipo-tecnico/reportes/reporte-seminario');
-  }
+ enviarCrearModulo():void{
+   this.link.emit('equipo-tecnico/crearModulo');
+ }
+ enviarParticipacion():void{
+   this.link.emit('equipo-tecnico/reportes/reporte-participacion');
+ }
+ enviarParticipantes():void{
+   this.link.emit('equipo-tecnico/reportes/reporte-participantes');
+ }
 
-  enviarCrearSeminario():void{
-    this.link.emit('equipo-tecnico/crearSeminario');
-  }
-  enviarAsignarBanco_Modulo():void{
-    this.link.emit('equipo-tecnico/asignacion');
-  }
+ enviarSeminario():void{
+   this.link.emit('equipo-tecnico/reportes/reporte-seminario');
+ }
+
+ enviarCrearSeminario():void{
+   this.link.emit('equipo-tecnico/crearSeminario');
+ }
+ enviarAsignarBanco_Modulo():void{
+   this.link.emit('equipo-tecnico/asignacion');
+ }
 
 desplegar(){
-    const a = this.enlace.nativeElement;
-    const submenu = this.submenu.nativeElement;
-    const height = submenu.scrollHeight;
-    const sibling = this.ren2.nextSibling(a);
-    if ( sibling.classList.contains( 'mostrar' )) {
-      this.ren2.removeClass( sibling,'mostrar');
-      this.ren2.removeAttribute(submenu,"style");
-    }else{
-       this.ren2.addClass(sibling,'mostrar');
-       this.ren2.setStyle(submenu,"height",height+"px");
-    }
+   const a = this.enlace.nativeElement;
+   const submenu = this.submenu.nativeElement;
+   const height = submenu.scrollHeight;
+   const sibling = this.ren2.nextSibling(a);
+   if ( sibling.classList.contains( 'mostrar' )) {
+     this.ren2.removeClass( sibling,'mostrar');
+     this.ren2.removeAttribute(submenu,"style");
+   }else{
+      this.ren2.addClass(sibling,'mostrar');
+      this.ren2.setStyle(submenu,"height",height+"px");
+   }
 }
 
 desplegar2(){
-  const a = this.enlace_dos.nativeElement;
-  const submenu2 = this.submenu2.nativeElement;
-  const height = submenu2.scrollHeight;
-  const sibling = this.ren2.nextSibling(a);
-  if ( sibling.classList.contains( 'mostrar' )) {
-      this.ren2.removeClass( sibling,'mostrar');
-      this.ren2.removeAttribute(submenu2,"style");
-    }else{
-       this.ren2.addClass(sibling,'mostrar');
-       this.ren2.setStyle(submenu2,"height",height+"px");
-    }
+ const a = this.enlace_dos.nativeElement;
+ const submenu2 = this.submenu2.nativeElement;
+ const height = submenu2.scrollHeight;
+ const sibling = this.ren2.nextSibling(a);
+ if ( sibling.classList.contains( 'mostrar' )) {
+     this.ren2.removeClass( sibling,'mostrar');
+     this.ren2.removeAttribute(submenu2,"style");
+   }else{
+      this.ren2.addClass(sibling,'mostrar');
+      this.ren2.setStyle(submenu2,"height",height+"px");
+   }
 }
 
 }
