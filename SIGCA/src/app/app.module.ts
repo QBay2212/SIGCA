@@ -38,9 +38,7 @@ children:[
     {path:'reporte-seminario', component:ReporteSeminarioComponent}
   ]},
 
-  {path:'asignacion', component: UsuarioRutasComponent, children:[
-    {path:'asignarBanco-Modulo', component: MainAsignarBanco_Modulo}
-  ]}
+ 
 ]}
 ];
 //cambios

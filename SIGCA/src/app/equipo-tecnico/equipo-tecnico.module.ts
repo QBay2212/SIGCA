@@ -9,7 +9,10 @@ import { UsuarioRutasComponent } from './usuario-rutas.component';
 
 import { ReportesRutasComponent } from './reportes/reportes-rutas.component';
 import { ReportesModule } from './reportes/reportes.module';
+
 import { AsignacionRutasComponent } from './asignacion/asignacion-rutas.component';
+
+
 
 
 const routes : Routes =[
