@@ -13,10 +13,12 @@ import { NavTopComponent } from './home/nav-top/nav-top.component';
 import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { UsuarioRutasComponent } from './equipo-tecnico/usuario-rutas.component';
 import { MainCrearSeminarioComponent } from './equipo-tecnico/crearSeminario/main-crear-seminario/main-crear-seminario.component';
+import { MainCrearModuloComponent } from './equipo-tecnico/crearModulo/main-crear-modulo/main-crear-modulo.component';
 import { ReportesRutasComponent } from './equipo-tecnico/reportes/reportes-rutas.component';
 import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte-participacion/reporte-participacion.component';
 import { ReporteParticipantesComponent } from './equipo-tecnico/reportes/reporte-participantes/reporte-participantes.component';
 import { ReporteSeminarioComponent } from './equipo-tecnico/reportes/reporte-seminario/reporte-seminario.component';
+import { MainAsignarBanco_Modulo } from './equipo-tecnico/asignacion/AsignarBanco_Modulo/main-asignar-banco-modulo.component';
 import { AsesorRutasComponent } from './asesor/asesor-rutas.component';
 import { AsesorModule } from './asesor/asesor.module';
 import { Tabla1Component } from './equipo-tecnico/reportes/reporte-participacion/tabla1/tabla1.component';
@@ -26,7 +28,7 @@ const routes : Routes =[
   {path: '', component:PagesLoginComponent},
   {path:'dashboard/asesor', component:AsesorRutasComponent},
   {path:'dashboard/equipoTecnico', component:PrincipalComponent},
-  
+
   {path:'equipo-tecnico', component:UsuarioRutasComponent,
 children:[
   {path:'crearModulo', component: MaincrearModuloComponent},
@@ -37,7 +39,8 @@ children:[
     {path:'reporte-participantes', component:ReporteParticipantesComponent},
     {path:'reporte-seminario', component:ReporteSeminarioComponent}
   ]},
-  {path:'crearSeminario', component: MainCrearSeminarioComponent}
+
+
 ]}
 ];
 //cambios
