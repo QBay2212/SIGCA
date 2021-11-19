@@ -6,7 +6,7 @@ import { FormularioCrearModuloComponent } from './crearModulo/formulario-crear-m
 import { CuadrosCrearModuloComponent } from './crearModulo/cuadros-crear-modulo/cuadros-crear-modulo.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UsuarioRutasComponent } from './usuario-rutas.component';
-import { MainCrearSeminarioComponent } from './crearSeminario/main-crear-seminario/main-crear-seminario.component';
+
 import { ReportesRutasComponent } from './reportes/reportes-rutas.component';
 import { ReportesModule } from './reportes/reportes.module';
 import { AsignacionRutasComponent } from './asignacion/asignacion-rutas.component';
@@ -23,8 +23,7 @@ const routes : Routes =[
     MainCrearModuloComponent,
     FormularioCrearModuloComponent,
     CuadrosCrearModuloComponent,
-    UsuarioRutasComponent,
-    MainCrearSeminarioComponent
+    UsuarioRutasComponent
   ],
   imports: [
     CommonModule,FormsModule,RouterModule.forRoot(routes),ReportesModule

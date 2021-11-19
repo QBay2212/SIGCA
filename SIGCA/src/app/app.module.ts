@@ -13,7 +13,6 @@ import { NavTopComponent } from './home/nav-top/nav-top.component';
 import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { UsuarioRutasComponent } from './equipo-tecnico/usuario-rutas.component';
 import { MainCrearModuloComponent } from './equipo-tecnico/crearModulo/main-crear-modulo/main-crear-modulo.component';
-import { MainCrearSeminarioComponent } from './equipo-tecnico/crearSeminario/main-crear-seminario/main-crear-seminario.component';
 import { ReportesRutasComponent } from './equipo-tecnico/reportes/reportes-rutas.component';
 import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte-participacion/reporte-participacion.component';
 import { ReporteParticipantesComponent } from './equipo-tecnico/reportes/reporte-participantes/reporte-participantes.component';
@@ -31,7 +30,7 @@ children:[
     {path:'reporte-participantes', component:ReporteParticipantesComponent},
     {path:'reporte-seminario', component:ReporteSeminarioComponent}
   ]},
-  {path:'crearSeminario', component: MainCrearSeminarioComponent},
+
   {path:'asignacion', component: UsuarioRutasComponent, children:[
     {path:'asignarBanco-Modulo', component: MainAsignarBanco_Modulo}
   ]}
