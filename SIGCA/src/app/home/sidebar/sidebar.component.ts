@@ -6,13 +6,13 @@ import { Component, Input, OnInit, Output, EventEmitter, ViewChild, ElementRef, 
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  
+
   @Output() link:EventEmitter<string> = new EventEmitter;
   @Input() opened:boolean=true;
-  @ViewChild('enlace') enlace:ElementRef | any; 
-  @ViewChild('enlace_dos') enlace_dos:ElementRef | any; 
-  @ViewChild('submenu') submenu:ElementRef | any; 
-  @ViewChild('submenu2') submenu2:ElementRef | any; 
+  @ViewChild('enlace') enlace:ElementRef | any;
+  @ViewChild('enlace_dos') enlace_dos:ElementRef | any;
+  @ViewChild('submenu') submenu:ElementRef | any;
+  @ViewChild('submenu2') submenu2:ElementRef | any;
   estado_desplegar1:boolean=false;
   estado_desplegar2:boolean=false;
 
@@ -40,6 +40,9 @@ export class SidebarComponent implements OnInit {
 
   enviarCrearSeminario():void{
     this.link.emit('equipo-tecnico/crearSeminario');
+  }
+  enviarAsignarBanco_Modulo():void{
+    this.link.emit('equipo-tecnico/asignacion');
   }
 
 desplegar(){
