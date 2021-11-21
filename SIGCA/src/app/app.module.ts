@@ -19,6 +19,7 @@ import { AsesorRutasComponent } from './asesor/asesor-rutas.component';
 import { AsesorModule } from './asesor/asesor.module';
 import { Tabla1Component } from './equipo-tecnico/reportes/reporte-participacion/tabla1/tabla1.component';
 import { MaincrearModuloComponent } from './equipo-tecnico/crearModulo/maincrear-modulo/maincrear-modulo.component';
+import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
@@ -50,7 +51,7 @@ children:[
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),CoreModule,SidebarModule.forRoot(),FormsModule,
-    AsesorModule
+    AsesorModule, EquipoTecnicoModule
   ],
   providers: [
     CargarScriptsService
