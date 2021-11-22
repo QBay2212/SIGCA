@@ -1,0 +1,15 @@
+.contenedor{
+    border: 1px solid black; height: 190px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.satisfaccion{
+    text-align: end;
+}
+.barra{
+    height: 100px;
+    width: 100%;
+}
+.boton{
+    text-align: end;
+}

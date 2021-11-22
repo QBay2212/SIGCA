@@ -20,10 +20,15 @@ import { AsesorModule } from './asesor/asesor.module';
 import { Tabla1Component } from './equipo-tecnico/reportes/reporte-participacion/tabla1/tabla1.component';
 import { MaincrearModuloComponent } from './equipo-tecnico/crearModulo/maincrear-modulo/maincrear-modulo.component';
 import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
+import { ProgramasComponent } from './asesor/programas/programas.component';
+import { ReportesocioComponent } from './asesor/reportesocio/reportesocio.component';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
-  {path:'dashboard/asesor', component:AsesorRutasComponent},
+  {path:'dashboard/asesor', component:AsesorRutasComponent,children:[
+    {path:'programa', component:ProgramasComponent},
+    {path:'reporte-asesor', component:ReportesocioComponent}
+  ]},
   {path:'dashboard/equipoTecnico', component:PrincipalComponent},
 
   {path:'equipo-tecnico', component:UsuarioRutasComponent,
