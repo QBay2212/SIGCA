@@ -8,8 +8,8 @@ import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 })
 export class Tabla1Component implements OnInit {
 
-  constructor(private _CargarScripts:CargarScriptsService) { 
-    _CargarScripts.Carga(["expotar"]);
+  constructor(private CargarScripts:CargarScriptsService) {
+    this.CargarScripts.Carga(["expotar"]);
   }
   ngOnInit(): void {
   }
