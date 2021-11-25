@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-4 contenedor" *ngFor="let pro of reportes">
+        <div class="col-4 contenedor" *ngFor="let pro of reportes; let i = index">
           <div class="row" >
               <div class="col-6">
                  {{pro.BANCO}}-{{pro.MODULO}}
@@ -16,7 +16,7 @@
             </div>
            
                <div class="col-6 boton">
-                <button type="button" class="btn btn-danger" >Datos Socio</button>
+                <button type="button" class="btn btn-danger" (click)="listar(i)">Datos Socio</button>
             </div>
             <div class="col-6 ">
                 <button type="button" class="btn btn-info">Pedido Oracion</button>

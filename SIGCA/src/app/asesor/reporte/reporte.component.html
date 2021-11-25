@@ -1,20 +1,26 @@
+
+
 <table class="table table-bordered tabla">
     
     <thead>
         <tr>
             <th>Socio</th>
-            <th> 
-                <select class="form-select" >
-                    <option value=0 >Sin Sesion</option>
-                    <option value={{s.id_SESION}} *ngFor="let s of sesiones">{{s.no_SESION}}</option>
-                   </select>
+            <th><select class="form-select" aria-label="Default select example" (change)="listartabla()" [(ngModel)]="model.sesion">
+             
+                <option value={{sesion.id_SESION}} *ngFor="let sesion of sesiones" >{{sesion.no_SESION}}</option>
+            </select></th>
+               
             
         </tr>
     </thead>
     <tbody>
-        <tr >
-           <td><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"*ngFor="let s of sesiones" >{{s.no_SESION}}</a></td>
-           <td>3/4</td>
+        <tr *ngFor="let reporte of reportes; let i=index" >
+           <td >
+               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="litarmodal(i)" >{{reporte.PERSONA}}</a>
+            </td>
+            <td >
+                 {{reporte.Asistencia}}
+             </td>
             </tr>
            
             

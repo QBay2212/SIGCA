@@ -19,6 +19,9 @@ export class ReportesService {
   getParticipacion(banco:number, modulo:number): Observable<Participacion[]>{
     return this.http.get<Participacion[]>(`${this.urlpost}/participacion/${banco}/${modulo}`)
   }
+  getParticipacionSesiones(banco:number, modulo:number,sesion:number): Observable<Participacion[]>{
+    return this.http.get<Participacion[]>(`${this.urlpost}/participacion/${banco}/${modulo}/${sesion}`)
+  }
   getParticipantes(banco:number, modulo:number): Observable<Participacion[]>{
     return this.http.get<Participacion[]>(`${this.urlpost}/participantes/${banco}/${modulo}`)
   }

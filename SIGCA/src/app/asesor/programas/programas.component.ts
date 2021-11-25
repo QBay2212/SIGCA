@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProgramaAsesor } from 'src/app/equipo-tecnico/reportes/reporte';
 import { AsesorService } from '../asesor.service';
 
@@ -11,7 +12,7 @@ import { AsesorService } from '../asesor.service';
 
 export class ProgramasComponent implements OnInit {
 
-  constructor(private asesor:AsesorService, ) { }
+  constructor(private asesor:AsesorService, private router:Router) { }
   reportes :  ProgramaAsesor[]=[];
   model: any=[];
   ngOnInit(): void {
@@ -21,6 +22,14 @@ export class ProgramasComponent implements OnInit {
        console.log( this.reportes);
       
      });
+  }
+  listar(i:number){
+  var  x=String(this.reportes[i].IDBANCO);
+  var  y=String(this.reportes[i].IDMODULO);
+   sessionStorage.setItem('modulo',y)
+   sessionStorage.setItem('banco',x)
+   this.router.navigate(['/reporte-asesor']);
+    
   }
  
 
