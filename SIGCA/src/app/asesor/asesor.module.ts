@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProgramasComponent } from './programas/programas.component';
 import { FormsModule } from '@angular/forms';
 import { ReportesocioComponent } from './reportesocio/reportesocio.component';
+import { HttpClient } from '@angular/common/http';
 
 
 const routes : Routes =[

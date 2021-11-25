@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ProgramaAsesor } from 'src/app/equipo-tecnico/reportes/reporte';
+import { AsesorService } from '../asesor.service';
 
-class Reporte{
- 
-  seminario?:String;
-  banco?:String;
-}
+
 @Component({
   selector: 'SIGCA-programas',
   templateUrl: './programas.component.html',
@@ -13,47 +11,17 @@ class Reporte{
 
 export class ProgramasComponent implements OnInit {
 
-  constructor() { }
-  reportes :  Reporte[]=[];
+  constructor(private asesor:AsesorService, ) { }
+  reportes :  ProgramaAsesor[]=[];
+  model: any=[];
   ngOnInit(): void {
-    this.reportes = [
-      {
+   
+     this.asesor.getProgramasAsesor(6).subscribe(listas=>{
+       this.reportes=listas;
+       console.log( this.reportes);
       
-        seminario:"Facebook",
-        banco:"Vallecito",
-      },
-      {
-       
-        seminario:"Whatsaap",
-        banco:"Los geranios",
-        
-      },
-      {
-       
-        seminario:"Whatsaap",
-        banco:"Las malvinas",
-        
-      }, 
-      {
-       
-        seminario:"Whatsaap",
-        banco:"Los geranios",
-        
-      },
-      {
-       
-        seminario:"Whatsaap",
-        banco:"Los geranios",
-      },
-      {
-       
-        seminario:"Whatsaap",
-        banco:"Los geranios",
-        
-      }
-
-       
-      ];
+     });
   }
+ 
 
 }

@@ -22,6 +22,7 @@ import { MaincrearModuloComponent } from './equipo-tecnico/crearModulo/maincrear
 import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { ProgramasComponent } from './asesor/programas/programas.component';
 import { ReportesocioComponent } from './asesor/reportesocio/reportesocio.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
@@ -56,7 +57,7 @@ children:[
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),CoreModule,SidebarModule.forRoot(),FormsModule,
-    AsesorModule, EquipoTecnicoModule
+    AsesorModule, EquipoTecnicoModule,HttpClientModule
   ],
   providers: [
     CargarScriptsService

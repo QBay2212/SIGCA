@@ -9,6 +9,8 @@ import { TablaParticipantesComponent } from './reporte-participantes/tabla-parti
 import { ReporteSeminarioComponent } from './reporte-seminario/reporte-seminario.component';
 import { TablaSeminariosComponent } from './reporte-seminario/tabla-seminarios/tabla-seminarios.component';
 import { ParticipacionModule } from './reporte-participacion/participacion.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 const routes : Routes =[
   {path:'reporte-participacion', component:ReporteParticipacionComponent,children:[
@@ -30,7 +32,7 @@ const routes : Routes =[
     TablaSeminariosComponent
   ],
   imports: [
-    CommonModule,RouterModule.forRoot(routes),ParticipacionModule
+    CommonModule,RouterModule.forRoot(routes),ParticipacionModule,HttpClientModule,FormsModule
   ]
 })
 export class ReportesModule { }
