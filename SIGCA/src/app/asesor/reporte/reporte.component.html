@@ -1,4 +1,21 @@
-
+<div class="col-4 contenedor" >
+    <div class="row" >
+        <div class="col-6">
+           {{nombreb}}-{{nombrem}}
+        </div>
+        <div class="col-6 satisfaccion">
+          Satisfaccion:Satisfecho
+      </div>
+      <div class="col-12 ">
+        
+          
+       <progress class="barra" max="100"  value={{progreso}}> </progress>
+          
+      </div>
+     
+        
+    </div>
+  </div>
 
 <table class="table table-bordered tabla">
     
@@ -47,26 +64,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr >
-                        <td>Pdf</td>
-                        <td>Asistio</td>
-                        <td>Satisfecho</td>
+                    <tr *ngFor="let mod of modal" >
+                        <td>{{mod.RECURSO}}</td>
+                        <td>{{mod.Asistencia}}</td>
+                        <td>{{mod.Valoracion}}</td>
                         </tr>
-                        <tr >
-                            <td>Pdf</td>
-                            <td>Asistio</td>
-                            <td>Satisfecho</td>
-                            </tr>
-                            <tr >
-                                <td>Pdf</td>
-                                <td>Asistio</td>
-                                <td>Satisfecho</td>
-                                </tr>
-                                <tr >
-                                    <td>Pdf</td>
-                                    <td>Asistio</td>
-                                    <td>Satisfecho</td>
-                                    </tr>
+                       
                                     
                        
                         

@@ -5,7 +5,7 @@ import { ReporteParticipacionComponent } from './reporte-participacion/reporte-p
 import { RouterModule, Routes } from '@angular/router';
 import { Tabla1Component } from './reporte-participacion/tabla1/tabla1.component';
 import { ReporteParticipantesComponent } from './reporte-participantes/reporte-participantes.component';
-import { TablaParticipantesComponent } from './reporte-participantes/tabla-participantes/tabla-participantes.component';
+
 import { ReporteSeminarioComponent } from './reporte-seminario/reporte-seminario.component';
 import { TablaSeminariosComponent } from './reporte-seminario/tabla-seminarios/tabla-seminarios.component';
 import { ParticipacionModule } from './reporte-participacion/participacion.module';
@@ -27,7 +27,7 @@ const routes : Routes =[
     ReporteParticipacionComponent,
     Tabla1Component,
     ReporteParticipantesComponent,
-    TablaParticipantesComponent,
+    
     ReporteSeminarioComponent,
     TablaSeminariosComponent
   ],

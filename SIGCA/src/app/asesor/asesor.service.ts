@@ -14,5 +14,9 @@ export class AsesorService {
     return this.http.get<ProgramaAsesor[]>(`${this.urlpost}/programa/${id}`)
   }
 
+  getRecursosSocio(socio:number, sesion:number): Observable<ProgramaAsesor[]>{
+    return this.http.get<ProgramaAsesor[]>(`${this.urlpost}/recursos/${socio}/${sesion}`)
+  }
+
 
 }

@@ -17,7 +17,7 @@ export class ProgramasComponent implements OnInit {
   model: any=[];
   ngOnInit(): void {
    
-     this.asesor.getProgramasAsesor(6).subscribe(listas=>{
+     this.asesor.getProgramasAsesor(4).subscribe(listas=>{
        this.reportes=listas;
        console.log( this.reportes);
       
@@ -26,6 +26,12 @@ export class ProgramasComponent implements OnInit {
   listar(i:number){
   var  x=String(this.reportes[i].IDBANCO);
   var  y=String(this.reportes[i].IDMODULO);
+  var  banco=String(this.reportes[i].BANCO);
+  var  modulo=String(this.reportes[i].MODULO);
+  var  progreso=String(this.reportes[i].PROGRESO);
+  sessionStorage.setItem('progreso',progreso);
+  sessionStorage.setItem('nombrebanco',banco);
+   sessionStorage.setItem('nombremodulo',modulo);
    sessionStorage.setItem('modulo',y)
    sessionStorage.setItem('banco',x)
    this.router.navigate(['/reporte-asesor']);

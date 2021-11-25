@@ -21,14 +21,15 @@ import { Tabla1Component } from './equipo-tecnico/reportes/reporte-participacion
 import { MaincrearModuloComponent } from './equipo-tecnico/crearModulo/maincrear-modulo/maincrear-modulo.component';
 import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { ProgramasComponent } from './asesor/programas/programas.component';
-import { ReportesocioComponent } from './asesor/reportesocio/reportesocio.component';
+
 import { HttpClientModule } from '@angular/common/http';
+import { ReporteComponent } from './asesor/reporte/reporte.component';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
   {path:'dashboard/asesor', component:AsesorRutasComponent,children:[
     {path:'programa', component:ProgramasComponent},
-    {path:'reporte-asesor', component:ReportesocioComponent}
+    {path:'reporte-asesor', component:ReporteComponent}
   ]},
   {path:'dashboard/equipoTecnico', component:PrincipalComponent},
 

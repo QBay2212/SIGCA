@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 import { Banco, Distrito, Sede, Sesion } from '../reporte';
 import { ReportesService } from '../reportes.service';
-import { TablaParticipantesComponent } from './tabla-participantes/tabla-participantes.component';
+
 
 @Component({
   selector: 'SIGCA-reporte-participantes',
@@ -17,8 +18,10 @@ export class ReporteParticipantesComponent implements OnInit {
   distritos: Distrito[]=[];
   programaciones: any={};
   model: any={};
-  constructor(private reporte:ReportesService, private route:Router) { }
-
+  constructor(private reporte:ReportesService, private route:Router, private _CargarScripts:CargarScriptsService) {
+    _CargarScripts.Carga(["expotar"], );
+   }
+  reportes: any=[];
   ngOnInit(): void {
     this.reporte.getSede().subscribe(listas=>{
       this.sede=listas;
@@ -69,9 +72,12 @@ export class ReporteParticipantesComponent implements OnInit {
    }
   go(){
     
-    sessionStorage.setItem("banco", this.model.banco);
-    sessionStorage.setItem("modulo", this.model.modulo);
    
+    this.reporte.getParticipantes(this.model.banco,this.model.modulo).subscribe((data: any[])=>{
+      this.reportes=data
+      console.log(this.reporte);
+     
+      });
 
 
   }
