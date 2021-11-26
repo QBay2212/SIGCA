@@ -2,12 +2,13 @@ td{
     text-align: center;
 }
 .contenedor{
-    border: 1px solid black; height: 190px;
+    border: 2.3px solid #007b5f; height: 190px;
     border-radius: 15px;
     margin-bottom: 10px;
     padding: 10px;
     
 }
+
 .satisfaccion{
     text-align: end;
 }
@@ -18,4 +19,9 @@ td{
 }
 .boton{
     text-align: end;
+}
+.titulo1{
+    font-size: 150%;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }

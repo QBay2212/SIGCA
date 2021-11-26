@@ -27,7 +27,7 @@ import { ReporteComponent } from './asesor/reporte/reporte.component';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
-  {path:'dashboard/asesor', component:AsesorRutasComponent,children:[
+  {path:'asesor', component:AsesorRutasComponent,children:[
     {path:'programa', component:ProgramasComponent},
     {path:'reporte-asesor', component:ReporteComponent}
   ]},

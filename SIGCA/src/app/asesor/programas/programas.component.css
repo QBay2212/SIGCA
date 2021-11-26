@@ -1,5 +1,7 @@
+
+
 .contenedor{
-    border: 1px solid black; height: 190px;
+    border: 2.3px solid #007b5f; height: 190px;
     border-radius: 15px;
     margin-bottom: 10px;
 }
@@ -12,4 +14,8 @@
 }
 .boton{
     text-align: end;
+}
+.btn{
+    background-color: #007b5f;
+    color: white;
 }

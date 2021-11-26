@@ -27,8 +27,13 @@ export class SidebarComponent implements OnInit {
  enviarCrearModulo():void{
    this.link.emit('equipo-tecnico/crearModulo');
  }
+ seguimientoSocio():void{
+  this.link.emit('asesor');
+  
+}
  enviarParticipacion():void{
    this.link.emit('equipo-tecnico/reportes/reporte-participacion');
+  
  }
  enviarParticipantes():void{
    this.link.emit('equipo-tecnico/reportes/reporte-participantes');
