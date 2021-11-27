@@ -17,7 +17,7 @@ export class ProgramasComponent implements OnInit {
   model: any=[];
   ngOnInit(): void {
    
-     this.asesor.getProgramasAsesor(6).subscribe(listas=>{
+     this.asesor.getProgramasAsesor(4).subscribe(listas=>{
        this.reportes=listas;
        console.log( this.reportes);
       

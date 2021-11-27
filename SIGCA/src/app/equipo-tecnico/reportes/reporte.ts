@@ -57,3 +57,11 @@ export class ProgramaAsesor{
         IDMODULO?: number;
   
     }
+
+    export class RecursoSocio{
+        CORREO?: String;
+        RECURSO?: String;
+        SOCIO?: String;
+        ASISTENCIA?: String;
+      
+        }

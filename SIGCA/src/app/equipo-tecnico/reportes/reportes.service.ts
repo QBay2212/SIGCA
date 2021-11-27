@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Banco, Distrito, Participacion, Programacion, Sede, Sesion } from './reporte';
+import { Banco, Distrito, Participacion, Programacion, RecursoSocio, Sede, Sesion } from './reporte';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError} from 'rxjs/operators';
 
@@ -18,6 +18,9 @@ export class ReportesService {
   constructor(private http: HttpClient, private router: Router) { }
   getParticipacion(banco:number, modulo:number): Observable<Participacion[]>{
     return this.http.get<Participacion[]>(`${this.urlpost}/participacion/${banco}/${modulo}`)
+  }
+  getparticipacionrecursosocio(sesion:number, modulo:number): Observable<RecursoSocio[]>{
+    return this.http.get<RecursoSocio[]>(`${this.urlpost}/participacionrecursos/${sesion}/${modulo}`)
   }
   getParticipacionSesiones(banco:number, modulo:number,sesion:number): Observable<Participacion[]>{
     return this.http.get<Participacion[]>(`${this.urlpost}/participacion/${banco}/${modulo}/${sesion}`)

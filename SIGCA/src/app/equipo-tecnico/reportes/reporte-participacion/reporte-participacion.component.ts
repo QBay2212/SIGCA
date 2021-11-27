@@ -70,6 +70,7 @@ export class ReporteParticipacionComponent implements OnInit {
     
     sessionStorage.setItem("banco", this.model.banco);
     sessionStorage.setItem("modulo", this.model.modulo);
+    sessionStorage.setItem("sesion", this.model.sesion);
     var x=Number(this.model.sesion);
     
     if(x==0){
