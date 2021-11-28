@@ -1,4 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { PrivilegiosUsuario } from 'src/app/equipo-tecnico/reportes/reporte';
+import { SidebarService } from './sidebar.service';
 
 @Component({
   selector: 'SIGCA-sidebar',
@@ -15,17 +17,24 @@ export class SidebarComponent implements OnInit {
   @ViewChild('submenu2') submenu2:ElementRef | any;
   estado_desplegar1:boolean=false;
   estado_desplegar2:boolean=false;
-
-  constructor(private ren2: Renderer2) {
+  privi:PrivilegiosUsuario[]=[];
+  constructor(private ren2: Renderer2,private privilegios:SidebarService) {
 
   }
 
  ngOnInit(): void {
+  this.privilegios.getPrivilegios(1).subscribe(listas=>{
+    this.privi=listas;
+    console.log(this.privi);
+    
+   
+  });
  }
 
 
- enviarCrearModulo():void{
-   this.link.emit('equipo-tecnico/crearModulo');
+ enviarCrearModulo(i:number):void{
+  var  x=String(this.privi[i].NO_PRIVILEGIOS);
+  this.link.emit(x);
  }
  seguimientoSocio():void{
   this.link.emit('asesor');
