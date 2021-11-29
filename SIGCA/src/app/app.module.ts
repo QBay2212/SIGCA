@@ -24,9 +24,12 @@ import { ProgramasComponent } from './asesor/programas/programas.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ReporteComponent } from './asesor/reporte/reporte.component';
+import { SocioComponent } from './socio/socio.component';
+import { SocioModule } from './socio/socio.module';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
+  {path: 'vistaSocio', component:SocioComponent},
   {path:'asesor', component:AsesorRutasComponent,children:[
     {path:'programa', component:ProgramasComponent},
     {path:'reporte-asesor', component:ReporteComponent}
