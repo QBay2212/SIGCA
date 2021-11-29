@@ -26,8 +26,8 @@
 }
 
 .mostrar{
-  display: none;
-}
+  visibility: visible;
+} 
 
 
 
@@ -60,7 +60,9 @@
 .submenu {
   margin-left: 0px;
   padding: 0;
-  transition: all 0.4s;
+  height: 0;
+  transition: all 0.5s;
+  overflow: hidden;
 }
 
 .decoration {
