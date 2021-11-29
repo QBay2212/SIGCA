@@ -15,9 +15,10 @@ export class ProgramasComponent implements OnInit {
   constructor(private asesor:AsesorService, private router:Router) { }
   reportes :  ProgramaAsesor[]=[];
   model: any=[];
+  id=Number(sessionStorage.getItem('idusuario'));
   ngOnInit(): void {
    
-     this.asesor.getProgramasAsesor(6).subscribe(listas=>{
+     this.asesor.getProgramasAsesor(this.id).subscribe(listas=>{
        this.reportes=listas;
        console.log( this.reportes);
       

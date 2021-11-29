@@ -8,7 +8,7 @@ import { SidebarService } from './sidebar.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
+  id=Number(sessionStorage.getItem('idusuario'));
   @Output() link:EventEmitter<string> = new EventEmitter;
   @Input() opened:boolean=true;
   @ViewChild('enlace') enlace:ElementRef | any;
@@ -23,7 +23,7 @@ export class SidebarComponent implements OnInit {
   }
 
  ngOnInit(): void {
-  this.privilegios.getPrivilegios(1).subscribe(listas=>{
+  this.privilegios.getPrivilegios(this.id).subscribe(listas=>{
     this.privi=listas;
     console.log(this.privi);
     
