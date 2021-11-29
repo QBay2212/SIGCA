@@ -5,10 +5,12 @@ import { ReporteParticipacionComponent } from './reporte-participacion/reporte-p
 import { RouterModule, Routes } from '@angular/router';
 import { Tabla1Component } from './reporte-participacion/tabla1/tabla1.component';
 import { ReporteParticipantesComponent } from './reporte-participantes/reporte-participantes.component';
-import { TablaParticipantesComponent } from './reporte-participantes/tabla-participantes/tabla-participantes.component';
+
 import { ReporteSeminarioComponent } from './reporte-seminario/reporte-seminario.component';
 import { TablaSeminariosComponent } from './reporte-seminario/tabla-seminarios/tabla-seminarios.component';
 import { ParticipacionModule } from './reporte-participacion/participacion.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 const routes : Routes =[
   {path:'reporte-participacion', component:ReporteParticipacionComponent,children:[
@@ -25,12 +27,12 @@ const routes : Routes =[
     ReporteParticipacionComponent,
     Tabla1Component,
     ReporteParticipantesComponent,
-    TablaParticipantesComponent,
+    
     ReporteSeminarioComponent,
     TablaSeminariosComponent
   ],
   imports: [
-    CommonModule,RouterModule.forRoot(routes),ParticipacionModule
+    CommonModule,RouterModule.forRoot(routes),ParticipacionModule,HttpClientModule,FormsModule
   ]
 })
 export class ReportesModule { }

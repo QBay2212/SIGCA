@@ -10,26 +10,35 @@ import { SidebarModule } from 'ng-sidebar';
 import { PagesLoginComponent } from './core/presentation/pages/pages-login/pages-login.component';
 import { FormsModule } from '@angular/forms';
 import { NavTopComponent } from './home/nav-top/nav-top.component';
-import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { UsuarioRutasComponent } from './equipo-tecnico/usuario-rutas.component';
-import { MainCrearModuloComponent } from './equipo-tecnico/crearModulo/main-crear-modulo/main-crear-modulo.component';
 import { ReportesRutasComponent } from './equipo-tecnico/reportes/reportes-rutas.component';
 import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte-participacion/reporte-participacion.component';
 import { ReporteParticipantesComponent } from './equipo-tecnico/reportes/reporte-participantes/reporte-participantes.component';
 import { ReporteSeminarioComponent } from './equipo-tecnico/reportes/reporte-seminario/reporte-seminario.component';
-import { MainAsignarBanco_Modulo } from './equipo-tecnico/asignacion/AsignarBanco_Modulo/main-asignar-banco-modulo.component';
 import { AsesorRutasComponent } from './asesor/asesor-rutas.component';
 import { AsesorModule } from './asesor/asesor.module';
 import { Tabla1Component } from './equipo-tecnico/reportes/reporte-participacion/tabla1/tabla1.component';
+import { MaincrearModuloComponent } from './equipo-tecnico/crearModulo/maincrear-modulo/maincrear-modulo.component';
+import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
+import { ProgramasComponent } from './asesor/programas/programas.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { ReporteComponent } from './asesor/reporte/reporte.component';
+import { SocioComponent } from './socio/socio.component';
+import { SocioModule } from './socio/socio.module';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
-  {path:'dashboard/asesor', component:AsesorRutasComponent},
+  {path: 'vistaSocio', component:SocioComponent},
+  {path:'asesor', component:AsesorRutasComponent,children:[
+    {path:'programa', component:ProgramasComponent},
+    {path:'reporte-asesor', component:ReporteComponent}
+  ]},
   {path:'dashboard/equipoTecnico', component:PrincipalComponent},
-  
+
   {path:'equipo-tecnico', component:UsuarioRutasComponent,
 children:[
-  {path:'crearModulo', component: MainCrearModuloComponent},
+  {path:'crearModulo', component: MaincrearModuloComponent},
   {path:'reportes', component: ReportesRutasComponent, children:[
     {path:'reporte-participacion', component:ReporteParticipacionComponent, children:[
       {path:'tabla1',component:Tabla1Component}
@@ -38,9 +47,7 @@ children:[
     {path:'reporte-seminario', component:ReporteSeminarioComponent}
   ]},
 
-  {path:'asignacion', component: UsuarioRutasComponent, children:[
-    {path:'asignarBanco-Modulo', component: MainAsignarBanco_Modulo}
-  ]}
+
 ]}
 ];
 //cambios
@@ -54,8 +61,7 @@ children:[
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),CoreModule,SidebarModule.forRoot(),FormsModule,
-    EquipoTecnicoModule,
-    AsesorModule
+    AsesorModule, EquipoTecnicoModule,HttpClientModule
   ],
   providers: [
     CargarScriptsService
