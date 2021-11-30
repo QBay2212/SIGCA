@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       console.log(response);
       this.authService.guardarUsuario(response.access_token);
       this.authService.guardarToken(response.access_token);
-      this.router.navigate(['/vistaSocio']);
+      this.router.navigate(['/dashboard/equipoTecnico']);
       let usuario = this.authService.usuario;
       alert('Bienvenido:'+usuario.username)
      
