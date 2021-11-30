@@ -16,28 +16,21 @@
               <form>
                 <div class="form-floating mb-3">
                   <input
-                    #documento
-                    type="text"
-                    class="form-control"
-                    id="floatingInput"
-                    placeholder="Text"
+                  [(ngModel)] = "usuario.username" type="text" class="form-control" placeholder="Username" name="username" autofocus
                   />
-                  <label for="floatingInput">DNI</label>
+                  <label for="floatingInput">Usuario</label>
                 </div>
 
                 <div class="form-floating mb-3">
                   <input
-                    #pass
-                    type="password"
-                    class="form-control"
-                    id="floatingPassword"
-                    placeholder="Password"
+                  type="password" [(ngModel)] = "usuario.password" class="form-control" placeholder="password" name="password"
                   />
                   <label for="floatingPassword">Contraseña</label>
                 </div>
 
                 <div class="form-check mb-3">
                   <input
+                  
                     class="form-check-input"
                     type="checkbox"
                     value=""
@@ -50,7 +43,7 @@
 
                 <div class="d-grid">
                   <button
-                    (click)="ingresar(documento.value, pass.value)"
+                    (click)="ingresar()"
                     class="
                       btn btn-lg btn-secondary btn-login
                       text-uppercase

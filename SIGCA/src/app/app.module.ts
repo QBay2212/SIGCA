@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReporteComponent } from './asesor/reporte/reporte.component';
 import { SocioComponent } from './socio/socio.component';
 import { SocioModule } from './socio/socio.module';
+import { HomeModule } from './home/home.module';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
@@ -55,13 +56,12 @@ children:[
   declarations: [
     AppComponent,
     SidebarComponent,
-    PrincipalComponent,
-    NavTopComponent
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),CoreModule,SidebarModule.forRoot(),FormsModule,
-    AsesorModule, EquipoTecnicoModule,HttpClientModule
+    AsesorModule, EquipoTecnicoModule,HttpClientModule,HomeModule
   ],
   providers: [
     CargarScriptsService
