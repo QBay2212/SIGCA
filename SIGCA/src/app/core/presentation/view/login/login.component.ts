@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Usuario } from 'src/app/equipo-tecnico/reportes/reporte';
+import { Rol, Usuario } from 'src/app/equipo-tecnico/reportes/reporte';
 import { AuthService } from './auth.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  a: any=[];
   usuario: Usuario;
   constructor(public authService: AuthService, private router:Router) { 
     this.usuario = new Usuario();
@@ -26,9 +26,20 @@ export class LoginComponent implements OnInit {
       console.log(response);
       this.authService.guardarUsuario(response.access_token);
       this.authService.guardarToken(response.access_token);
-      this.router.navigate(['/dashboard/equipoTecnico']);
       let usuario = this.authService.usuario;
-      alert('Bienvenido:'+usuario.username)
+      var x=Number(sessionStorage.getItem('idusuario'));
+      this.authService.getRoles(x).subscribe((data: any[])=>{
+        this.a=data
+        console.log(this.a)
+        for(let i = 0; i < this.a.length; i++){
+          if(this.a[i].nombrerol=='Socio'){
+            this.router.navigate(['/vistaSocio']);
+          }else{
+            this.router.navigate(['/dashboard/equipoTecnico']);
+          }
+        }
+        });
+     
      
     }
     );

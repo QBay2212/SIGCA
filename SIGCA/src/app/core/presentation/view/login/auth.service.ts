@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Usuario } from 'src/app/equipo-tecnico/reportes/reporte';
+import { Rol, Usuario } from 'src/app/equipo-tecnico/reportes/reporte';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,7 @@ export class AuthService {
      this._usuario = new Usuario();
      this._token = "";
    }
+   private urlpost:string ='http://localhost:9090/api/rol/roles';
    public get usuario():Usuario{
      if(this._usuario != null){
        return this._usuario;
@@ -87,5 +88,9 @@ export class AuthService {
    sessionStorage.clear();
    sessionStorage.removeItem('token');
    sessionStorage.removeItem('usuario');
+ }
+
+ getRoles(id:number){
+  return this.http.get<Rol[]>(`${this.urlpost}/${id}`)
  }
 }

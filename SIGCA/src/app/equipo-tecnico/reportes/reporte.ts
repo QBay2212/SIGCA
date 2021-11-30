@@ -77,3 +77,8 @@ export class ProgramaAsesor{
         estado:boolean=true;
         roles:string[]=[];
     }
+    export class Rol{
+        idrol?:number;
+        nombrerol?:string;
+        
+    }
