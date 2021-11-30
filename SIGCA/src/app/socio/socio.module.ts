@@ -6,13 +6,13 @@ import { IngresarseminarioComponent } from './ingresarseminario/ingresarseminari
 import { RegistrarpedidoComponent } from './registrarpedido/registrarpedido.component';
 import { SesionesComponent } from './ingresarmodulo/sesiones/sesiones.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavTopComponent } from '../home/nav-top/nav-top.component';
 import { HomeModule } from '../home/home.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 const routes : Routes =[
-  {path: 'vistaSocio', component:SocioComponent
-  }
+  {path: 'vistaSocio', component:SocioComponent}
 ]
 
 @NgModule({
@@ -24,9 +24,11 @@ const routes : Routes =[
     SesionesComponent
   ],
   imports: [
+ 
     CommonModule,
     FormsModule,
     RouterModule.forRoot(routes),HomeModule
+    
   ]
 })
 export class SocioModule { }

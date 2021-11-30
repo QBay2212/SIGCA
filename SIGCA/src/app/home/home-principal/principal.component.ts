@@ -19,16 +19,7 @@ export class PrincipalComponent implements OnInit {
 
    recibirEstado(status:boolean):void{
      this.statusReceived=status;
-  //   const iframe = this.iframe.nativeELement;
-  //   const menu = this.sidebar.nativeElement;
-  //   // if (this.statusReceived==false) {
-  //   //    this.ren2.addClass(menu,'ocultar');
-  //   //   this.ren2.addClass(iframe,'col-xl-12');
-  //   // }else{
-  //   //   this.ren2.removeClass(menu,'ocultar');
-  //   //   this.ren2.addClass(menu,'col-xl-2');
-  //   //   this.ren2.addClass(iframe,'col-xl-10');
-  //   // }
+  
    }
 
 

@@ -27,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SocioComponent } from './socio/socio.component';
 import { SesionesComponent } from './socio/ingresarmodulo/sesiones/sesiones.component';
 import { ReporteComponent } from './asesor/reporte/reporte.component';
-import { HomeModule } from './home.module';
+import { HomeModule } from './home/home.module';
+import { SocioModule } from './socio/socio.module';
+
 
 const routes: Routes = [
   { path: '', component: PagesLoginComponent },
@@ -82,7 +84,7 @@ const routes: Routes = [
     AsesorModule,
     EquipoTecnicoModule,
     HttpClientModule,
-    HomeModule,
+    HomeModule,SocioModule
   ],
   providers: [CargarScriptsService],
   bootstrap: [AppComponent],
