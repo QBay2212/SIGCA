@@ -20,28 +20,30 @@ height: 600px;
 
 .semi{
 height: 600px;
-background-color: rgb(241, 123, 123);
 }
 
 .semin{
   height: 300px;
 }
 .pedido{
-  border: black solid 2px;
   text-align: center;
-  background-color: darkslateblue;
-  color: white;
+  background-color: #007B5F;
+  color: rgb(255, 255, 255);
   font-family:Comic Sans MS,Arial,Verdana;
   margin: 0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(124, 124, 124);
+
 }
 .p{
-  background-color:#007B5F;
+  background-color:#ffffff;
   height: 195px;
   margin: 0;
   height: 205px;
-  border: black solid 2px;
   display: flex;
   justify-content: center;
+  border-radius: 10px;
+  margin-top: 10px;
 
 
 }
@@ -92,14 +94,14 @@ form{
 }
 h2{
   padding-top: 5px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-family:Comic Sans MS,Arial,Verdana;
   text-align:center;
   font-size: 15px;
   height: 20px;
 }
 h3{
-  color: white;
+  color: rgb(105, 0, 0);
   font-family:Comic Sans MS,Arial,Verdana;
   text-align:center;
   font-size: 15px;

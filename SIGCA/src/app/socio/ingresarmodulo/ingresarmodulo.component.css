@@ -3,7 +3,6 @@ body{
 }
 
 .caja{
-  border: 2px solid rgb(255, 255, 255);
   border-radius: 2%;
   background-color: #ffffff;
   box-shadow: 2px 2px 5px #999;
@@ -29,4 +28,15 @@ body{
 
 .divi{
   height: 10px;
+}
+
+.pedido{
+  text-align: center;
+  background-color: #007B5F;
+  color: rgb(255, 255, 255);
+  font-family:Comic Sans MS,Arial,Verdana;
+  margin: 0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(124, 124, 124);
+
 }
