@@ -3,7 +3,6 @@
   height: 100vh;
 }
 
-
 .size-1 {
   height: 10%;
 }
@@ -12,6 +11,11 @@
   height: 90%;
 }
 
-.main-info{
+.main-info {
   overflow-x: auto;
+}
+
+.ocultar {
+  display: none;
+  transition: all 0.5s;
 }
