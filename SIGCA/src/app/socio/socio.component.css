@@ -2,9 +2,98 @@
   padding: 0;
   height: 100vh;
 }
+body{
+  background-color: rgb(226, 226, 226);
+}
+
+.config-nav-top {
+  height: 100%;
+  background-color: #007b5f;
+  /* border: 1px solid black; */
+}
 .size-1 {
   height: 10%;
 }
 .size-2 {
   height: 90%;
 }
+.pedido{
+  border: black solid 2px;
+  text-align: center;
+  background-color: darkslateblue;
+  color: white;
+  font-family:Comic Sans MS,Arial,Verdana;
+  margin: 0;
+}
+.p{
+  background-color:#007B5F;
+  height: 195px;
+  margin: 0;
+  height: 205px;
+  border: black solid 2px;
+  display: flex;
+  justify-content: center;
+
+
+}
+img{
+  width: 200px;
+  height: 100px;
+
+}
+.botones{
+  display: flex;
+  justify-content: center; 
+  margin-top: 10px;
+}
+.btn-primary{
+  background-color:grey;
+  border: none;
+  margin-bottom: 15px;
+ }
+.modal-content{
+  background-color:#007B5F;
+  border: black solid 2px;
+  width: 500px;
+  height: 350px;
+  margin-top: 140px;
+  justify-content: center; 
+  color: white;
+  border-radius: 20px;
+}
+h5{
+  color: white;
+  font-family:Comic Sans MS,Arial,Verdana;
+  text-align:center;
+  font-size: 25px;
+  margin-top: 20px;
+  font-weight: 800;
+  /* border: 2px solid black */
+}
+form{
+  margin: 20px;
+}
+.modal-footer{
+  display: flex;
+  justify-content: center; 
+
+}
+.form-control{
+  color: gray;
+}
+h2{
+  padding-top: 5px;
+  color: white;
+  font-family:Comic Sans MS,Arial,Verdana;
+  text-align:center;
+  font-size: 15px;
+  height: 20px;
+}
+h3{
+  color: white;
+  font-family:Comic Sans MS,Arial,Verdana;
+  text-align:center;
+  font-size: 15px;
+  font-weight: 800;
+}
+
