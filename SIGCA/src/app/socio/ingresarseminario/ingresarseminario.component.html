@@ -1,29 +1,27 @@
-<body>
-     <div class="container2">
-        <h1>AHORRANDO EN PANDEMIA</h1>
-        <h2>Con el objetivo de evaluar su asistencia y 
-            participación,es esencial que usted califique y
-            deje un comentario sobre lo que le ah parecido este seminario</h2>   
-        <form>
-            <div class="form-group">
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5">Escribir comentario</textarea>
-            </div>
-          </form>
-          <div class="calificacion">
-          <span class="fas fa-star" id="1estrella" onclick="calificar(this)"></span>
-          <span class="fas fa-star" id="2estrella" onclick="calificar(this)"></span>
-          <span class="fas fa-star" id="3estrella" onclick="calificar(this)"></span>
-          <span class="fas fa-star" id="4estrella" onclick="calificar(this)"></span>
-          <span class="fas fa-star" id="5estrella" onclick="calificar(this)"></span>
-        </div>
-          <div class="botones">
-          <button type="button" class="btn btn-warning">Registrar asistencia</button>
-        </div>
-        </div>
-        <!-- <script src="js/script.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/popper.js"></script>
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/jquery.js"></script>
-        <script src="js/seminario2.js"></script> -->
-</body>
+<div class="p row" *ngFor="let se of semi" style="margin-bottom: 60px;" >
+  <h3>{{se.NO_SEMINARIO}}</h3>
+  <img src="/assets/images/3.jpg" class="img-fluid" alt="" />
+  <div class="botones">
+
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 40px;">
+      En vivo ahora
+    </button>
+    
+   
+</div>
+<div class="botones">
+
+  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 40px;">
+    Asistencia
+  </button>
+  
+ 
+</div>
+
+
+
+
+</div>
+
+
+

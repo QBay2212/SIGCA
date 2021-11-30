@@ -12,7 +12,9 @@ import { HomeModule } from '../home/home.module';
 
 const routes : Routes =[
   {path: 'vistaSocio', component:SocioComponent
-  }
+  },
+  {path: 'seminario', component:IngresarseminarioComponent
+}
 ]
 
 @NgModule({

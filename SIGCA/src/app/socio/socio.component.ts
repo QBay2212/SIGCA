@@ -4,6 +4,7 @@ import { SocioService } from './socio.service';
 import { FormsModule } from '@angular/forms';
 import { Sesion } from '../equipo-tecnico/reportes/reporte';
 import swal from 'sweetalert2';
+import { Seminario } from '../models/Seminario';
 
 @Component({
   selector: 'SIGCA-socio',
@@ -11,7 +12,7 @@ import swal from 'sweetalert2';
   styleUrls: ['./socio.component.css']
 })
 export class SocioComponent implements OnInit {
- 
+  semi:Seminario[]=[];
   oracion: Pedido = new Pedido();
   model:any=[];
    x=Number(sessionStorage.getItem('idusuario'));
@@ -19,6 +20,28 @@ export class SocioComponent implements OnInit {
 
   ngOnInit(): void {
     this.model.des='Escribir pedido, agradecimiento o necesidad';
+   
+    this.semi = [
+      {
+        id_SEMINARIO:1,
+        NO_SEMINARIO:"Facebook",
+        URL_SEMINARIO:"waasasasasasas"
+        
+      },
+      {
+        id_SEMINARIO:2,
+        NO_SEMINARIO:"asasasas",
+        URL_SEMINARIO:"paosaoskaodkaodkaodk"
+        
+      },
+      {
+        id_SEMINARIO:3,
+        NO_SEMINARIO:"Equipo",
+        URL_SEMINARIO:"paosaoskaodkaodkaodk"
+        
+      }
+    
+    ]
   }
 
   recibirEstado(status:boolean):void{
