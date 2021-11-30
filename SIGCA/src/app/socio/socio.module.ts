@@ -11,7 +11,8 @@ import { NavTopComponent } from '../home/nav-top/nav-top.component';
 import { HomeModule } from '../home/home.module';
 
 const routes : Routes =[
-  {path: 'vistaSocio', component:SocioComponent}
+  {path: 'vistaSocio', component:SocioComponent
+  }
 ]
 
 @NgModule({

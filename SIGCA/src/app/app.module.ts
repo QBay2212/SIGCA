@@ -27,10 +27,12 @@ import { ReporteComponent } from './asesor/reporte/reporte.component';
 import { SocioComponent } from './socio/socio.component';
 import { SocioModule } from './socio/socio.module';
 import { HomeModule } from './home/home.module';
+import { SesionesComponent } from './socio/ingresarmodulo/sesiones/sesiones.component';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
   {path: 'vistaSocio', component:SocioComponent},
+  {path: 'vistaModulo', component:SesionesComponent},
   {path:'asesor', component:AsesorRutasComponent,children:[
     {path:'programa', component:ProgramasComponent},
     {path:'reporte-asesor', component:ReporteComponent}
