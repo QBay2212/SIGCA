@@ -26,6 +26,7 @@ height: 600px;
   height: 300px;
 }
 .pedido{
+  height: 40px;
   text-align: center;
   background-color: #007B5F;
   color: rgb(255, 255, 255);
@@ -106,4 +107,46 @@ h3{
   text-align:center;
   font-size: 15px;
   font-weight: 800;
+}
+
+.sesion{
+background-color: #cfcfcf;
+}
+
+.pad{
+padding: 0px;
+}
+
+.altura{
+height: 360px;
+}
+
+.cajon{
+box-shadow: 2px 2px 5px rgb(124, 124, 124);
+border-radius: 10px;
+background-color: rgb(255, 255, 255);
+margin-right: 15px; margin-top: 20px; height: 320px;
+}
+
+.divisor{
+height: 10px;
+}
+
+.medio{
+font-size: medium;
+}
+
+.altur{
+height: 40px;
+}
+
+.alt360{
+height: 300px;
+}
+
+.pedid{
+box-shadow: 2px 2px 5px rgb(124, 124, 124);
+border-radius: 10px;
+background-color: rgb(255, 255, 255);
+margin-right: 15px;
 }
