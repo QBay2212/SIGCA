@@ -6,13 +6,15 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./nav-top.component.css']
 })
 export class NavTopComponent implements OnInit {
-
+ 
   @Output() statusSidebar:EventEmitter<boolean> = new EventEmitter();
   estadoActual=true;
+  nombre=sessionStorage.getItem('nombreusuario');
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   toggleSidebar(){

@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProgramaAsesor } from 'src/app/equipo-tecnico/reportes/reporte';
+import { AsesorService } from '../asesor.service';
 
-class Reporte{
- 
-  seminario?:String;
-  banco?:String;
-}
+
 @Component({
   selector: 'SIGCA-programas',
   templateUrl: './programas.component.html',
@@ -13,47 +12,32 @@ class Reporte{
 
 export class ProgramasComponent implements OnInit {
 
-  constructor() { }
-  reportes :  Reporte[]=[];
+  constructor(private asesor:AsesorService, private router:Router) { }
+  reportes :  ProgramaAsesor[]=[];
+  model: any=[];
+  id=Number(sessionStorage.getItem('idusuario'));
   ngOnInit(): void {
-    this.reportes = [
-      {
+   
+     this.asesor.getProgramasAsesor(this.id).subscribe(listas=>{
+       this.reportes=listas;
+       console.log( this.reportes);
       
-        seminario:"Facebook",
-        banco:"Vallecito",
-      },
-      {
-       
-        seminario:"Whatsaap",
-        banco:"Los geranios",
-        
-      },
-      {
-       
-        seminario:"Whatsaap",
-        banco:"Las malvinas",
-        
-      }, 
-      {
-       
-        seminario:"Whatsaap",
-        banco:"Los geranios",
-        
-      },
-      {
-       
-        seminario:"Whatsaap",
-        banco:"Los geranios",
-      },
-      {
-       
-        seminario:"Whatsaap",
-        banco:"Los geranios",
-        
-      }
-
-       
-      ];
+     });
   }
+  listar(i:number){
+  var  x=String(this.reportes[i].IDBANCO);
+  var  y=String(this.reportes[i].IDMODULO);
+  var  banco=String(this.reportes[i].BANCO);
+  var  modulo=String(this.reportes[i].MODULO);
+  var  progreso=String(this.reportes[i].PROGRESO);
+  sessionStorage.setItem('progreso',progreso);
+  sessionStorage.setItem('nombrebanco',banco);
+   sessionStorage.setItem('nombremodulo',modulo);
+   sessionStorage.setItem('modulo',y)
+   sessionStorage.setItem('banco',x)
+   this.router.navigate(['/reporte-asesor']);
+    
+  }
+ 
 
 }

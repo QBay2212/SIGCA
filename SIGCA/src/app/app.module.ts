@@ -21,13 +21,21 @@ import { Tabla1Component } from './equipo-tecnico/reportes/reporte-participacion
 import { MaincrearModuloComponent } from './equipo-tecnico/crearModulo/maincrear-modulo/maincrear-modulo.component';
 import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { ProgramasComponent } from './asesor/programas/programas.component';
-import { ReportesocioComponent } from './asesor/reportesocio/reportesocio.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { ReporteComponent } from './asesor/reporte/reporte.component';
+import { SocioComponent } from './socio/socio.component';
+import { SocioModule } from './socio/socio.module';
+import { HomeModule } from './home/home.module';
+import { SesionesComponent } from './socio/ingresarmodulo/sesiones/sesiones.component';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
-  {path:'dashboard/asesor', component:AsesorRutasComponent,children:[
+  {path: 'vistaSocio', component:SocioComponent},
+  {path: 'vistaModulo', component:SesionesComponent},
+  {path:'asesor', component:AsesorRutasComponent,children:[
     {path:'programa', component:ProgramasComponent},
-    {path:'reporte-asesor', component:ReportesocioComponent}
+    {path:'reporte-asesor', component:ReporteComponent}
   ]},
   {path:'dashboard/equipoTecnico', component:PrincipalComponent},
 
@@ -50,13 +58,12 @@ children:[
   declarations: [
     AppComponent,
     SidebarComponent,
-    PrincipalComponent,
-    NavTopComponent
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),CoreModule,SidebarModule.forRoot(),FormsModule,
-    AsesorModule, EquipoTecnicoModule
+    AsesorModule, EquipoTecnicoModule,HttpClientModule,HomeModule
   ],
   providers: [
     CargarScriptsService

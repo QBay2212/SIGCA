@@ -12,4 +12,7 @@ export class SocioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  recibirEstado(status:boolean):void{
+    //alert(this.statusReceived);
+  }
 }
