@@ -65,3 +65,20 @@ export class ProgramaAsesor{
         ASISTENCIA?: String;
       
         }
+
+    export class PrivilegiosUsuario{
+        NO_PRIVILEGIOS?:string;
+        MENU?:string;
+    }
+    export class Usuario{
+        idusuario:number=0;
+        username:string="";
+        password:string="";
+        estado:boolean=true;
+        roles:string[]=[];
+    }
+    export class Rol{
+        idrol?:number;
+        nombrerol?:string;
+        
+    }

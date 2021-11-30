@@ -1,0 +1,19 @@
+<section
+  *ngFor="let datos of datosMostrarSesion; index as i"
+  class="section-main"
+>
+  <!--?? Sesiones -->
+  <header class="header d-flex p-1">
+    <button
+      class="header__title w-100"
+      (click)="datosMostarRecurso(datos.id_SESION)"
+    >
+      {{ i + 1 }}.{{ datos.no_SESION | uppercase }}
+    </button>
+    <div class="d-flex align-items-center">
+      <i class="far fa-trash-alt header__icon header__icon--red"></i>
+      <i class="fas fa-edit header__icon header__icon--yellow"></i>
+    </div>
+  </header>
+  <!-- ?? Recursos -->
+</section>
