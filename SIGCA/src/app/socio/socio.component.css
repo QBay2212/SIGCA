@@ -2,9 +2,6 @@
   padding: 0;
   height: 100vh;
 }
-body{
-  background-color: rgb(226, 226, 226);
-}
 
 .config-nav-top {
   height: 100%;
@@ -16,4 +13,16 @@ body{
 }
 .size-2 {
   height: 90%;
+}
+.modulo{
+height: 600px;
+}
+
+.semi{
+height: 600px;
+background-color: rgb(241, 123, 123);
+}
+
+.semin{
+  height: 300px;
 }
