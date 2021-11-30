@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { NavTopComponent } from '../home/nav-top/nav-top.component';
 
 const routes : Routes =[
-  {path: 'vistaSocio', component:SocioComponent}
+  {path: 'vistaSocio', component:SocioComponent
+  }
 ]
 
 @NgModule({
