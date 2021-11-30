@@ -31,6 +31,8 @@ import { HomeModule } from './home/home.module';
 import { SocioModule } from './socio/socio.module';
 
 
+
+
 const routes: Routes = [
   { path: '', component: PagesLoginComponent },
   { path: 'vistaSocio', component: SocioComponent },
