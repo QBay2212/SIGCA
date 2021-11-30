@@ -1,19 +1,16 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SocioComponent } from './socio.component';
-import { IngresarmoduloComponent } from './ingresarmodulo/ingresarmodulo.component';
-import { IngresarseminarioComponent } from './ingresarseminario/ingresarseminario.component';
-import { RegistrarpedidoComponent } from './registrarpedido/registrarpedido.component';
 import { SesionesComponent } from './ingresarmodulo/sesiones/sesiones.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { NavTopComponent } from '../home/nav-top/nav-top.component';
 import { HomeModule } from '../home/home.module';
+import { NavTopComponent } from '../home/nav-top/nav-top.component';
+import { IngresarmoduloComponent } from './ingresarmodulo/ingresarmodulo.component';
+import { IngresarseminarioComponent } from './ingresarseminario/ingresarseminario.component';
+import { RegistrarpedidoComponent } from './registrarpedido/registrarpedido.component';
 
-const routes : Routes =[
-  {path: 'vistaSocio', component:SocioComponent
-  }
-]
+const routes: Routes = [{ path: 'vistaSocio', component: SocioComponent }];
 
 @NgModule({
   declarations: [
@@ -21,12 +18,14 @@ const routes : Routes =[
     IngresarmoduloComponent,
     IngresarseminarioComponent,
     RegistrarpedidoComponent,
-    SesionesComponent
+    SesionesComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forRoot(routes),HomeModule
-  ]
+    RouterModule.forRoot(routes),
+    HomeModule,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class SocioModule { }
+export class SocioModule {}
