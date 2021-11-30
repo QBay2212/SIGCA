@@ -3,7 +3,7 @@ import { PrincipalComponent } from './home/home-principal/principal.component';
 import { CargarScriptsService } from './cargar-scripts.service';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule,Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SidebarModule } from 'ng-sidebar';
@@ -26,66 +26,51 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReporteComponent } from './asesor/reporte/reporte.component';
 import { SocioComponent } from './socio/socio.component';
 import { SocioModule } from './socio/socio.module';
+import { HomeModule } from './home/home.module';
 import { SesionesComponent } from './socio/ingresarmodulo/sesiones/sesiones.component';
 
-const routes: Routes = [
-  { path: '', component: PagesLoginComponent },
-  { path: 'vistaSocio', component: SocioComponent},
-  {path: 'vistaModulo', component: SesionesComponent},
-  {
-    path: 'asesor',
-    component: AsesorRutasComponent,
-    children: [
-      { path: 'programa', component: ProgramasComponent },
-      { path: 'reporte-asesor', component: ReporteComponent },
-    ],
-  },
-  { path: 'dashboard/equipoTecnico', component: PrincipalComponent },
+const routes : Routes =[
+  {path: '', component:PagesLoginComponent},
+  {path: 'vistaSocio', component:SocioComponent},
+  {path: 'vistaModulo', component:SesionesComponent},
+  {path:'asesor', component:AsesorRutasComponent,children:[
+    {path:'programa', component:ProgramasComponent},
+    {path:'reporte-asesor', component:ReporteComponent}
+  ]},
+  {path:'dashboard/equipoTecnico', component:PrincipalComponent},
 
-  {
-    path: 'equipo-tecnico',
-    component: UsuarioRutasComponent,
-    children: [
-      { path: 'crearModulo', component: MaincrearModuloComponent },
-      {
-        path: 'reportes',
-        component: ReportesRutasComponent,
-        children: [
-          {
-            path: 'reporte-participacion',
-            component: ReporteParticipacionComponent,
-            children: [{ path: 'tabla1', component: Tabla1Component }],
-          },
-          {
-            path: 'reporte-participantes',
-            component: ReporteParticipantesComponent,
-          },
-          { path: 'reporte-seminario', component: ReporteSeminarioComponent },
-        ],
-      },
-    ],
-  },
+  {path:'equipo-tecnico', component:UsuarioRutasComponent,
+children:[
+  {path:'crearModulo', component: MaincrearModuloComponent},
+  {path:'reportes', component: ReportesRutasComponent, children:[
+    {path:'reporte-participacion', component:ReporteParticipacionComponent, children:[
+      {path:'tabla1',component:Tabla1Component}
+    ]},
+    {path:'reporte-participantes', component:ReporteParticipantesComponent},
+    {path:'reporte-seminario', component:ReporteSeminarioComponent}
+  ]},
+
+
+]}
 ];
 //cambios
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    PrincipalComponent,
-    NavTopComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
-    CoreModule,
-    SidebarModule.forRoot(),
-    FormsModule,
-    AsesorModule,
-    EquipoTecnicoModule,
-    HttpClientModule,
+    RouterModule.forRoot(routes),CoreModule,SidebarModule.forRoot(),FormsModule,
+    AsesorModule, EquipoTecnicoModule,HttpClientModule,HomeModule
   ],
-  providers: [CargarScriptsService],
+  providers: [
+    CargarScriptsService
+  ],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+   schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
-export class AppModule {}
+export class AppModule { }
