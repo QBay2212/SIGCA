@@ -38,6 +38,14 @@ export class SidebarComponent implements OnInit {
    this.link.emit('equipo-tecnico/reportes/reporte-seminario');
  }
 
+ enviarBancaModulo():void{
+  this.link.emit('equipo-tecnico/bancaModulo');
+ }
+
+ enviarControlarModulo():void{
+  this.link.emit('equipo-tecnico/controlarModulo');
+ }
+
  enviarCrearSeminario():void{
    this.link.emit('equipo-tecnico/crearSeminario');
  }

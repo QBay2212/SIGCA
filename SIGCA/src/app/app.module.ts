@@ -18,10 +18,15 @@ import { ReporteSeminarioComponent } from './equipo-tecnico/reportes/reporte-sem
 import { AsesorRutasComponent } from './asesor/asesor-rutas.component';
 import { AsesorModule } from './asesor/asesor.module';
 import { Tabla1Component } from './equipo-tecnico/reportes/reporte-participacion/tabla1/tabla1.component';
-import { MaincrearModuloComponent } from './equipo-tecnico/crearModulo/maincrear-modulo/maincrear-modulo.component';
 import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { ProgramasComponent } from './asesor/programas/programas.component';
 import { ReportesocioComponent } from './asesor/reportesocio/reportesocio.component';
+import { MainCrearModuloComponent } from './equipo-tecnico/crearModulo/main-crear-modulo/main-crear-modulo.component';
+import { MainSeminarioComponent } from './equipo-tecnico/crearSeminario/main-seminario/main-seminario.component';
+import { MainBancoModuloComponent } from './equipo-tecnico/asignacionBancaModulo/main-banco-modulo/main-banco-modulo.component';
+import { MainControlarModuloComponent } from './equipo-tecnico/controlarModulo/main-controlar-modulo/main-controlar-modulo.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 const routes : Routes =[
   {path: '', component:PagesLoginComponent},
@@ -33,7 +38,10 @@ const routes : Routes =[
 
   {path:'equipo-tecnico', component:UsuarioRutasComponent,
 children:[
-  {path:'crearModulo', component: MaincrearModuloComponent},
+  {path:'crearModulo', component: MainCrearModuloComponent},
+  {path:'crearSeminario', component:MainSeminarioComponent},
+  {path:'bancaModulo', component:MainBancoModuloComponent},
+  {path:'controlarModulo', component:MainControlarModuloComponent},
   {path:'reportes', component: ReportesRutasComponent, children:[
     {path:'reporte-participacion', component:ReporteParticipacionComponent, children:[
       {path:'tabla1',component:Tabla1Component}
@@ -56,7 +64,7 @@ children:[
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),CoreModule,SidebarModule.forRoot(),FormsModule,
-    AsesorModule, EquipoTecnicoModule
+    AsesorModule, EquipoTecnicoModule,HttpClientModule,CommonModule
   ],
   providers: [
     CargarScriptsService
