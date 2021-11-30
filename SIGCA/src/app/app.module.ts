@@ -86,10 +86,8 @@ const routes: Routes = [
     AsesorModule,
     EquipoTecnicoModule,
     HttpClientModule,
-
-    HomeModule,SocioModule
-
-   
+    SocioModule,
+    HomeModule
 
   ],
   providers: [CargarScriptsService],
