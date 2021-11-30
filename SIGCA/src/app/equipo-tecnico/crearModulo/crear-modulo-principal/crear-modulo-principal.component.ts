@@ -6,7 +6,6 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Categoria } from 'src/app/models/categoria';
 import { Modulo } from 'src/app/models/modulo';
 import { Sesion } from 'src/app/models/sesion';
@@ -25,7 +24,7 @@ export class CrearModuloPrincipalComponent implements OnInit {
   descripcion = '';
   id_modulo: number = 0;
   insModulo: Modulo = new Modulo();
-
+  updateModulo: Modulo = new Modulo();
   selectCategoria: Categoria[] = [];
 
   @Output() datosSesion: EventEmitter<any> = new EventEmitter();
@@ -120,6 +119,20 @@ export class CrearModuloPrincipalComponent implements OnInit {
   }
 
   updateModuloLleanarDatos() {
+    this.cargarCategoria();
     console.log(this.id_modulo);
+    this.moduloservice.getModuloId(this.id_modulo).subscribe((e) => {
+      // console.log(e);
+      this.updateModulo = e;
+    });
+  }
+
+  editarModulo() {
+    this.insModulo.no_modulo = this.nombreModulo;
+    console.log(this.getvalCategoria());
+    this.insModulo.categoria = { id_categoria: this.getvalCategoria() };
+    this.moduloservice.updateModulo(this.id_modulo, this.insModulo);
+    this.limpiar();
+    this.cargarModulos();
   }
 }

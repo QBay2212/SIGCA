@@ -164,6 +164,7 @@
                 name="nombreModulo"
                 type="text"
                 class="form-control"
+                [value]="updateModulo.no_modulo"
                 [(ngModel)]="nombreModulo"
                 placeholder=" Ingrese Modulo"
               />
@@ -201,7 +202,7 @@
             type="button"
             class="btn btn-primary"
             data-bs-dismiss="modal"
-            (click)="guardar()"
+            (click)="editarModulo()"
           >
             Guardar
           </button>
