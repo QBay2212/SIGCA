@@ -6,8 +6,9 @@ import { UsuarioRutasComponent } from './usuario-rutas.component';
 import { ReportesRutasComponent } from './reportes/reportes-rutas.component';
 import { ReportesModule } from './reportes/reportes.module';
 import { MaincrearModuloComponent } from './crearModulo/maincrear-modulo/maincrear-modulo.component';
-
-
+import { AsignarBancoModuloComponent } from './asignar-banco-modulo/asignar-banco-modulo.component';
+import { TablasComponent } from './asignar-banco-modulo/tablas/tablas.component';
+import { FiltrosComponent } from './asignar-banco-modulo/filtros/filtros.component';
 const routes : Routes =[
   {path:'crearModulo', component:MaincrearModuloComponent},
   {path:'reportes', component:ReportesRutasComponent}
@@ -16,7 +17,10 @@ const routes : Routes =[
 @NgModule({
   declarations: [
     MaincrearModuloComponent,
-    UsuarioRutasComponent
+    UsuarioRutasComponent,
+    AsignarBancoModuloComponent,
+    TablasComponent,
+    FiltrosComponent
   ],
   imports: [
     CommonModule,FormsModule,RouterModule.forRoot(routes),ReportesModule

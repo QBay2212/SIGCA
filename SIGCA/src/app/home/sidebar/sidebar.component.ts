@@ -27,13 +27,16 @@ export class SidebarComponent implements OnInit {
  enviarCrearModulo():void{
    this.link.emit('equipo-tecnico/crearModulo');
  }
+ asignar():void {
+   this.link.emit('equipo-tecnico/asignar-banco-modulo')
+ }
  seguimientoSocio():void{
   this.link.emit('asesor');
-  
+
 }
  enviarParticipacion():void{
    this.link.emit('equipo-tecnico/reportes/reporte-participacion');
-  
+
  }
  enviarParticipantes():void{
    this.link.emit('equipo-tecnico/reportes/reporte-participantes');
@@ -45,9 +48,6 @@ export class SidebarComponent implements OnInit {
 
  enviarCrearSeminario():void{
    this.link.emit('equipo-tecnico/crearSeminario');
- }
- enviarAsignarBanco_Modulo():void{
-   this.link.emit('equipo-tecnico/asignacion');
  }
 
 desplegar(){

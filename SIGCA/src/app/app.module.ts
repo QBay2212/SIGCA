@@ -1,3 +1,4 @@
+import { AsignarBancoModuloComponent } from './equipo-tecnico/asignar-banco-modulo/asignar-banco-modulo.component';
 import { SidebarComponent } from './home/sidebar/sidebar.component';
 import { PrincipalComponent } from './home/home-principal/principal.component';
 import { CargarScriptsService } from './cargar-scripts.service';
@@ -21,7 +22,6 @@ import { Tabla1Component } from './equipo-tecnico/reportes/reporte-participacion
 import { MaincrearModuloComponent } from './equipo-tecnico/crearModulo/maincrear-modulo/maincrear-modulo.component';
 import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { ProgramasComponent } from './asesor/programas/programas.component';
-
 import { HttpClientModule } from '@angular/common/http';
 import { ReporteComponent } from './asesor/reporte/reporte.component';
 import { SocioComponent } from './socio/socio.component';
@@ -39,6 +39,7 @@ const routes : Routes =[
   {path:'equipo-tecnico', component:UsuarioRutasComponent,
 children:[
   {path:'crearModulo', component: MaincrearModuloComponent},
+  {path:'asignar-banco-modulo', component: AsignarBancoModuloComponent},
   {path:'reportes', component: ReportesRutasComponent, children:[
     {path:'reporte-participacion', component:ReporteParticipacionComponent, children:[
       {path:'tabla1',component:Tabla1Component}
