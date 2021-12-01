@@ -34,6 +34,7 @@ export class SidebarComponent implements OnInit {
 
  enviarCrearModulo(i:number):void{
   var  x=String(this.privi[i].NO_PRIVILEGIOS);
+ 
   this.link.emit(x);
  }
  asignar():void {

@@ -1,4 +1,3 @@
-import { AsignarBancoModuloComponent } from './equipo-tecnico/asignar-banco-modulo/asignar-banco-modulo.component';
 import { SidebarComponent } from './home/sidebar/sidebar.component';
 import { PrincipalComponent } from './home/home-principal/principal.component';
 import { CargarScriptsService } from './cargar-scripts.service';
@@ -9,7 +8,6 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SidebarModule } from 'ng-sidebar';
 import { PagesLoginComponent } from './core/presentation/pages/pages-login/pages-login.component';
-import { FormsModule } from '@angular/forms';
 import { UsuarioRutasComponent } from './equipo-tecnico/usuario-rutas.component';
 import { ReportesRutasComponent } from './equipo-tecnico/reportes/reportes-rutas.component';
 import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte-participacion/reporte-participacion.component';
@@ -31,6 +29,7 @@ import { ReporteComponent } from './asesor/reporte/reporte.component';
 import { HomeModule } from './home/home.module';
 import { SocioModule } from './socio/socio.module';
 import { IngresarseminarioComponent } from './socio/ingresarseminario/ingresarseminario.component';
+
 
 const routes: Routes = [
   { path: '', component: PagesLoginComponent },
@@ -85,7 +84,7 @@ const routes: Routes = [
     EquipoTecnicoModule,
     HttpClientModule,
     HomeModule,
-    SocioModule
+    SocioModule,
   ],
   providers: [CargarScriptsService],
   bootstrap: [AppComponent],
