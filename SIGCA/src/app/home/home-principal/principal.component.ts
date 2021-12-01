@@ -1,31 +1,35 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'SIGCA-principal',
   templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  styleUrls: ['./principal.component.css'],
 })
 export class PrincipalComponent implements OnInit {
+  statusReceived: boolean = true;
+  UrlIframe: string = '';
+  @ViewChild('marcoIframe') iframe: ElementRef | any;
+  @ViewChild('sidebar') sidebar: ElementRef | any;
 
-  statusReceived:boolean=true;
-  UrlIframe:string='';
-  @ViewChild('marcoIframe') iframe:ElementRef | any;
+  constructor(private ren2: Renderer2) {}
 
-  constructor(private renderer: Renderer2) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  recibirEstado(status: any) {
+    this.statusReceived = status;
   }
 
-  recibirEstado(status:boolean):void{
-    this.statusReceived=status;
-    //alert(this.statusReceived);
-  }
 
 
   recibirLink(link:string):void{
-    const iframe = this.iframe.nativeElement;
-    this.renderer.setAttribute(iframe,'src',link);
+    console.log(link)
+    const direccion = this.iframe.nativeElement;
+    this.ren2.setAttribute(direccion, 'src', link);
   }
-
-  
 }

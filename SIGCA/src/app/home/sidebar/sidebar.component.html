@@ -4,11 +4,12 @@
   <ng-sidebar [opened]="opened">
     <nav class="w-100">
       <ul class="d-flex flex-column p-0">
-        <li class="nav__item" (click)="enviarCrearModulo()">
+        <li class="nav__item" (click)="enviarCrearModulo(i)" *ngFor="let pro of privi; let i = index">
           <a class="item__link"
-            ><i class="fas fa-address-book decoration"></i>Crear Modulo</a
+            ><i class="fas fa-address-book decoration"></i>{{pro.MENU}}</a
           >
         </li>
+
         <li class="nav__item" (click)="enviarCrearSeminario()">
           <a class="item__link">
             <i class="fas fa-business-time decoration"></i> Crear Seminario
@@ -57,6 +58,7 @@
             </li>
           </ul>
         </li>
+
       </ul>
     </nav>
   </ng-sidebar>

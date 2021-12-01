@@ -1,4 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { PrivilegiosUsuario } from 'src/app/equipo-tecnico/reportes/reporte';
+import { SidebarService } from './sidebar.service';
 
 @Component({
   selector: 'SIGCA-sidebar',
@@ -6,7 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter, ViewChild, ElementRef, 
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
+  id=Number(sessionStorage.getItem('idusuario'));
   @Output() link:EventEmitter<string> = new EventEmitter;
   @Input() opened:boolean=true;
   @ViewChild('enlace') enlace:ElementRef | any;
@@ -15,17 +17,24 @@ export class SidebarComponent implements OnInit {
   @ViewChild('submenu2') submenu2:ElementRef | any;
   estado_desplegar1:boolean=false;
   estado_desplegar2:boolean=false;
-
-  constructor(private ren2: Renderer2) {
+  privi:PrivilegiosUsuario[]=[];
+  constructor(private ren2: Renderer2,private privilegios:SidebarService) {
 
   }
 
  ngOnInit(): void {
+  this.privilegios.getPrivilegios(this.id).subscribe(listas=>{
+    this.privi=listas;
+    console.log(this.privi);
+    
+   
+  });
  }
 
 
- enviarCrearModulo():void{
-   this.link.emit('equipo-tecnico/crearModulo');
+ enviarCrearModulo(i:number):void{
+  var  x=String(this.privi[i].NO_PRIVILEGIOS);
+  this.link.emit(x);
  }
  asignar():void {
    this.link.emit('equipo-tecnico/asignar-banco-modulo')
@@ -44,6 +53,14 @@ export class SidebarComponent implements OnInit {
 
  enviarSeminario():void{
    this.link.emit('equipo-tecnico/reportes/reporte-seminario');
+ }
+
+ enviarBancaModulo():void{
+  this.link.emit('equipo-tecnico/bancaModulo');
+ }
+
+ enviarControlarModulo():void{
+  this.link.emit('equipo-tecnico/controlarModulo');
  }
 
  enviarCrearSeminario():void{

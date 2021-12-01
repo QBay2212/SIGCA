@@ -4,13 +4,12 @@ import { PrincipalComponent } from './home/home-principal/principal.component';
 import { CargarScriptsService } from './cargar-scripts.service';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule,Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SidebarModule } from 'ng-sidebar';
 import { PagesLoginComponent } from './core/presentation/pages/pages-login/pages-login.component';
 import { FormsModule } from '@angular/forms';
-import { NavTopComponent } from './home/nav-top/nav-top.component';
 import { UsuarioRutasComponent } from './equipo-tecnico/usuario-rutas.component';
 import { ReportesRutasComponent } from './equipo-tecnico/reportes/reportes-rutas.component';
 import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte-participacion/reporte-participacion.component';
@@ -19,22 +18,19 @@ import { ReporteSeminarioComponent } from './equipo-tecnico/reportes/reporte-sem
 import { AsesorRutasComponent } from './asesor/asesor-rutas.component';
 import { AsesorModule } from './asesor/asesor.module';
 import { Tabla1Component } from './equipo-tecnico/reportes/reporte-participacion/tabla1/tabla1.component';
-import { MaincrearModuloComponent } from './equipo-tecnico/crearModulo/maincrear-modulo/maincrear-modulo.component';
 import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { ProgramasComponent } from './asesor/programas/programas.component';
+import { MainCrearModuloComponent } from './equipo-tecnico/crearModulo/main-crear-modulo/main-crear-modulo.component';
+import { MainSeminarioComponent } from './equipo-tecnico/crearSeminario/main-seminario/main-seminario.component';
+import { MainBancoModuloComponent } from './equipo-tecnico/asignacionBancaModulo/main-banco-modulo/main-banco-modulo.component';
+import { MainControlarModuloComponent } from './equipo-tecnico/controlarModulo/main-controlar-modulo/main-controlar-modulo.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReporteComponent } from './asesor/reporte/reporte.component';
 import { SocioComponent } from './socio/socio.component';
+import { SesionesComponent } from './socio/ingresarmodulo/sesiones/sesiones.component';
+import { ReporteComponent } from './asesor/reporte/reporte.component';
+import { HomeModule } from './home/home.module';
 import { SocioModule } from './socio/socio.module';
-
-const routes : Routes =[
-  {path: '', component:PagesLoginComponent},
-  {path: 'vistaSocio', component:SocioComponent},
-  {path:'asesor', component:AsesorRutasComponent,children:[
-    {path:'programa', component:ProgramasComponent},
-    {path:'reporte-asesor', component:ReporteComponent}
-  ]},
-  {path:'dashboard/equipoTecnico', component:PrincipalComponent},
+import { IngresarseminarioComponent } from './socio/ingresarseminario/ingresarseminario.component';
 
   {path:'equipo-tecnico', component:UsuarioRutasComponent,
 children:[
@@ -49,27 +45,66 @@ children:[
   ]},
 
 
-]}
+const routes: Routes = [
+  { path: '', component: PagesLoginComponent },
+  { path: 'vistaSocio', component: SocioComponent },
+  { path: 'vistaModulo', component: SesionesComponent },
+  
+  {
+    path: 'asesor',
+    component: AsesorRutasComponent,
+    children: [
+      { path: 'programa', component: ProgramasComponent },
+      { path: 'reporte-asesor', component: ReporteComponent },
+    ],
+  },
+  { path: 'dashboard/equipoTecnico', component: PrincipalComponent },
+
+  {
+    path: 'equipo-tecnico',
+    component: UsuarioRutasComponent,
+    children: [
+      { path: 'crearModulo', component: MainCrearModuloComponent },
+      { path: 'crearSeminario', component: MainSeminarioComponent },
+      { path: 'bancaModulo', component: MainBancoModuloComponent },
+      { path: 'controlarModulo', component: MainControlarModuloComponent },
+      {
+        path: 'reportes',
+        component: ReportesRutasComponent,
+        children: [
+          {
+            path: 'reporte-participacion',
+            component: ReporteParticipacionComponent,
+            children: [{ path: 'tabla1', component: Tabla1Component }],
+          },
+          {
+            path: 'reporte-participantes',
+            component: ReporteParticipantesComponent,
+          },
+          { path: 'reporte-seminario', component: ReporteSeminarioComponent },
+        ],
+      },
+    ],
+  },
 ];
 //cambios
 @NgModule({
-  declarations: [
-    AppComponent,
-    SidebarComponent,
-    PrincipalComponent,
-    NavTopComponent
-  ],
+  declarations: [AppComponent, SidebarComponent, PrincipalComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),CoreModule,SidebarModule.forRoot(),FormsModule,
-    AsesorModule, EquipoTecnicoModule,HttpClientModule
+    RouterModule.forRoot(routes),
+    CoreModule,
+    SidebarModule.forRoot(),
+    FormsModule,
+    AsesorModule,
+    EquipoTecnicoModule,
+    HttpClientModule,
+    SocioModule,
+    HomeModule
+
   ],
-  providers: [
-    CargarScriptsService
-  ],
+  providers: [CargarScriptsService],
   bootstrap: [AppComponent],
-   schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}
