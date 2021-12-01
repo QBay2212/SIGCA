@@ -1,3 +1,4 @@
+import { AsignarBancoModuloComponent } from './equipo-tecnico/asignar-banco-modulo/asignar-banco-modulo.component';
 import { SidebarComponent } from './home/sidebar/sidebar.component';
 import { PrincipalComponent } from './home/home-principal/principal.component';
 import { CargarScriptsService } from './cargar-scripts.service';
@@ -31,7 +32,17 @@ import { HomeModule } from './home/home.module';
 import { SocioModule } from './socio/socio.module';
 import { IngresarseminarioComponent } from './socio/ingresarseminario/ingresarseminario.component';
 
-
+  {path:'equipo-tecnico', component:UsuarioRutasComponent,
+children:[
+  {path:'crearModulo', component: MaincrearModuloComponent},
+  {path:'asignar-banco-modulo', component: AsignarBancoModuloComponent},
+  {path:'reportes', component: ReportesRutasComponent, children:[
+    {path:'reporte-participacion', component:ReporteParticipacionComponent, children:[
+      {path:'tabla1',component:Tabla1Component}
+    ]},
+    {path:'reporte-participantes', component:ReporteParticipantesComponent},
+    {path:'reporte-seminario', component:ReporteSeminarioComponent}
+  ]},
 
 
 const routes: Routes = [
