@@ -32,24 +32,10 @@ import { HomeModule } from './home/home.module';
 import { SocioModule } from './socio/socio.module';
 import { IngresarseminarioComponent } from './socio/ingresarseminario/ingresarseminario.component';
 
-  {path:'equipo-tecnico', component:UsuarioRutasComponent,
-children:[
-  {path:'crearModulo', component: MaincrearModuloComponent},
-  {path:'asignar-banco-modulo', component: AsignarBancoModuloComponent},
-  {path:'reportes', component: ReportesRutasComponent, children:[
-    {path:'reporte-participacion', component:ReporteParticipacionComponent, children:[
-      {path:'tabla1',component:Tabla1Component}
-    ]},
-    {path:'reporte-participantes', component:ReporteParticipantesComponent},
-    {path:'reporte-seminario', component:ReporteSeminarioComponent}
-  ]},
-
-
 const routes: Routes = [
   { path: '', component: PagesLoginComponent },
   { path: 'vistaSocio', component: SocioComponent },
   { path: 'vistaModulo', component: SesionesComponent },
-  
   {
     path: 'asesor',
     component: AsesorRutasComponent,
@@ -95,13 +81,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     CoreModule,
     SidebarModule.forRoot(),
-    FormsModule,
     AsesorModule,
     EquipoTecnicoModule,
     HttpClientModule,
-    SocioModule,
-    HomeModule
-
+    HomeModule,
+    SocioModule
   ],
   providers: [CargarScriptsService],
   bootstrap: [AppComponent],
