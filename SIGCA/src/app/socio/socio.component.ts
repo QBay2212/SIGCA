@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Sesion } from '../equipo-tecnico/reportes/reporte';
 import swal from 'sweetalert2';
 import { Seminario } from '../models/Seminario';
+import { CargarScriptsService } from '../cargar-scripts.service';
 
 @Component({
   selector: 'SIGCA-socio',
@@ -18,7 +19,10 @@ export class SocioComponent implements OnInit {
   en:any=[];
   asis:any=[];
    x=Number(sessionStorage.getItem('idusuario'));
-  constructor(private pedido:SocioService) { }
+  constructor(private pedido:SocioService, private _CargarScripts: CargarScriptsService) {
+    _CargarScripts.Carga(['expotar']);
+
+   }
 
   ngOnInit(): void {
     this.model.des='Escribir pedido, agradecimiento o necesidad';
