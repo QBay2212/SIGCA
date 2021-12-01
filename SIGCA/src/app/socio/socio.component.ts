@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Sesion } from '../equipo-tecnico/reportes/reporte';
 import swal from 'sweetalert2';
 import { Seminario } from '../models/Seminario';
+import { CargarScriptsService } from '../cargar-scripts.service';
 
 @Component({
   selector: 'SIGCA-socio',
@@ -15,33 +16,17 @@ export class SocioComponent implements OnInit {
   semi:Seminario[]=[];
   oracion: Pedido = new Pedido();
   model:any=[];
+  en:any=[];
+  asis:any=[];
    x=Number(sessionStorage.getItem('idusuario'));
-  constructor(private pedido:SocioService) { }
+  constructor(private pedido:SocioService, private _CargarScripts: CargarScriptsService) {
+    _CargarScripts.Carga(['expotar']);
+
+   }
 
   ngOnInit(): void {
     this.model.des='Escribir pedido, agradecimiento o necesidad';
-   
-    this.semi = [
-      {
-        id_SEMINARIO:1,
-        NO_SEMINARIO:"Facebook",
-        URL_SEMINARIO:"waasasasasasas"
-        
-      },
-      {
-        id_SEMINARIO:2,
-        NO_SEMINARIO:"asasasas",
-        URL_SEMINARIO:"paosaoskaodkaodkaodk"
-        
-      },
-      {
-        id_SEMINARIO:3,
-        NO_SEMINARIO:"Equipo",
-        URL_SEMINARIO:"paosaoskaodkaodkaodk"
-        
-      }
-    
-    ]
+    this.listarDistritos();
   }
 
   recibirEstado(status:boolean):void{
@@ -71,4 +56,16 @@ export class SocioComponent implements OnInit {
   limpiar(){
     this.model.des='';
   }
+  listarDistritos(){
+  
+     this.pedido.getSeminarios(this.x).subscribe(listas=>{
+       this.semi=listas;
+       console.log(this.semi)
+      
+     });
+   }
+   entrar(i:number){
+    this.asis=this.semi[i];
+  }
+
 }
