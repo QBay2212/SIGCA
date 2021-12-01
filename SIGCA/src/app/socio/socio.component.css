@@ -53,7 +53,7 @@ img{
   height: 100px;
 
 }
-.botones{
+modal-footer{
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -77,8 +77,7 @@ h5{
   color: white;
   font-family:Comic Sans MS,Arial,Verdana;
   text-align:center;
-  font-size: 25px;
-  margin-top: 20px;
+  font-size: 20px;
   font-weight: 800;
   /* border: 2px solid black */
 }
@@ -150,3 +149,65 @@ border-radius: 10px;
 background-color: rgb(255, 255, 255);
 margin-right: 15px;
 }
+
+.modal-body{
+  background-color:#007B5F;
+  color: white;
+  border-radius: 20px;
+}
+.title{
+color: white;
+font-family:Comic Sans MS,Arial,Verdana;
+text-align:center;
+font-size: 25px;
+font-weight: 800;
+}
+
+.texto-imagen{
+display: flex;
+justify-content: center; 
+
+}
+
+.texto{
+ /* border: 2px solid black;  */
+margin-left: 20px;
+font-family:Comic Sans MS,Arial,Verdana;
+text-align:center;
+}
+
+.cap{
+color: white;
+font-size: 20px;
+} 
+.nom{
+color: white;
+font-size: 20px;
+font-weight: 800;
+}
+.imagen{
+  max-width: 400px;
+max-height: 300px;
+margin-left: 25px;
+padding-top: 30px;
+}
+.form-group{
+
+    margin-left:10px;
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+ 
+}
+.calificacion{
+  margin: 0;
+  padding-top: 37px;
+   text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    
+}
+
+
+
+
