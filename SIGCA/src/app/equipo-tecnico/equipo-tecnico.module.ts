@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { RouterModule, Routes } from '@angular/router';
 import { UsuarioRutasComponent } from './usuario-rutas.component';
 import { ReportesRutasComponent } from './reportes/reportes-rutas.component';
@@ -16,6 +16,7 @@ import { MainControlarModuloComponent } from './controlarModulo/main-controlar-m
 import { HttpClientModule } from '@angular/common/http';
 import { CuadroSesionesComponent } from './crearModulo/cuadro-sesiones/cuadro-sesiones.component';
 import { RecursosComponent } from './crearModulo/recursos/recursos.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'crearModulo', component: MainCrearModuloComponent },

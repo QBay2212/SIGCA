@@ -28,6 +28,8 @@ import { SesionesComponent } from './socio/ingresarmodulo/sesiones/sesiones.comp
 import { ReporteComponent } from './asesor/reporte/reporte.component';
 import { HomeModule } from './home/home.module';
 import { SocioModule } from './socio/socio.module';
+import { IngresarseminarioComponent } from './socio/ingresarseminario/ingresarseminario.component';
+
 
 const routes: Routes = [
   { path: '', component: PagesLoginComponent },
