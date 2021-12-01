@@ -1,4 +1,3 @@
-import { AsignarBancoModuloComponent } from './equipo-tecnico/asignar-banco-modulo/asignar-banco-modulo.component';
 import { SidebarComponent } from './home/sidebar/sidebar.component';
 import { PrincipalComponent } from './home/home-principal/principal.component';
 import { CargarScriptsService } from './cargar-scripts.service';
@@ -9,7 +8,6 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SidebarModule } from 'ng-sidebar';
 import { PagesLoginComponent } from './core/presentation/pages/pages-login/pages-login.component';
-import { FormsModule } from '@angular/forms';
 import { UsuarioRutasComponent } from './equipo-tecnico/usuario-rutas.component';
 import { ReportesRutasComponent } from './equipo-tecnico/reportes/reportes-rutas.component';
 import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte-participacion/reporte-participacion.component';
@@ -30,26 +28,11 @@ import { SesionesComponent } from './socio/ingresarmodulo/sesiones/sesiones.comp
 import { ReporteComponent } from './asesor/reporte/reporte.component';
 import { HomeModule } from './home/home.module';
 import { SocioModule } from './socio/socio.module';
-import { IngresarseminarioComponent } from './socio/ingresarseminario/ingresarseminario.component';
-
-  {path:'equipo-tecnico', component:UsuarioRutasComponent,
-children:[
-  {path:'crearModulo', component: MaincrearModuloComponent},
-  {path:'asignar-banco-modulo', component: AsignarBancoModuloComponent},
-  {path:'reportes', component: ReportesRutasComponent, children:[
-    {path:'reporte-participacion', component:ReporteParticipacionComponent, children:[
-      {path:'tabla1',component:Tabla1Component}
-    ]},
-    {path:'reporte-participantes', component:ReporteParticipantesComponent},
-    {path:'reporte-seminario', component:ReporteSeminarioComponent}
-  ]},
-
 
 const routes: Routes = [
   { path: '', component: PagesLoginComponent },
   { path: 'vistaSocio', component: SocioComponent },
   { path: 'vistaModulo', component: SesionesComponent },
-  
   {
     path: 'asesor',
     component: AsesorRutasComponent,
@@ -95,13 +78,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     CoreModule,
     SidebarModule.forRoot(),
-    FormsModule,
     AsesorModule,
     EquipoTecnicoModule,
     HttpClientModule,
+    HomeModule,
     SocioModule,
-    HomeModule
-
   ],
   providers: [CargarScriptsService],
   bootstrap: [AppComponent],
