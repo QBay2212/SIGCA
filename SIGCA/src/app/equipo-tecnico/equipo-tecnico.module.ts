@@ -38,19 +38,6 @@ const routes: Routes = [
     MainControlarModuloComponent,
     CuadroSesionesComponent,
     RecursosComponent,
-
-import { MaincrearModuloComponent } from './crearModulo/maincrear-modulo/maincrear-modulo.component';
-import { AsignarBancoModuloComponent } from './asignar-banco-modulo/asignar-banco-modulo.component';
-const routes : Routes =[
-  {path:'crearModulo', component:MaincrearModuloComponent},
-  {path:'reportes', component:ReportesRutasComponent}
-]
-
-@NgModule({
-  declarations: [
-    MaincrearModuloComponent,
-    UsuarioRutasComponent,
-    AsignarBancoModuloComponent
   ],
   imports: [
     CommonModule,
