@@ -1,6 +1,6 @@
 .margenes-costado {
   padding: 0;
-  height: 100vh;
+  margin-bottom: 10px;
 }
 
 .config-nav-top {
@@ -159,7 +159,7 @@ margin-right: 15px;
 color: white;
 font-family:Comic Sans MS,Arial,Verdana;
 text-align:center;
-font-size: 25px;
+font-size: 20px;
 font-weight: 800;
 }
 
@@ -207,7 +207,12 @@ padding-top: 30px;
     cursor: pointer;
     
 }
-
+.botones{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+ 
+}
 
 
 
