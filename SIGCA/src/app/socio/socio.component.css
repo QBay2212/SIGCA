@@ -165,7 +165,7 @@ font-weight: 800;
 
 .texto-imagen{
 display: flex;
-justify-content: center; 
+justify-content: center;
 
 }
 
@@ -179,7 +179,7 @@ text-align:center;
 .cap{
 color: white;
 font-size: 20px;
-} 
+}
 .nom{
 color: white;
 font-size: 20px;
@@ -197,7 +197,7 @@ padding-top: 30px;
     margin-right: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
- 
+
 }
 .calificacion{
   margin: 0;
@@ -205,13 +205,13 @@ padding-top: 30px;
    text-align: center;
     font-size: 30px;
     cursor: pointer;
-    
+
 }
 .botones{
   display: flex;
   justify-content: center;
   margin-top: 10px;
- 
+
 }
 
 
