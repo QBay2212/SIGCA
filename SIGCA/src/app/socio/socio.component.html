@@ -115,16 +115,28 @@
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <h5 class="title" id="exampleModalLabel" style=" padding-top: 10px; text-align: center; font-size: 20px;">Facebook para la salud</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                          ...
+                            <div class="texto-imagen">
+                                <div class="texto" >
+                                  <h2 class="cap">Seminario:</h2>
+                                  <h3 class="nom">Facebook para la salud</h3>
+                                  <h2 class="cap">Fecha de inicio:</h2>
+                                  <h3 class="nom">20/12/21</h3>
+                                  <h2 class="cap">Fecha de cierre:</h2>
+                                  <h3 class="nom">20/12/21</h3>
+                                </div>
+                                <div class= imagen>
+                                    <img class="foto" src="https://www.eleconomista.com.mx/__export/1594342992581/sites/eleconomista/img/2020/07/09/fp1_100720.png_673822677.png" alt="#">
+                                </div>
+                        </div>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Asistencia" style="height: 40px;">
-                            Asistencia
+                          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asistencia" style="background-color:rgb(209, 23, 23);">
+                           Registrar Asistencia
                           </button>
                         </div>
                       </div>
@@ -134,15 +146,30 @@
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Asisten ias</h5>
+                          <h5 class="modal-title" id="exampleModalLabel" style=" padding-top: 15px; text-align: center; font-size: 20px;">Facebook para la salud</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                          ...
-                        </div>
+                              <div class="form-group">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Escribir comentario</textarea>
+                              </div>
+                              <div class="textoa" style="padding-top: 5px;">
+                            <h2>Con el objetivo de evaluar su asistencia y 
+                              participación,es esencial que usted califique y
+                              deje un comentario sobre lo que le ah parecido este seminario</h2>   
+                            </div>
+                            <div class="calificacion" >
+                              <span class="fas fa-star" id="1estrella" onclick="calificar(this)"></span>
+                              <span class="fas fa-star" id="2estrella" onclick="calificar(this)"></span>
+                              <span class="fas fa-star" id="3estrella" onclick="calificar(this)"></span>
+                              <span class="fas fa-star" id="4estrella" onclick="calificar(this)"></span>
+                              <span class="fas fa-star" id="5estrella" onclick="calificar(this)"></span>
+                            </div>
+
+                          </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
+                          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                          <button type="button" class="btn btn-primary">Registrar Asistencia</button>
                         </div>
                       </div>
                     </div>
