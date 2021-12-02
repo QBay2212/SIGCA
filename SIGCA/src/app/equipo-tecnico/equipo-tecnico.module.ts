@@ -7,8 +7,6 @@ import { ReportesRutasComponent } from './reportes/reportes-rutas.component';
 import { ReportesModule } from './reportes/reportes.module';
 import { MainCrearModuloComponent } from './crearModulo/main-crear-modulo/main-crear-modulo.component';
 import { CrearModuloPrincipalComponent } from './crearModulo/crear-modulo-principal/crear-modulo-principal.component';
-import { CrearSeminarioFormulario2Component } from './crearSeminario/crear-seminario-formulario2/crear-seminario-formulario2.component';
-import { CrearSeminarioFormulario3Component } from './crearSeminario/crear-seminario-formulario3/crear-seminario-formulario3.component';
 import { CrearSeminarioPrincipalComponent } from './crearSeminario/crear-seminario-principal/crear-seminario-principal.component';
 import { MainSeminarioComponent } from './crearSeminario/main-seminario/main-seminario.component';
 import { MainBancoModuloComponent } from './asignacionBancaModulo/main-banco-modulo/main-banco-modulo.component';
@@ -31,8 +29,6 @@ const routes: Routes = [
     UsuarioRutasComponent,
     CrearModuloPrincipalComponent,
     MainCrearModuloComponent,
-    CrearSeminarioFormulario2Component,
-    CrearSeminarioFormulario3Component,
     CrearSeminarioPrincipalComponent,
     MainSeminarioComponent,
     MainBancoModuloComponent,

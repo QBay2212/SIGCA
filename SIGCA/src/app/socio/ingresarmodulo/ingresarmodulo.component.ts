@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Progreso } from 'src/app/models/Progreso';
+import { SocioService } from '../socio.service';
 
 @Component({
   selector: 'SIGCA-ingresarmodulo',
@@ -7,13 +9,28 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class IngresarmoduloComponent implements OnInit {
   @Output() link:EventEmitter<string> = new EventEmitter;
-  constructor() { }
-
+  constructor( private profreso:SocioService) { }
+  x=Number(sessionStorage.getItem('idusuario'));
+  progres: Progreso[]=[];
+  nombre="";
+  progreso='';
+  id=0;
   ngOnInit(): void {
+    this.Progreso();
   }
 
   entrarModulo():void{
     this.link.emit('socio/ingresarmodulo/sesiones')
 
+  }
+  Progreso():void{
+    this.profreso.getProgreso(this.x).subscribe(listas=>{
+      this.progres=listas;
+      console.log(this.progres)
+      this.nombre=String(this.progres[0].NO_MODULO);
+      this.progreso=String(this.progres[0].Avance_Modulo);
+      this.id=Number(this.progres[0].FK_MODULO);
+    });
+  
   }
 }
