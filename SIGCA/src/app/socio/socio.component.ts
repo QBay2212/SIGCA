@@ -6,6 +6,7 @@ import { Sesion } from '../equipo-tecnico/reportes/reporte';
 import swal from 'sweetalert2';
 import { Seminario } from '../models/Seminario';
 import { CargarScriptsService } from '../cargar-scripts.service';
+import { Progreso } from '../models/Progreso';
 
 @Component({
   selector: 'SIGCA-socio',
@@ -18,6 +19,7 @@ export class SocioComponent implements OnInit {
   model:any=[];
   en:any=[];
   asis:any=[];
+  progres:any=[]
    x=Number(sessionStorage.getItem('idusuario'));
   constructor(private pedido:SocioService, private _CargarScripts: CargarScriptsService) {
     _CargarScripts.Carga(['expotar']);
@@ -27,10 +29,16 @@ export class SocioComponent implements OnInit {
   ngOnInit(): void {
     this.model.des='Escribir pedido, agradecimiento o necesidad';
     this.listarDistritos();
+    this.Progreso();
+    
+
   }
 
-  recibirEstado(status:boolean):void{
-   
+  Progreso():void{
+    this.pedido.getProgreso(this.x).subscribe(listas=>{
+      this.progres=listas;
+      console.log(this.progres)
+    });
   }
 
   guardarpedido():void{
