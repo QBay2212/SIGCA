@@ -29,7 +29,7 @@ export class SocioComponent implements OnInit {
   ngOnInit(): void {
     this.model.des='Escribir pedido, agradecimiento o necesidad';
     this.listarDistritos();
-    this.Progreso();
+   
     
 
   }
