@@ -16,6 +16,7 @@ export class SocioService {
   private urlpost:string ='http://localhost:9090/api/pedidooracion/new'; 
   private urlget:string ='http://localhost:9090/api/seminario/socio'; 
   private progres:string ='http://localhost:9090/api/reportes/progreso'; 
+  private asistencia:string ='http://localhost:9090/api/asistenciaseminario/actualizar'; 
   constructor(private http: HttpClient, private router: Router) { }
   insertarModulo(obj: Pedido) {
  
@@ -30,6 +31,11 @@ export class SocioService {
     
     return this.http.get<Progreso[]>(`${this.progres}/${id}`)
   
+  }
+
+  insertarasistencia(socio:number, seminario:number, valor: number, des:String ) {
+ 
+    return this.http.post(`${this.asistencia}/${socio}/${seminario}/${valor}/${des}`,null) ;
   }
 
 }

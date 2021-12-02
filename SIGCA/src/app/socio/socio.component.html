@@ -44,7 +44,7 @@
                   </div>
                   <div class="botones">
                   
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Asistencia" style="height: 40px;">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Asistencia" style="height: 40px;" (click)="Asistencia(i)">
                       Asistencia
                     </button>
                     
@@ -131,7 +131,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="texto-imagen">
-                                <div class="texto" >
+                                <div class="texto"  >
                                   <h2 class="cap">Seminario:</h2>
                                   <h3 class="nom">{{asis.NO_SEMINARIO}}</h3>
                                   <h2 class="cap">Fecha de inicio:</h2>
@@ -144,9 +144,9 @@
                                 </div>
                         </div>
                         </div>
-                        <div class="modal-footer">
+                        <div class="modal-footer" >
                           <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><a href ={{asis.URL_SEMINARIO}} target="_blank" style="text-decoration:none; color: aliceblue;">Entrar</a></button>
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asistencia" style="background-color:rgb(209, 23, 23);">
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asistencia" style="background-color:rgb(209, 23, 23);" (click)="Asis()">
                            Registrar Asistencia
                           </button>
                         </div>
@@ -157,12 +157,12 @@
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel" style=" padding-top: 15px; text-align: center; font-size: 20px;">Facebook para la salud</h5>
+                          <h5 class="modal-title" id="exampleModalLabel" style=" padding-top: 15px; text-align: center; font-size: 20px;">Registra tu Asistencia</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                               <div class="form-group">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Escribir comentario</textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="mo.comentario" (click)="limpiar()">Escribir comentario</textarea>
                               </div>
                               <div class="textoa" style="padding-top: 5px;">
                             <h2>Con el objetivo de evaluar su asistencia y 
@@ -179,8 +179,8 @@
 
                           </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-                          <button type="button" class="btn btn-primary">Registrar Asistencia</button>
+                          
+                          <button type="button" class="btn btn-primary"data-bs-dismiss="modal" (click)="guardarasistencia()">Registrar Asistencia</button>
                         </div>
                       </div>
                     </div>
