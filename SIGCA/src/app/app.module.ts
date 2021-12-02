@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SidebarModule } from 'ng-sidebar';
 import { PagesLoginComponent } from './core/presentation/pages/pages-login/pages-login.component';
-import { FormsModule } from '@angular/forms';
 import { UsuarioRutasComponent } from './equipo-tecnico/usuario-rutas.component';
 import { ReportesRutasComponent } from './equipo-tecnico/reportes/reportes-rutas.component';
 import { ReporteParticipacionComponent } from './equipo-tecnico/reportes/reporte-participacion/reporte-participacion.component';
@@ -79,7 +78,6 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     CoreModule,
     SidebarModule.forRoot(),
-    FormsModule,
     AsesorModule,
     EquipoTecnicoModule,
     HttpClientModule,

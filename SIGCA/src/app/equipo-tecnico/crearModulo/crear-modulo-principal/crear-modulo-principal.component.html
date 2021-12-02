@@ -171,10 +171,10 @@
             </div>
             <div class="mb-3">
               <select
-                #categoria
+                #categoriaupdate
                 class="w-100 form-select"
                 aria-label="Default select example"
-                (change)="getvalCategoria()"
+                (change)="getvalCategoriaUpdate()"
               >
                 <option selected disabled autofocus>
                   Seleccione Categoria
@@ -238,7 +238,7 @@
                 name="nombreModulo"
                 type="text"
                 class="form-control"
-                [(ngModel)]="nombreSesion"
+                [(ngModel)]="inSesion.no_sesion"
                 placeholder=" Ingrese Sesion"
               />
             </div>
@@ -249,11 +249,16 @@
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
-            (click)="limpiar()"
+            (click)="limpiarSesion()"
           >
             Cerrar
           </button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-dismiss="modal"
+            (click)="insertarSesion()"
+          >
             Guardar
           </button>
         </div>

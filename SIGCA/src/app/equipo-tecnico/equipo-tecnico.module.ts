@@ -41,10 +41,10 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    FormsModule,
     RouterModule.forRoot(routes),
     ReportesModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
   ],
 })
