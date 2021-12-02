@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { RouterModule, Routes } from '@angular/router';
 import { UsuarioRutasComponent } from './usuario-rutas.component';
 import { ReportesRutasComponent } from './reportes/reportes-rutas.component';
 import { ReportesModule } from './reportes/reportes.module';
 import { MainCrearModuloComponent } from './crearModulo/main-crear-modulo/main-crear-modulo.component';
 import { CrearModuloPrincipalComponent } from './crearModulo/crear-modulo-principal/crear-modulo-principal.component';
-import { CrearSeminarioFormulario2Component } from './crearSeminario/crear-seminario-formulario2/crear-seminario-formulario2.component';
-import { CrearSeminarioFormulario3Component } from './crearSeminario/crear-seminario-formulario3/crear-seminario-formulario3.component';
 import { CrearSeminarioPrincipalComponent } from './crearSeminario/crear-seminario-principal/crear-seminario-principal.component';
 import { MainSeminarioComponent } from './crearSeminario/main-seminario/main-seminario.component';
 import { MainBancoModuloComponent } from './asignacionBancaModulo/main-banco-modulo/main-banco-modulo.component';
@@ -16,6 +14,7 @@ import { MainControlarModuloComponent } from './controlarModulo/main-controlar-m
 import { HttpClientModule } from '@angular/common/http';
 import { CuadroSesionesComponent } from './crearModulo/cuadro-sesiones/cuadro-sesiones.component';
 import { RecursosComponent } from './crearModulo/recursos/recursos.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'crearModulo', component: MainCrearModuloComponent },
@@ -30,27 +29,12 @@ const routes: Routes = [
     UsuarioRutasComponent,
     CrearModuloPrincipalComponent,
     MainCrearModuloComponent,
-    CrearSeminarioFormulario2Component,
-    CrearSeminarioFormulario3Component,
     CrearSeminarioPrincipalComponent,
     MainSeminarioComponent,
     MainBancoModuloComponent,
     MainControlarModuloComponent,
     CuadroSesionesComponent,
     RecursosComponent,
-
-import { MaincrearModuloComponent } from './crearModulo/maincrear-modulo/maincrear-modulo.component';
-import { AsignarBancoModuloComponent } from './asignar-banco-modulo/asignar-banco-modulo.component';
-const routes : Routes =[
-  {path:'crearModulo', component:MaincrearModuloComponent},
-  {path:'reportes', component:ReportesRutasComponent}
-]
-
-@NgModule({
-  declarations: [
-    MaincrearModuloComponent,
-    UsuarioRutasComponent,
-    AsignarBancoModuloComponent
   ],
   imports: [
     CommonModule,
