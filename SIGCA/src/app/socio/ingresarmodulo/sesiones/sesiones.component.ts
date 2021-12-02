@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CargarScriptsService } from 'src/app/cargar-scripts.service';
+import { SocioService } from '../../socio.service';
 
 @Component({
   selector: 'SIGCA-sesiones',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SesionesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pedido:SocioService, private _CargarScripts: CargarScriptsService) {
+    _CargarScripts.Carga(['expotar']);
+
+   }
 
   ngOnInit(): void {
   }
