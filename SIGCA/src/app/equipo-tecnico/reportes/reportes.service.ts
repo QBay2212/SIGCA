@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Banco, Distrito, Participacion, Programacion, RecursoSocio, Sede, Sesion } from './reporte';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError} from 'rxjs/operators';
+import { Modulo } from 'src/app/models/modulo';
+import { Categoria } from 'src/app/models/categoria';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,9 @@ export class ReportesService {
   private urlbanco:string ='http://localhost:9090/api/bancoComunal'; 
   private urlprogramacion:string ='http://localhost:9090/api/programacion'; 
   private urlsesion:string ='http://localhost:9090/api/sesion'; 
+  private urlbancoComunal:string ='http://localhost:9090/api/bancoComunal/sede';
+  private urlmodulo:string = 'http://localhost:9090/api/modulo/categoria';
+  private urlcategoria:string = 'http://localhost:9090/api/categoria/all';
   constructor(private http: HttpClient, private router: Router) { }
   getParticipacion(banco:number, modulo:number): Observable<Participacion[]>{
     return this.http.get<Participacion[]>(`${this.urlpost}/participacion/${banco}/${modulo}`)
@@ -43,4 +48,14 @@ export class ReportesService {
   getSesion(id:number): Observable<Sesion[]>{
     return this.http.get<Sesion[]>(`${this.urlsesion}/modulo/${id}`);  
   }
+  getBancoSede(id:number): Observable<Banco[]>{
+    return this.http.get<Banco[]>(`${this.urlbancoComunal}/${id}`);  
+  }
+  getModulo(id:number): Observable<Modulo[]>{
+    return this.http.get<Modulo[]>(`${this.urlmodulo}/${id}`);  
+  }
+  getCategoria(): Observable<Categoria[]>{
+    return this.http.get<Categoria[]>(this.urlcategoria);
+  }
+
 }

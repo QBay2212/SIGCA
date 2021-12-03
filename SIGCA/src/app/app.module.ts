@@ -20,7 +20,7 @@ import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { ProgramasComponent } from './asesor/programas/programas.component';
 import { MainCrearModuloComponent } from './equipo-tecnico/crearModulo/main-crear-modulo/main-crear-modulo.component';
 import { MainSeminarioComponent } from './equipo-tecnico/crearSeminario/main-seminario/main-seminario.component';
-import { MainBancoModuloComponent } from './equipo-tecnico/asignacionBancaModulo/main-banco-modulo/main-banco-modulo.component';
+
 import { MainControlarModuloComponent } from './equipo-tecnico/controlarModulo/main-controlar-modulo/main-controlar-modulo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SocioComponent } from './socio/socio.component';
@@ -29,6 +29,7 @@ import { ReporteComponent } from './asesor/reporte/reporte.component';
 import { HomeModule } from './home/home.module';
 import { SocioModule } from './socio/socio.module';
 import { IngresarseminarioComponent } from './socio/ingresarseminario/ingresarseminario.component';
+import { AsignarBancoModuloComponent } from './equipo-tecnico/asignacion/asignar-banco-modulo.component';
 
 
 const routes: Routes = [
@@ -51,7 +52,7 @@ const routes: Routes = [
     children: [
       { path: 'crearModulo', component: MainCrearModuloComponent },
       { path: 'crearSeminario', component: MainSeminarioComponent },
-      { path: 'bancaModulo', component: MainBancoModuloComponent },
+      { path: 'asignacion', component: AsignarBancoModuloComponent},
       { path: 'controlarModulo', component: MainControlarModuloComponent },
       {
         path: 'reportes',

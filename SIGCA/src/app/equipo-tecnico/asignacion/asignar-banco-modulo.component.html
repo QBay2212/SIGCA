@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="row" style="margin-top:3%">
+    <div class="col">
+     <h1>Banco Comunal</h1>
+    </div>
+    <div class="col">
+     <h1>Modulo</h1>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col">
+            <select (change)="listarBancosComunales()" [(ngModel)]="model.sede"  class="form-select bg-secondary btn-secondary" aria-label="Default select example" >
+              <option value={{sede.id_sede}} *ngFor="let sede of sede">{{sede.no_sede}}</option>
+            </select>
+      </div>
+      <div class="col">
+            <select (change)="listarModulos()" [(ngModel)]="model.categoria" class="form-select bg-secondary btn-secondary" aria-label="Default select example">
+              <option value={{categoria.id_categoria}} *ngFor="let categoria of categoria">{{categoria.no_categoria}}</option>
+            </select>
+      </div>
+  </div>
+  <div class="row" style="margin-top:1%; margin-right:0; margin-left:0;" >
+    <div class="col">
+        <div class="card-body text-success alert-secondary">
+          <div class="card-body text-success" style="overflow-y:auto;">
+                <button type="button" class="btn btn-secondary btn-md mb-3">
+                    SELECCIONAR TODO
+                </button>
+                <form id="form2" method="post" action="#">                 
+                <div *ngFor="let banco of banco" >
+                  <input type="checkbox" name="Submit" value={{banco.id_bancocomunal}} onClick="obtener();" class="card border-success mb-3 bg-secondary" >
+                    <label class="card-body btn btn-md btn-secondary">
+                      {{banco.no_bancocomunal}}
+                    </label>
+                  </div>
+                    <br>
+                    <input type="button" name="Submit" value="Conta" onClick="obtener();">
+                    <br>
+                  </form>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="col">
+            <div class="card-body text-success alert-secondary" style="overflow-y:auto;">
+                <div class="card-body text-success">
+                  <button type="button" class="btn btn-secondary btn-md mb-3">
+                    SELECCIONAR TODO
+                  </button>
+                  <div style="position: relative;">
+                  <div type="button" class="card border-success mb-3 bg-secondary" *ngFor="let Modulo of modulo">
+                    <button class="card-body btn btn-md btn-secondary">
+                       {{Modulo.no_modulo}}
+                    </button>
+                </div>
+                </div>
+              </div>
+        </div>
+    </div>
+  </div>
+<script>
+
+</script>
+
