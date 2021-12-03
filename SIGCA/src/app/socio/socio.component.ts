@@ -14,6 +14,7 @@ import { Progreso } from '../models/Progreso';
   styleUrls: ['./socio.component.css']
 })
 export class SocioComponent implements OnInit {
+  
   semi:Seminario[]=[];
   oracion: Pedido = new Pedido();
   model:any=[];
