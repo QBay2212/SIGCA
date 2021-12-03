@@ -11,6 +11,10 @@
   /* border: 1px solid black; */
 }
 
+.adra_img:hover {
+  cursor: pointer;
+}
+
 .dropdown-menu {
   margin: 17px;
   background: #262a34;
@@ -27,21 +31,14 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
 }
 
-.main-perfil{
-  /* border: 1px solid black; */
+.main-icon {
   height: 100%;
 }
 
-.main-icon{
- height: 100%;
-}
-
-
-.main-perfil:hover >.perfil {
+.main-perfil:hover > .perfil {
   display: block;
   visibility: visible;
 }
-
 
 .icon,
 .icon-perfil {
@@ -49,30 +46,28 @@
   font-size: 30px;
 }
 
-.icon-desplegar{
+.icon-desplegar {
   color: white;
   margin-left: 5px;
 }
 
-
-
-.perfil{
+.perfil {
   margin-top: 0.5rem;
   width: 200px;
   height: 200px;
-  top:60px;
-  left: -70px;
+  top: 30px;
+  left: -50px;
   background-color: #02906f;
   border-radius: 10px;
   visibility: hidden;
 }
 
-.perfil__container{
+.perfil__container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.perfil__title{
+.perfil__title {
   text-align: center;
 }

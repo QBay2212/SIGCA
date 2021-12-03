@@ -11,8 +11,8 @@ export class NavTopComponent implements OnInit {
   @Output() statusSidebar: EventEmitter<boolean> = new EventEmitter();
   estadoActual = true;
   nombre = sessionStorage.getItem('nombreusuario');
-  rol=sessionStorage.getItem('rol');
-  constructor( private as:AuthService,private router:Router) {}
+  rol = sessionStorage.getItem('rol');
+  constructor(private as: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -26,8 +26,12 @@ export class NavTopComponent implements OnInit {
     }
   }
 
- salir(){
-   this.as.logout();
-  this.router.navigate(['/'])
- }
+  salir() {
+    this.as.logout();
+    this.router.navigate(['/']);
+  }
+
+  recargarPagina() {
+    window.location.reload();
+  }
 }
