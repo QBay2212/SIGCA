@@ -141,3 +141,6 @@
 #boton3{
     margin-top: 20px;
 }
+.table{
+    overflow-y: scroll;
+}
