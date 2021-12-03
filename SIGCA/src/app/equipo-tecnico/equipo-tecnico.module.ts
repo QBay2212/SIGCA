@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'crearModulo', component: MainCrearModuloComponent },
   { path: 'reportes', component: ReportesRutasComponent },
   { path: 'crearSeminario', component: MainSeminarioComponent },
-  { path: 'bancaModulo', component: MainBancoModuloComponent },
+  { path: 'asignacion', component: MainBancoModuloComponent },
   { path: 'controlarModulo', component: MainControlarModuloComponent },
 ];
 
