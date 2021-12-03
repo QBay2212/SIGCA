@@ -3,6 +3,7 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  DoCheck,
   OnInit,
   Output,
 } from '@angular/core';
@@ -15,7 +16,7 @@ import { ModulosService } from '../service/modulos.service';
   templateUrl: './cuadro-sesiones.component.html',
   styleUrls: ['./cuadro-sesiones.component.css'],
 })
-export class CuadroSesionesComponent implements OnInit, OnChanges {
+export class CuadroSesionesComponent implements OnInit, OnChanges, DoCheck {
   datosMostrarSesion: any[] = [];
   @Input() id_modulo: number = 0;
   @Output() status: EventEmitter<boolean> = new EventEmitter();
@@ -32,6 +33,9 @@ export class CuadroSesionesComponent implements OnInit, OnChanges {
     this.cargarSesionesID();
   }
 
+  ngDoCheck() {
+    // this.cargarSesionesID();
+  }
   cargarSesionesID() {
     console.log(this.id_modulo);
     this.Service.getSesionModulo(this.id_modulo).subscribe((e) => {
