@@ -26,17 +26,17 @@
                 <button type="button" class="btn btn-secondary btn-md mb-3">
                     SELECCIONAR TODO
                 </button>
-                <form id="form2" method="post" action="#">                 
-                <div *ngFor="let banco of banco" >
-                  <input type="checkbox" name="Submit" value={{banco.id_bancocomunal}} onClick="obtener();" class="card border-success mb-3 bg-secondary" >
-                    <label class="card-body btn btn-md btn-secondary">
-                      {{banco.no_bancocomunal}}
-                    </label>
-                  </div>
-                    <br>
-                    <input type="button" name="Submit" value="Conta" onClick="obtener();">
-                    <br>
-                  </form>
+                
+                  <form id="form2" method="post" action="#">
+                    <div *ngFor="let mo of banco ">
+                      <input type="checkbox" name="checkbox" id="chk1" value={{mo.id_bancocomunal}}><label >{{mo.no_bancocomunal}}</label><br>
+                    </div>
+            
+                    
+                    
+                    
+                    </form>
+                    
             </div>
         </div>
     </div>
@@ -48,17 +48,20 @@
                     SELECCIONAR TODO
                   </button>
                   <div style="position: relative;">
-                  <div type="button" class="card border-success mb-3 bg-secondary" *ngFor="let Modulo of modulo">
-                    <button class="card-body btn btn-md btn-secondary">
-                       {{Modulo.no_modulo}}
-                    </button>
-                </div>
+                    <form id="form1" method="post" action="#">
+                      <div *ngFor="let modulo of modulo ">
+                        <input type="checkbox" name="checkbox" id="chk1" value={{modulo.id_modulo}}><label >{{modulo.no_modulo}}</label><br>
+                      </div>
+              
+                      
+                      
+                      
+                      </form>
                 </div>
               </div>
         </div>
     </div>
   </div>
-<script>
-
-</script>
-
+  
+  <button onclick="obtener()" style="margin-top: 40px;">Asignar</button>
+  <button (click)="guardar()" style="margin-top: 40px;">Guardar</button>

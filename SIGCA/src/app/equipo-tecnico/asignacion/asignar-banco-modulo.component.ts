@@ -11,16 +11,22 @@ import { ReportesService } from '../reportes/reportes.service';
   styleUrls: ['./asignar-banco-modulo.component.css']
 })
 export class AsignarBancoModuloComponent implements OnInit {
+  
+
+  check: any = [];
   sede: Sede[]=[];
   model: any = [];
   banco: Banco[]=[];
   modulo: Modulo[]=[];
   categoria: Categoria[]=[];
+
+  
   constructor(private asignacion:ReportesService, private _CargarScripts: CargarScriptsService) { 
     _CargarScripts.Carga(['expotar']);
   }
-
+ 
   ngOnInit(): void {
+  
     this.asignacion.getSede().subscribe(data=>{
       this.sede=data;
     });
@@ -36,8 +42,22 @@ export class AsignarBancoModuloComponent implements OnInit {
   }
   listarModulos():void{
     var y = Number(this.model.categoria);
+    alert(y)
     this.asignacion.getModulo(y).subscribe(listas=>{
       this.modulo=listas;
     })
   }
+  guardar(){
+   var mo= String(sessionStorage.getItem('mo'))
+   var ba=String(sessionStorage.getItem('ban'))
+   this.asignacion.insertarMasivo(mo,ba)
+    .subscribe((e) => {
+     
+      console.log(e);
+     
+     
+    });
+   
+  }
+  
 }

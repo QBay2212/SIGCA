@@ -52,7 +52,9 @@ const routes: Routes = [
     children: [
       { path: 'crearModulo', component: MainCrearModuloComponent },
       { path: 'crearSeminario', component: MainSeminarioComponent },
+
       { path: 'asignacion', component: AsignarBancoModuloComponent},
+
       { path: 'controlarModulo', component: MainControlarModuloComponent },
       {
         path: 'reportes',

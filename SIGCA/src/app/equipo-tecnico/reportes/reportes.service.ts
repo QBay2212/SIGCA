@@ -57,5 +57,8 @@ export class ReportesService {
   getCategoria(): Observable<Categoria[]>{
     return this.http.get<Categoria[]>(this.urlcategoria);
   }
+  insertarMasivo(modulo:String, banco:String): Observable<String>{
+    return this.http.post<String>(`${this.urlpost}/insertar/${modulo}/${banco}`,null)
+  }
 
 }
