@@ -27,7 +27,9 @@ import { SesionesComponent } from './socio/ingresarmodulo/sesiones/sesiones.comp
 import { ReporteComponent } from './asesor/reporte/reporte.component';
 import { HomeModule } from './home/home.module';
 import { SocioModule } from './socio/socio.module';
+
 import { IngresarseminarioComponent } from './socio/ingresarseminario/ingresarseminario.component';
+import { AsignarBancoModuloComponent } from './equipo-tecnico/asignacion/asignar-banco-modulo.component';
 
 
 const routes: Routes = [
@@ -50,6 +52,7 @@ const routes: Routes = [
     children: [
       { path: 'crearModulo', component: MainCrearModuloComponent },
       { path: 'crearSeminario', component: MainSeminarioComponent },
+      { path: 'asignacion', component: AsignarBancoModuloComponent},
       { path: 'controlarModulo', component: MainControlarModuloComponent },
       {
         path: 'reportes',

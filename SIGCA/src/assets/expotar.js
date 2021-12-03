@@ -28,3 +28,21 @@ function exportTableToExcel(tableID, filename = ''){
         downloadLink.click();
     }
 }
+var contador;
+function calificar(item){
+    console.log(item)
+    contador= item.id[0];
+    let nombre = item.id.substring(1);
+    valoracion=0;
+    for(let i=0;i<5;i++){
+        if(i<contador){
+            document.getElementById((i+1)+nombre).style.color="orange";
+           valoracion++;
+        }
+        else{
+            document.getElementById((i+1)+nombre).style.color="white";
+        }
+       
+    }
+    sessionStorage.setItem('valoracionseminario',valoracion);
+}
