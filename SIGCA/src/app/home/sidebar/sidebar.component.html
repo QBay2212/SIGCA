@@ -4,57 +4,10 @@
   <ng-sidebar [opened]="opened">
     <nav class="w-100">
       <ul class="d-flex flex-column p-0">
-        <li class="nav__item" (click)="enviarCrearModulo()">
+        <li class="nav__item" (click)="enviarCrearModulo(i)" *ngFor="let pro of privi; let i = index">
           <a class="item__link"
-            ><i class="fas fa-address-book decoration"></i>Crear Modulo</a
+            ><i class="fas fa-address-book decoration"></i>{{pro.MENU}}</a
           >
-        </li>
-        <li class="nav__item" (click)="enviarCrearSeminario()">
-          <a class="item__link">
-            <i class="fas fa-business-time decoration"></i> Crear Seminario
-          </a>
-        </li>
-        <li class="nav__item">
-          <a class="item__link d-block">
-            <i class="fas fa-book-open decoration"></i>Asignar Banco-Modulo </a>
-        </li>
-        <li class="nav__item">
-          <a class="item__link">
-            <i class="fas fa-book-open decoration"></i> Controlar Módulo</a
-          >
-        </li>
-        <li class="nav__item w-100">
-          <a class="item__link d-block" (click)="seguimientoSocio()"
-            >Seguimiento Socio
-          </a>
-        </li>
-        <li class="nav__item">
-          <a #enlace_dos (click)="desplegar2()" class="item__link">
-            <i class="far fa-clipboard decoration"></i> Reportes
-            <i class="fas fa-angle-down margenes"></i
-          ></a>
-          <ul #submenu2 class="submenu">
-            <li class="nav__item w-100">
-              <a class="item__link d-block"
-                >Desarrollo de modulos por bancos
-              </a>
-            </li>
-            <li class="nav__item w-100">
-              <a class="item__link d-block" (click)="enviarParticipacion()"
-                >Participación
-              </a>
-            </li>
-            <li class="nav__item w-100">
-              <a class="item__link d-block" (click)="enviarParticipantes()"
-                >Participantes
-              </a>
-            </li>
-            <li class="nav__item w-100">
-              <a class="item__link d-block" (click)="enviarSeminario()"
-                >Participancion_Seminario
-              </a>
-            </li>
-          </ul>
         </li>
       </ul>
     </nav>

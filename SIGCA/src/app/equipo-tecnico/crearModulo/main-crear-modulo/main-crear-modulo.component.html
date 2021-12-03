@@ -1,4 +1,13 @@
-<p>main-crear-modulo works!</p>
-<h1>Crear Modulo</h1>
-<SIGCA-formulario-crear-modulo></SIGCA-formulario-crear-modulo>
-<SIGCA-cuadros-crear-modulo></SIGCA-cuadros-crear-modulo>
+<section class="size-main">
+  <article class="size-modulo">
+    <SIGCA-crear-modulo-principal
+      (datosSesion)="recibirDatosSesion($event)"
+    ></SIGCA-crear-modulo-principal>
+  </article>
+  <article class="size-cuadros" *ngIf="estadoCuadro">
+    <SIGCA-cuadro-sesiones
+      class="d-flex justify-content-around align-items-center h-100"
+      [datosMostrarSesion]="datosSesion"
+    ></SIGCA-cuadro-sesiones>
+  </article>
+</section>
