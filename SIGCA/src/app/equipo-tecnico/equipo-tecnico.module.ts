@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CuadroSesionesComponent } from './crearModulo/cuadro-sesiones/cuadro-sesiones.component';
 import { RecursosComponent } from './crearModulo/recursos/recursos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AsignarBancoModuloComponent } from './asignar-banco-modulo/asignar-banco-modulo.component';
 import { AsignarBancoModuloComponent } from './asignacion/asignar-banco-modulo.component';
 
 const routes: Routes = [
@@ -21,7 +22,9 @@ const routes: Routes = [
   { path: 'reportes', component: ReportesRutasComponent },
   { path: 'crearSeminario', component: MainSeminarioComponent },
   { path: 'asignacion', component: AsignarBancoModuloComponent },
+
   { path: 'controlarModulo', component: MainControlarModuloComponent },
+  { path: 'asignar-banco-modulo', component: AsignarBancoModuloComponent }
 ];
 
 @NgModule({
@@ -35,12 +38,14 @@ const routes: Routes = [
     MainControlarModuloComponent,
     CuadroSesionesComponent,
     RecursosComponent,
+    AsignarBancoModuloComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),
     ReportesModule,
     HttpClientModule,
+    ReactiveFormsModule
     FormsModule,
     ReactiveFormsModule,
   ],

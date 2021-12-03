@@ -20,7 +20,6 @@ import { EquipoTecnicoModule } from './equipo-tecnico/equipo-tecnico.module';
 import { ProgramasComponent } from './asesor/programas/programas.component';
 import { MainCrearModuloComponent } from './equipo-tecnico/crearModulo/main-crear-modulo/main-crear-modulo.component';
 import { MainSeminarioComponent } from './equipo-tecnico/crearSeminario/main-seminario/main-seminario.component';
-
 import { MainControlarModuloComponent } from './equipo-tecnico/controlarModulo/main-controlar-modulo/main-controlar-modulo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SocioComponent } from './socio/socio.component';
