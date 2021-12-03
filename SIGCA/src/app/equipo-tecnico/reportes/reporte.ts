@@ -82,3 +82,8 @@ export class ProgramaAsesor{
         nombrerol?:string;
         
     }
+
+export class categoria{
+    id_categoria?: number; 
+    no_categoria?: string;
+}

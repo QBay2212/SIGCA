@@ -9,19 +9,23 @@ import { MainCrearModuloComponent } from './crearModulo/main-crear-modulo/main-c
 import { CrearModuloPrincipalComponent } from './crearModulo/crear-modulo-principal/crear-modulo-principal.component';
 import { CrearSeminarioPrincipalComponent } from './crearSeminario/crear-seminario-principal/crear-seminario-principal.component';
 import { MainSeminarioComponent } from './crearSeminario/main-seminario/main-seminario.component';
-import { MainBancoModuloComponent } from './asignacionBancaModulo/main-banco-modulo/main-banco-modulo.component';
 import { MainControlarModuloComponent } from './controlarModulo/main-controlar-modulo/main-controlar-modulo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CuadroSesionesComponent } from './crearModulo/cuadro-sesiones/cuadro-sesiones.component';
 import { RecursosComponent } from './crearModulo/recursos/recursos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AsignarBancoModuloComponent } from './asignacion/asignar-banco-modulo.component';
+
 
 const routes: Routes = [
   { path: 'crearModulo', component: MainCrearModuloComponent },
   { path: 'reportes', component: ReportesRutasComponent },
   { path: 'crearSeminario', component: MainSeminarioComponent },
-  { path: 'asignacion', component: MainBancoModuloComponent },
+
+  { path: 'asignacion', component: AsignarBancoModuloComponent },
+
   { path: 'controlarModulo', component: MainControlarModuloComponent },
+  { path: 'asignar-banco-modulo', component: AsignarBancoModuloComponent }
 ];
 
 @NgModule({
@@ -31,17 +35,18 @@ const routes: Routes = [
     MainCrearModuloComponent,
     CrearSeminarioPrincipalComponent,
     MainSeminarioComponent,
-    MainBancoModuloComponent,
+    AsignarBancoModuloComponent,
     MainControlarModuloComponent,
     CuadroSesionesComponent,
-    RecursosComponent,
+    RecursosComponent
   ],
   imports: [
     CommonModule,
-    FormsModule,
     RouterModule.forRoot(routes),
     ReportesModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     ReactiveFormsModule,
   ],
 })
