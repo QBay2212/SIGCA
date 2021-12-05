@@ -46,6 +46,7 @@ export class ReportesService {
     return this.http.get<Programacion[]>(`${this.urlprogramacion}/banco/${id}`);  
   }
   getSesion(id:number): Observable<Sesion[]>{
+    
     return this.http.get<Sesion[]>(`${this.urlsesion}/modulo/${id}`);  
   }
   getBancoSede(id:number): Observable<Banco[]>{

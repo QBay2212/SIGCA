@@ -18,4 +18,14 @@
 .btn{
     background-color: #007b5f;
     color: white;
+    margin-right: 10px; 
+}
+.bo{
+    margin-left: 50px;
+}
+
+.card{
+    border: 1px solid black;
+    margin-right: 10px;
+    margin-top: 10px;
 }
