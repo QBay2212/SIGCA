@@ -23,6 +23,7 @@ export class IngresarmoduloComponent implements OnInit {
     this.link.emit('socio/ingresarmodulo/sesiones')
 
   }
+
   Progreso():void{
     this.profreso.getProgreso(this.x).subscribe(listas=>{
       this.progres=listas;
@@ -31,6 +32,12 @@ export class IngresarmoduloComponent implements OnInit {
       this.progreso=String(this.progres[0].Avance_Modulo);
       this.id=Number(this.progres[0].FK_MODULO);
     });
-  
+
+  }
+
+  guardar():void{
+    var y = String(this.id);
+    sessionStorage.setItem('id_modulo', y);
+    alert(y);
   }
 }
