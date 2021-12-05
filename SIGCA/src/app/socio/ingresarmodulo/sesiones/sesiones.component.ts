@@ -6,6 +6,8 @@ import { ReportesService } from 'src/app/equipo-tecnico/reportes/reportes.servic
 import { Recurso } from 'src/app/models/recurso';
 import { SocioService } from '../../socio.service';
 
+
+
 @Component({
   selector: 'SIGCA-sesiones',
   templateUrl: './sesiones.component.html',
@@ -15,6 +17,7 @@ export class SesionesComponent implements OnInit {
   id_modulo = Number (sessionStorage.getItem('id_modulo'))
   sesiones : Sesion [] = [];
   recursos : any = [];
+  x=Number(sessionStorage.getItem('idusuario'));
   constructor(private pedido:SocioService, private _CargarScripts: CargarScriptsService, private se :ReportesService, private recurso :ModulosService) {
     _CargarScripts.Carga(['expotar']);
 
@@ -34,11 +37,25 @@ export class SesionesComponent implements OnInit {
 
    listarRecurso(i:number){
      var id = Number(this.sesiones[i].id_SESION);
-      this.recurso.getRecursoSesion(id).subscribe(listas=>{
+      this.pedido.getRecursosS(id,this.x).subscribe(listas=>{
       this.recursos=listas;
       console.log(this.recursos)
 
     });
    }
+   guardarAsistencia(i:number){
+     var xy = Number(this.recursos[i].ID_ASISTENCIA_RECURSO);
+
+     var valor=Number(sessionStorage.getItem('valoracionseminario'));
+     this.pedido.actualizarEstado(xy).subscribe((e) => {
+
+      console.log(e);
+
+
+    });
+   }
 
 }
+
+
+
