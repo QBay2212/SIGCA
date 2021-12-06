@@ -12,7 +12,7 @@ import { ReportesService } from '../reportes.service';
 })
 export class ReporteParticipacionComponent implements OnInit {
   sede: Sede[]=[];
-  sesiones: Sesion[]=[];
+  sesiones: any=[];
   bancos: Banco[]=[];
   distritos: Distrito[]=[];
   programaciones: any={};
@@ -53,6 +53,7 @@ export class ReporteParticipacionComponent implements OnInit {
     var x=this.model.modulo;
      this.reporte.getSesion(x).subscribe(listas=>{
        this.sesiones=listas;
+       console.log(listas)
       console.log(this.sesiones)
       
      });

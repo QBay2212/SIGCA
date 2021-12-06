@@ -5,6 +5,10 @@ import { Sesion } from 'src/app/equipo-tecnico/reportes/reporte';
 import { ReportesService } from 'src/app/equipo-tecnico/reportes/reportes.service';
 import { Recurso } from 'src/app/models/recurso';
 import { SocioService } from '../../socio.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { SnackBarComponentExampleComponent } from './snack-bar-component-example/snack-bar-component-example.component';
+
+
 
 @Component({
   selector: 'SIGCA-sesiones',
@@ -13,9 +17,11 @@ import { SocioService } from '../../socio.service';
 })
 export class SesionesComponent implements OnInit {
   id_modulo = Number (sessionStorage.getItem('id_modulo'))
-  sesiones : Sesion [] = [];
+  sesiones : any = [];
   recursos : any = [];
-  constructor(private pedido:SocioService, private _CargarScripts: CargarScriptsService, private se :ReportesService, private recurso :ModulosService) {
+  durationInSeconds = 5;
+  x=Number(sessionStorage.getItem('idusuario'));
+  constructor(private pedido:SocioService, private _CargarScripts: CargarScriptsService, private se :ReportesService, private recurso :ModulosService, private snackBar: MatSnackBar) {
     _CargarScripts.Carga(['expotar']);
 
    }
@@ -33,12 +39,28 @@ export class SesionesComponent implements OnInit {
    }
 
    listarRecurso(i:number){
-     var id = Number(this.sesiones[i].id_SESION);
-      this.recurso.getRecursoSesion(id).subscribe(listas=>{
+     var id = Number(this.sesiones[i].id_sesion);
+      this.pedido.getRecursosS(id,this.x).subscribe(listas=>{
       this.recursos=listas;
       console.log(this.recursos)
 
     });
    }
+   guardarAsistencia(i:number){
+     var xy = Number(this.recursos[i].ID_ASISTENCIA_RECURSO);
+     var valor=Number(sessionStorage.getItem('valoracionseminario'));
+     this.pedido.actualizarEstado(xy).subscribe((e) => {
 
+      console.log(e);
+
+
+    });
+   }
+   openSnackBar(messaje: string): void {
+
+    this.snackBar.open(messaje);
+  }
 }
+
+
+

@@ -1,22 +1,20 @@
 <h1 class="titulo1">Seguimiento Bancos-Socios</h1>
-<div class="col-4 contenedor" >
-    <div class="row" >
-        <div class="col-6">
-           {{nombreb}}-{{nombrem}}
-        </div>
-        <div class="col-6 satisfaccion">
-          Satisfaccion:Satisfecho
-      </div>
-      <div class="col-12 ">
-        
+  <div class="container-fluid">
+    
+    <div class="row">
+
+      
+          <div class="card" style="width: 25rem;" >
+            <div class="card-body">
+              <h5 class="card-title"> {{nombreb}}-{{nombrem}}</h5>
+              <progress class="barra" max="100"  value={{progreso}}> </progress>
+             
+            </div>
+          </div>
+      
           
-       <progress class="barra" max="100"  value={{progreso}}> </progress>
-          
-      </div>
-     
-        
     </div>
-  </div>
+</div>
 
 <table class="table table-bordered tabla">
     
@@ -25,7 +23,7 @@
             <th>Socio</th>
             <th><select class="form-select" aria-label="Default select example" (change)="listartabla()" [(ngModel)]="model.sesion">
              
-                <option value={{sesion.id_SESION}} *ngFor="let sesion of sesiones" >{{sesion.no_SESION}}</option>
+                <option value={{sesion.id_sesion}} *ngFor="let sesion of sesiones" >{{sesion.no_sesion}}</option>
             </select></th>
                
             
@@ -34,7 +32,7 @@
     <tbody>
         <tr *ngFor="let reporte of reportes; let i=index" >
            <td >
-               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="litarmodal(i)" >{{reporte.PERSONA}}</a>
+               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" style = "text-decoration: None" (click)="litarmodal(i)" >{{reporte.PERSONA}}</a>
             </td>
             <td >
                  {{reporte.Asistencia}}
