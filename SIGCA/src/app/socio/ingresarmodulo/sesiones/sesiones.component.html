@@ -36,10 +36,11 @@
             [attr.id]="'accordion-body-' + index"
             [attr.aria-labelledby]="'accordion-header-' + index">
 
-            <a *ngFor="let recurso of recursos; let i = index;" href="https://www.youtube.com/embed/Sld5v-GIcrE?rel=0" target="reproduccion" onclick="" (click)="guardarAsistencia(i)">
-              <button id="liveToastBtn" onclick="toasts()" class="btn btn-outline-success" type="button" style="width: 100%; text-align: left; margin-top: 10px;">
+            <a *ngFor="let recurso of recursos; let i = index;" href={{recurso.DESC_RECURSO}} target="reproduccion" onclick="" (click)="guardarAsistencia(i)">
+              <button id="liveToastBtn" class="btn btn-outline-success" type="button" style="width: 100%; text-align: left; margin-top: 10px;">
                 <div class="row">
-                  <div class="col-10">{{recurso.NO_RECURSO}}</div>
+                  <div class="col-1" style="color: red;"><i class="fas fa-play"></i></div>
+                  <div class="col-9">{{recurso.NO_RECURSO}}</div>
                   <div class="col-2"><i class="fas fa-check-circle" style="color: #007B5F;"></i></div>
                 </div>
               </button>
@@ -48,46 +49,72 @@
           </div>
         </cdk-accordion-item>
       </cdk-accordion>
-
   </div>
+
 
 
 
 
 
   <div class="col-8" style="margin-top: 20px;">
-    <iframe src="" frameborder="0" height="500px" width="100%" name="reproduccion" style="box-shadow: 2px 2px 5px rgb(124, 124, 124); border-radius: 1%;" >
+    <iframe src="https://www.youtube.com/embed/O0nm9BC_KVM?rel=0" frameborder="0" height="500px" width="100%" name="reproduccion" style="box-shadow: 2px 2px 5px rgb(124, 124, 124); border-radius: 1%;" >
     </iframe>
     <div class="calificacion" style="text-align: right;">
-      <b>¿Que tan bueno te parecio esto?  =  </b>
       <span class="fas fa-star" id="1estrella" onclick="calificar(this)"></span>
       <span class="fas fa-star" id="2estrella" onclick="calificar(this)"></span>
       <span class="fas fa-star" id="3estrella" onclick="calificar(this)"></span>
       <span class="fas fa-star" id="4estrella" onclick="calificar(this)"></span>
       <span class="fas fa-star" id="5estrella" onclick="calificar(this)"></span>
       </div>
+      <div class="row" style="margin-top: 10px;">
+        <div class="col-6">
+          <button type="button" class="btn btn-dark"> <i class="fas fa-backward"></i> Anterior</button>
+        </div>
+        <div class="col-6" style="text-align: right;">
+          <button type="button" class="btn btn-dark">Siguiente <i class="fas fa-forward"></i></button>
+        </div>
+      </div>
   </div>
 
-  <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+  <!--
+<div style="text-align: center; align-items: center; margin-top: 30px;">
+
+  <button type="button" class="btn btn-primary" id="liveToastBtn" style="width: 300px;">Me gusta este Modulo      <i class="fas fa-heart"></i></button>
+</div>
 
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
-      <img src="..." class="rounded me-2" alt="...">
-      <strong class="me-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
+      <i class="fas fa-heart"></i>
+      <div style="width: 10px;"></div>
+      <strong class="me-auto">  SIGCA</strong>
+      <small>justo ahora</small>
       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
-      Hello, world! This is a toast message.
+      Has indicado que te gusta este módulo
     </div>
   </div>
 </div>
+
+
+  <mat-form-field appearance="fill">
+  <mat-label>Snack bar duration (seconds)</mat-label>
+  <input type="number" [(ngModel)]="durationInSeconds" matInput>
+</mat-form-field>
+
+<button class="btn btn-danger" mat-stroked-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+  Pizza party
+</button>
+ -->
 
 
 </div>
 </div>
 </body>
+
+
+
 
 
 

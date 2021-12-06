@@ -38,6 +38,5 @@ export class IngresarmoduloComponent implements OnInit {
   guardar():void{
     var y = String(this.id);
     sessionStorage.setItem('id_modulo', y);
-    alert(y);
   }
 }
