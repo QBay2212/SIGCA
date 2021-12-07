@@ -29,7 +29,7 @@
                 
                   <form id="form2" method="post" action="#">
                     <div *ngFor="let mo of banco ">
-                      <input type="checkbox" name="checkbox" id="chk1" value={{mo.id_bancocomunal}}><label >{{mo.no_bancocomunal}}</label><br>
+                      <input id="btn-switch" class="lbl-switch" type="checkbox" name="checkbox" id="chk1" value={{mo.id_bancocomunal}}><label >{{mo.no_bancocomunal}}</label><br>
                     </div>
             
                     
@@ -50,7 +50,7 @@
                   <div style="position: relative;">
                     <form id="form1" method="post" action="#">
                       <div *ngFor="let modulo of modulo ">
-                        <input type="checkbox" name="checkbox" id="chk1" value={{modulo.id_modulo}}><label >{{modulo.no_modulo}}</label><br>
+                        <input id="btn-switch" class="lbl-switch" type="checkbox" name="checkbox" id="chk1" value={{modulo.id_modulo}}><label >{{modulo.no_modulo}}</label><br>
                       </div>
               
                       
@@ -62,6 +62,10 @@
         </div>
     </div>
   </div>
-  
-  <button onclick="obtener()" style="margin-top: 40px;">Asignar</button>
-  <button (click)="guardar()" style="margin-top: 40px;">Guardar</button>
+  <div class="row">
+    <div class="col">
+      <button onclick="obtener()" class="btn btn-secondary btn-md mb-3" style="margin-top: 40px; margin-right: 1%;">Asignar</button>
+
+      <button (click)="guardar()" class="btn btn-secondary btn-md mb-3" style="margin-top: 40px; margin-left: 1%;">Guardar</button> 
+    </div>
+  </div>
