@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SocioComponent } from './socio.component';
 import { IngresarmoduloComponent } from './ingresarmodulo/ingresarmodulo.component';
@@ -14,6 +14,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 const routes : Routes =[
   {path: 'vistaSocio', component:SocioComponent
@@ -33,12 +34,9 @@ const routes : Routes =[
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forRoot(routes),HomeModule, CdkAccordionModule, BrowserAnimationsModule,
-    BrowserModule,
-    HttpClientModule,
-    MatNativeDateModule,
-    ReactiveFormsModule
+    RouterModule.forRoot(routes),HomeModule, CdkAccordionModule, MatSnackBarModule
   ],
   providers:[],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SocioModule { }

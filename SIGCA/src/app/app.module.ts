@@ -87,7 +87,7 @@ const routes: Routes = [
     EquipoTecnicoModule,
     HttpClientModule,
     HomeModule,
-    SocioModule
+    SocioModule,
   ],
   providers: [CargarScriptsService],
   bootstrap: [AppComponent],
