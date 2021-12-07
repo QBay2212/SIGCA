@@ -15,7 +15,7 @@ import { SocioService } from '../../socio.service';
 })
 export class SesionesComponent implements OnInit {
   id_modulo = Number (sessionStorage.getItem('id_modulo'))
-  sesiones : Sesion [] = [];
+  sesiones :any = [];
   recursos : any = [];
   x=Number(sessionStorage.getItem('idusuario'));
   constructor(private pedido:SocioService, private _CargarScripts: CargarScriptsService, private se :ReportesService, private recurso :ModulosService) {
@@ -36,7 +36,7 @@ export class SesionesComponent implements OnInit {
    }
 
    listarRecurso(i:number){
-     var id = Number(this.sesiones[i].id_SESION);
+     var id = Number(this.sesiones[i].id_sesion);
       this.pedido.getRecursosS(id,this.x).subscribe(listas=>{
       this.recursos=listas;
       console.log(this.recursos)
