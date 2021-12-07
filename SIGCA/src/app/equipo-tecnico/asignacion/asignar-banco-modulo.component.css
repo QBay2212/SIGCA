@@ -1,0 +1,29 @@
+.boton{
+    margin: 1opx;
+
+}
+.lbl-switch{
+    display: inline-block;
+    width: 55px;
+    height: 30px;
+    background: 100px;
+    position: relative;
+    cursor: pointer;
+}
+.lbl-switch{
+    position: absolute;
+    content: '';
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 100px;
+    top: 4px;
+    left: 5px;
+    transition: 0.3s;
+}
+#btn-switch:checked~ .lbl-switch{
+    background: #61a0ff;
+}
+#btn-switch{
+    display: none;
+}
