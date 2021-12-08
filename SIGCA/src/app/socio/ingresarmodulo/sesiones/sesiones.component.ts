@@ -17,11 +17,7 @@ import { SnackBarComponentExampleComponent } from './snack-bar-component-example
 })
 export class SesionesComponent implements OnInit {
   id_modulo = Number (sessionStorage.getItem('id_modulo'))
-<<<<<<< HEAD
-  sesiones :any = [];
-=======
   sesiones : any = [];
->>>>>>> 11b658c25fdea611229cccdb48a06449c8bc04fd
   recursos : any = [];
   durationInSeconds = 5;
   x=Number(sessionStorage.getItem('idusuario'));

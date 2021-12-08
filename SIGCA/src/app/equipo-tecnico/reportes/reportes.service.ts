@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Banco, Distrito, Participacion, Programacion, RecursoSocio, Sede, Sesion } from './reporte';
+import { Banco, Distrito, Participacion, Programacion, RecursoSocio, Sede, Sesion, Socio } from './reporte';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError} from 'rxjs/operators';
 import { Modulo } from 'src/app/models/modulo';
@@ -20,6 +20,8 @@ export class ReportesService {
   private urlbancoComunal:string ='http://localhost:9090/api/bancoComunal/sede';
   private urlmodulo:string = 'http://localhost:9090/api/modulo/categoria';
   private urlcategoria:string = 'http://localhost:9090/api/categoria/all';
+  private urldesarrollodis:string = 'http://localhost:9090/api/reportes/desarrollodistrito';
+  private urldesarrolloban:string = 'http://localhost:9090/api/reportes/desarrollobanco';
   constructor(private http: HttpClient, private router: Router) { }
   getParticipacion(banco:number, modulo:number): Observable<Participacion[]>{
     return this.http.get<Participacion[]>(`${this.urlpost}/participacion/${banco}/${modulo}`)
@@ -60,6 +62,15 @@ export class ReportesService {
   }
   insertarMasivo(modulo:String, banco:String): Observable<String>{
     return this.http.post<String>(`${this.urlpost}/insertar/${modulo}/${banco}`,null)
+  }
+  listarSocios(id:number): Observable<Socio[]>{
+    return this.http.get<Socio[]>(`${this.urlpost}/socios/${id}`);
+  }
+  DesarrolloDistrito(id:number): Observable<Socio[]>{
+    return this.http.get<Socio[]>(`${this.urldesarrollodis}/${id}`);
+  }
+  DesarrolloBanco(id:number): Observable<Socio[]>{
+    return this.http.get<Socio[]>(`${this.urldesarrolloban}/${id}`);
   }
 
 }

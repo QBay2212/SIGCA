@@ -11,13 +11,15 @@ import { TablaSeminariosComponent } from './reporte-seminario/tabla-seminarios/t
 import { ParticipacionModule } from './reporte-participacion/participacion.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DesarrollomoduloComponent } from './desarrollomodulo/desarrollomodulo.component';
 
 const routes : Routes =[
   {path:'reporte-participacion', component:ReporteParticipacionComponent,children:[
     {path:'tabla1', component:Tabla1Component}
   ]},
   {path:'reporte-participantes', component:ReporteParticipantesComponent},
-  {path:'reporte-seminario', component:ReporteSeminarioComponent}
+  {path:'reporte-seminario', component:ReporteSeminarioComponent},
+  {path:'desarrollo', component:DesarrollomoduloComponent}
 ]
 
 
@@ -29,7 +31,8 @@ const routes : Routes =[
     ReporteParticipantesComponent,
     
     ReporteSeminarioComponent,
-    TablaSeminariosComponent
+    TablaSeminariosComponent,
+    DesarrollomoduloComponent
   ],
   imports: [
     CommonModule,RouterModule.forRoot(routes),ParticipacionModule,HttpClientModule,FormsModule

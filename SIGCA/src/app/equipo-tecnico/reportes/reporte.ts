@@ -87,3 +87,7 @@ export class categoria{
     id_categoria?: number; 
     no_categoria?: string;
 }
+export class Socio{
+    ID_PERSONA? : number;
+    Persona? : string;
+}
