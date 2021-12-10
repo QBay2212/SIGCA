@@ -7,11 +7,14 @@ import { Tabla1Component } from './reporte-participacion/tabla1/tabla1.component
 import { ReporteParticipantesComponent } from './reporte-participantes/reporte-participantes.component';
 
 import { ReporteSeminarioComponent } from './reporte-seminario/reporte-seminario.component';
-import { TablaSeminariosComponent } from './reporte-seminario/tabla-seminarios/tabla-seminarios.component';
+
 import { ParticipacionModule } from './reporte-participacion/participacion.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DesarrollomoduloComponent } from './desarrollomodulo/desarrollomodulo.component';
+
+import { SeminarioModule } from 'src/app/socio/ingresarseminario/seminario.module';
+
 
 const routes : Routes =[
   {path:'reporte-participacion', component:ReporteParticipacionComponent,children:[
@@ -31,11 +34,12 @@ const routes : Routes =[
     ReporteParticipantesComponent,
     
     ReporteSeminarioComponent,
-    TablaSeminariosComponent,
-    DesarrollomoduloComponent
+    
+    DesarrollomoduloComponent,
+          
   ],
   imports: [
-    CommonModule,RouterModule.forRoot(routes),ParticipacionModule,HttpClientModule,FormsModule
+    CommonModule,RouterModule.forRoot(routes),ParticipacionModule,HttpClientModule,FormsModule,SeminarioModule
   ]
 })
 export class ReportesModule { }

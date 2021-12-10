@@ -6,6 +6,7 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError} from 'rxjs/operators';
 import { Modulo } from 'src/app/models/modulo';
 import { Categoria } from 'src/app/models/categoria';
+import { Seminario } from 'src/app/models/Seminario';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,7 @@ export class ReportesService {
   private urlcategoria:string = 'http://localhost:9090/api/categoria/all';
   private urldesarrollodis:string = 'http://localhost:9090/api/reportes/desarrollodistrito';
   private urldesarrolloban:string = 'http://localhost:9090/api/reportes/desarrollobanco';
+  private urlseminario:string = 'http://localhost:9090/api/seminario';
   constructor(private http: HttpClient, private router: Router) { }
   getParticipacion(banco:number, modulo:number): Observable<Participacion[]>{
     return this.http.get<Participacion[]>(`${this.urlpost}/participacion/${banco}/${modulo}`)
@@ -71,6 +73,9 @@ export class ReportesService {
   }
   DesarrolloBanco(id:number): Observable<Socio[]>{
     return this.http.get<Socio[]>(`${this.urldesarrolloban}/${id}`);
+  }
+  getSeminarios(fecha:String): Observable<Seminario[]>{
+    return this.http.get<Seminario[]>(`${this.urlseminario}/fecha/${fecha}`);
   }
 
 }
