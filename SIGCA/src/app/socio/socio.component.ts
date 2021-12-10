@@ -8,6 +8,7 @@ import { Seminario } from '../models/Seminario';
 import { CargarScriptsService } from '../cargar-scripts.service';
 import { Progreso } from '../models/Progreso';
 import { AsisSeminario } from '../models/AsistenciaSeminario';
+declare var $:any;
 
 
 @Component({
@@ -16,7 +17,7 @@ import { AsisSeminario } from '../models/AsistenciaSeminario';
   styleUrls: ['./socio.component.css']
 })
 export class SocioComponent implements OnInit {
-
+  validacion:any=[];
   semi:Seminario[]=[];
   semina:AsisSeminario=new AsisSeminario();
   oracion: Pedido = new Pedido();
@@ -134,21 +135,52 @@ export class SocioComponent implements OnInit {
   Asistencia(i:number){
 
    this.idseminario=Number(this.semi[i].id_SEMINARIO);
+   this.pedido.getAsistencia(this.idseminario,this.idusuario).subscribe(listas=>{
+    this.validacion=listas;
+    if(this.validacion==null){
+      
+      $("#Asistencia").modal("show");
+    }else{
+      swal.fire({
+        title: 'Solo puede registrar su asistencia una vez',
+        text: '',
+        icon: 'warning',
+        confirmButtonText: 'OK'
+      })
+    }
+    console.log(this.validacion)
+    
+    
+  });
+
+
+   
    
 
   }
   Asis(){
 
     this.idseminario=Number(this.semi[this.pocision].id_SEMINARIO);
+    this.pedido.getAsistencia(this.idseminario,this.idusuario).subscribe(listas=>{
+      this.validacion=listas;
+      if(this.validacion==null){
+        
+        $("#Asistencia").modal("show");
+      }else{
+        swal.fire({
+          title: 'Solo puede registrar su asistencia una vez',
+          text: '',
+          icon: 'warning',
+          confirmButtonText: 'OK'
+        })
+      }
+      console.log(this.validacion)
+      
+      
+    });
+    
 
   }
 
-  abrir(){
-    const app = document.getElementById("Asistencia");
-   
-   
-
-
-  }
-
+ 
 }

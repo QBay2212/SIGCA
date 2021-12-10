@@ -21,6 +21,7 @@ export class SocioService {
   private asistencia:string ='http://localhost:9090/api/asistenciaseminario/new';
   private recurso:string ='http://localhost:9090/api/reportes/asistenciaRecurso';
   private estadoAsistencia:string ='http://localhost:9090/api/AsistenciaRecurso/asistencia';
+  private asis:string ='http://localhost:9090/api/asistenciaseminario/validacion';
 
   constructor(private http: HttpClient, private router: Router) { }
   insertarModulo(obj: Pedido) {
@@ -50,6 +51,9 @@ export class SocioService {
 
   getRecursosS(sesion:number, socio:number): Observable<RecursoA[]>{
     return this.http.get<RecursoA[]>(`${this.recurso}/${sesion}/${socio}`)
+  }
+  getAsistencia(seminario:number, socio:number): Observable<AsisSeminario[]>{
+    return this.http.get<AsisSeminario[]>(`${this.asis}/${seminario}/${socio}`)
   }
 
   actualizarEstado(id:number ) {

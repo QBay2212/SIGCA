@@ -34,6 +34,8 @@ import { PedidoComponent } from './asesor/pedido/pedido.component';
 import { DesarrollomoduloComponent } from './equipo-tecnico/reportes/desarrollomodulo/desarrollomodulo.component';
 
 
+
+
 const routes: Routes = [
   { path: '', component: PagesLoginComponent },
   { path: 'vistaSocio', component: SocioComponent },
