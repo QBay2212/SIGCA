@@ -25,7 +25,51 @@ export class SidebarComponent implements OnInit {
  ngOnInit(): void {
   this.privilegios.getPrivilegios(this.id).subscribe(listas=>{
     this.privi=listas;
-    console.log(this.privi);
+    for(let i = 0; i<this.privi.length; i++){
+      var nombre=this.privi[i].MENU;
+      if(nombre=='Crear Modulo' || nombre=='Crear Seminario'){
+        this.privi[i].ICONO='far fa-plus-square'
+      
+      }
+      
+      if(nombre=='Asignar Banco-Modulo'){
+        this.privi[i].ICONO='fas fa-hands-helping'
+        
+      }
+      
+      if(nombre=='Reporte Participacion'){
+        this.privi[i].ICONO='fas fa-book'
+        
+      }
+      if(nombre=='Reporte Participantes'){
+        this.privi[i].ICONO='fas fa-users'
+        
+      }
+
+      if(nombre=='Reporte Seminario'){
+        this.privi[i].ICONO='fas fa-address-book'
+        
+      }
+      if(nombre=='Controlar Modulo'){
+        this.privi[i].ICONO='fas fa-tasks'
+        
+      }
+      if(nombre=='Reporte Desarrollo'){
+        this.privi[i].ICONO='fas fa-clipboard'
+        
+      }
+      
+      if(nombre=='Seguimiento Socio'){
+        this.privi[i].ICONO='fas fa-book-reader'
+        
+      }
+      
+
+      
+     
+     
+
+    }
     
    
   });
