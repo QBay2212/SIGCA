@@ -40,7 +40,13 @@
             type="checkbox"
             class="btn-switch"
             [checked]="true"
-            (change)="cambiarChecked(pro.id_programacion)"
+            (change)="
+              cambiarChecked(
+                pro.id_programacion,
+                pro.banco.id_bancocomunal,
+                pro.modulo.id_modulo
+              )
+            "
           />
           <label class="lbl-switch"></label>
         </div>
@@ -58,7 +64,13 @@
             type="checkbox"
             class="btn-switch"
             [checked]="false"
-            (change)="cambiarChecked(pro.id_programacion)"
+            (change)="
+              cambiarChecked(
+                pro.id_programacion,
+                pro.banco.id_bancocomunal,
+                pro.modulo.id_modulo
+              )
+            "
           />
           <label class="lbl-switch"></label>
         </div>
