@@ -14,7 +14,7 @@
             <td>{{pro.PERSONA}}</td>
             <td>{{pro.CORREO}}</td>
             <td>{{pro.SESION}}</td>
-            <td>{{pro.Asistencia}}</td>
+            <td><i class="{{pro.Asistencia}}"></i></td>
         </tr>
       
 
@@ -23,5 +23,6 @@
     </tbody>
 </table>
 <div class="contenedor-boton1">
+    
     <button type="button" class="btn btn-success" onclick="exportTableToExcel('tblData')">Exportar</button>
 </div>

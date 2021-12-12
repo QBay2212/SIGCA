@@ -10,7 +10,7 @@ import { AsesorService } from '../asesor.service';
   styleUrls: ['./reporte.component.css']
 })
 export class ReporteComponent implements OnInit {
-  sesiones: Sesion[]=[];
+  sesiones: any=[];
   reportes: any=[];
   modal: any=[];
   model:any=[];
@@ -23,7 +23,7 @@ export class ReporteComponent implements OnInit {
   ngOnInit(): void {
     this.sesion.getSesion(this.modulo).subscribe(listas=>{
       this.sesiones=listas;
-     
+     console.log(this.sesion);
     });
 
   }

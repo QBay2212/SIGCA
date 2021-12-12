@@ -69,6 +69,7 @@ export class ProgramaAsesor{
     export class PrivilegiosUsuario{
         NO_PRIVILEGIOS?:string;
         MENU?:string;
+        ICONO?:String
     }
     export class Usuario{
         idusuario:number=0;
@@ -86,4 +87,8 @@ export class ProgramaAsesor{
 export class categoria{
     id_categoria?: number; 
     no_categoria?: string;
+}
+export class Socio{
+    ID_PERSONA? : number;
+    Persona? : string;
 }

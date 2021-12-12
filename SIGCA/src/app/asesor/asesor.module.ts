@@ -7,20 +7,22 @@ import { FormsModule } from '@angular/forms';
 
 import {  HttpClientModule } from '@angular/common/http';
 import { ReporteComponent } from './reporte/reporte.component';
+import { PedidoComponent } from './pedido/pedido.component';
 
 
 
 const routes : Routes =[
   {path:'programa', component:ProgramasComponent},
   {path:'reporte-asesor', component:ReporteComponent},
- 
+  {path:'pedido', component:PedidoComponent},
 ]
 
 @NgModule({
   declarations: [
     AsesorRutasComponent,
     ProgramasComponent,
-    ReporteComponent
+    ReporteComponent,
+    PedidoComponent
   ],
   imports: [
     CommonModule,RouterModule.forRoot(routes), FormsModule, HttpClientModule

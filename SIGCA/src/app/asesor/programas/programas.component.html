@@ -2,27 +2,17 @@
     
     <div class="row">
 
-        <div class="col-4 contenedor" *ngFor="let pro of reportes; let i = index">
-          <div class="row" >
-              <div class="col-6">
-                 {{pro.BANCO}}-{{pro.MODULO}}
-              </div>
-              <div class="col-6 satisfaccion">
-                Satisfaccion:Satisfecho
-            </div>
-            <div class="col-12 ">
-              
-             <progress class="barra" max="100"  value={{pro.PROGRESO}}> </progress>
-                
-            </div>
-           
-               <div class="col-6 boton">
-                <button type="button" class="btn " (click)="listar(i)">Datos Socio</button>
-            </div>
-            <div class="col-6 ">
-                <button type="button" class="btn ">Pedido Oracion</button>
+      
+          <div class="card" style="width: 25rem;" *ngFor="let pro of reportes; let i = index">
+            <div class="card-body">
+              <h5 class="card-title"> {{pro.BANCO}}-{{pro.MODULO}}</h5>
+              <progress class="barra" max="100"  value={{pro.PROGRESO}}> </progress>
+              <button type="button" class="btn bo " (click)="listar(i)">Datos Socio</button>
+              <button type="button" class="btn " (click)="pedido(i)">Pedido Oracion</button>
             </div>
           </div>
-        </div>
+      
+          
     </div>
 </div>
+
