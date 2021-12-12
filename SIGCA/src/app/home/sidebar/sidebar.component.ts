@@ -28,14 +28,14 @@ export class SidebarComponent implements OnInit {
   constructor(private ren2: Renderer2, private privilegios: SidebarService) {}
 
   pintar() {
-    $(function () {
-      $('#main ul li a').click(function () {
-        // quitar .seleccionado a todos (por si hay alguno)
-        $('#main ul li a').removeClass('seleccionado');
-        // agregar seleccionado a "este" elemento.
-        $(this).addClass('seleccionado');
-      });
-    });
+    // $(function () {
+    //   $('#main ul li a').click(function () {
+    //     // quitar .seleccionado a todos (por si hay alguno)
+    //     $('#main ul li a').removeClass('seleccionado');
+    //     // agregar seleccionado a "este" elemento.
+    //     $(this).addClass('seleccionado');
+    //   });
+    // });
   }
 
   ngOnInit(): void {
