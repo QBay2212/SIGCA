@@ -3,25 +3,25 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Seminario</th>
-            <th>Sede</th>
-            <th>Distrito</th>
             <th>Banco</th>
-            <th>Fecha</th>
+            <th>Distrito</th>
+            <th>Personas</th>
+            <th>Vistos</th>
+           
             <th>Progreso</th>
         </tr>
     </thead>
     <tbody>
-        <tr >
-            <td>1</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr *ngFor="let progreso of progresos; let i=index ">
+            <td>{{i+1}}</td>
+            <td>{{progreso.BANCO}}</td>
+            <td>{{progreso.NO_DISTRITO}}</td>
+            <td>{{progreso.Personas}}</td>
+            <td>{{progreso.Vistos}}</td>
+        
             <td class="Progreso">
                 
-                <progress class="barra" max="100"  value=50> </progress>
+                <progress class="barra" max="100"  value={{progreso.Progreso}}> </progress>
             </td>
             </tr>
            

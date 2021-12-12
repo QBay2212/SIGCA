@@ -7,6 +7,7 @@ import { map, catchError} from 'rxjs/operators';
 import { Modulo } from 'src/app/models/modulo';
 import { Categoria } from 'src/app/models/categoria';
 import { Seminario } from 'src/app/models/Seminario';
+import { ProgresoSeminario } from 'src/app/models/ProgresoSeminario';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,8 @@ export class ReportesService {
   private urlcategoria:string = 'http://localhost:9090/api/categoria/all';
   private urldesarrollodis:string = 'http://localhost:9090/api/reportes/desarrollodistrito';
   private urldesarrolloban:string = 'http://localhost:9090/api/reportes/desarrollobanco';
+  private urlprogresoseminario:string = 'http://localhost:9090/api/reportes/seminarios';
+  private urlprogresoseminariobanco:string = 'http://localhost:9090/api/reportes/seminariosbanco';
   private urlseminario:string = 'http://localhost:9090/api/seminario';
   constructor(private http: HttpClient, private router: Router) { }
   getParticipacion(banco:number, modulo:number): Observable<Participacion[]>{
@@ -76,6 +79,10 @@ export class ReportesService {
   }
   getSeminarios(fecha:String): Observable<Seminario[]>{
     return this.http.get<Seminario[]>(`${this.urlseminario}/fecha/${fecha}`);
+  }
+
+  getProgresoSeminario(distrito:number, seminario:number): Observable<ProgresoSeminario[]>{
+    return this.http.get<ProgresoSeminario[]>(`${this.urlprogresoseminario}/${distrito}/${seminario}`)
   }
 
 }

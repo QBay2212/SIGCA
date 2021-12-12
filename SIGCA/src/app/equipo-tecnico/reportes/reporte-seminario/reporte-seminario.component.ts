@@ -66,11 +66,17 @@ listarDistritos(){
   
     
   if(this.banco=='Banco'){
+    sessionStorage.setItem('distrito',this.distri);
+    sessionStorage.setItem('seminario',this.seminario);
+    
     let tabla1='tabla3';
   (<HTMLIFrameElement>document.getElementById('tablas')).src = tabla1;
   }
 
   if(this.banco!='Banco'){
+
+    sessionStorage.setItem('seminario',this.seminario);
+    sessionStorage.setItem('banco',this.banco);
     let tabla1='tabla4';
   (<HTMLIFrameElement>document.getElementById('tablas')).src = tabla1;
   }

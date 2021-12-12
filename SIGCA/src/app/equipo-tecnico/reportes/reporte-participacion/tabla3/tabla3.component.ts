@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProgresoSeminario } from 'src/app/models/ProgresoSeminario';
+import { ReportesService } from '../../reportes.service';
 
 @Component({
   selector: 'SIGCA-tabla3',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabla3.component.css']
 })
 export class Tabla3Component implements OnInit {
-
-  constructor() { }
-
+progresos:ProgresoSeminario[]=[];
+  constructor(private progreso:ReportesService) { }
+distrito=Number(sessionStorage.getItem('distrito'));
+seminario=Number(sessionStorage.getItem('seminario'));
   ngOnInit(): void {
+   
+    this.progreso.getProgresoSeminario(this.distrito,this.seminario).subscribe(listas=>{
+      this.progresos=listas;
+      console.log(this.progresos)
+     
+    });
   }
 
 }

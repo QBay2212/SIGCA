@@ -69,6 +69,7 @@ export class ProgramaAsesor{
     export class PrivilegiosUsuario{
         NO_PRIVILEGIOS?:string;
         MENU?:string;
+        ICONO?:String
     }
     export class Usuario{
         idusuario:number=0;
