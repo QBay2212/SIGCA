@@ -71,14 +71,14 @@ export class SocioComponent implements OnInit {
 
   }
   guardarasistencia(){
-    
+
     var valor=Number(sessionStorage.getItem('valoracionseminario'));
 
     this.semina.nu_VALORACION=valor;
     this.semina.de_ASISTENCIA=this.mo.comentario;
     this.semina.socio={id:this.idusuario};
     this.semina.seminario={id_SEMINARIO:this.idseminario}
-  
+
     this.pedido.insertarAsis(this.semina)
     .subscribe((e) => {
 
@@ -138,7 +138,7 @@ export class SocioComponent implements OnInit {
    this.pedido.getAsistencia(this.idseminario,this.idusuario).subscribe(listas=>{
     this.validacion=listas;
     if(this.validacion==null){
-      
+
       $("#Asistencia").modal("show");
     }else{
       swal.fire({
@@ -149,13 +149,13 @@ export class SocioComponent implements OnInit {
       })
     }
     console.log(this.validacion)
-    
-    
+
+
   });
 
 
-   
-   
+
+
 
   }
   Asis(){
@@ -164,7 +164,7 @@ export class SocioComponent implements OnInit {
     this.pedido.getAsistencia(this.idseminario,this.idusuario).subscribe(listas=>{
       this.validacion=listas;
       if(this.validacion==null){
-        
+
         $("#Asistencia").modal("show");
       }else{
         swal.fire({
@@ -175,12 +175,12 @@ export class SocioComponent implements OnInit {
         })
       }
       console.log(this.validacion)
-      
-      
+
+
     });
-    
+
 
   }
 
- 
+
 }
