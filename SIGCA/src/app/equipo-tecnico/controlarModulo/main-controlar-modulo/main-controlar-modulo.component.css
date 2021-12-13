@@ -1,3 +1,41 @@
-.title{
+.title {
   text-align: center;
+}
+
+.lbl-switch {
+  display: inline-block;
+  /* border: 1px solid black; */
+  width: 55px;
+  height: 30px;
+  background-color: red;
+  border-radius: 100px;
+  position: relative;
+}
+
+.btn-switch {
+  position: absolute;
+  cursor: pointer;
+  width: 75px;
+  height: 30px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.btn-switch:checked ~ .lbl-switch {
+  background: #61a0ff;
+}
+.btn-switch:checked ~ .lbl-switch::after {
+  left: 28px;
+}
+
+.lbl-switch::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 100px;
+  top: 4px;
+  left: 5px;
+  transition: 0.3s;
 }

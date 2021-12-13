@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Banco, Distrito, Participacion, Programacion, RecursoSocio, Sede, Sesion } from './reporte';
+import { Banco, Distrito, Participacion, Programacion, RecursoSocio, Sede, Sesion, Socio } from './reporte';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError} from 'rxjs/operators';
 import { Modulo } from 'src/app/models/modulo';
 import { Categoria } from 'src/app/models/categoria';
+import { Seminario } from 'src/app/models/Seminario';
+import { ProgresoSeminario } from 'src/app/models/ProgresoSeminario';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +22,11 @@ export class ReportesService {
   private urlbancoComunal:string ='http://localhost:9090/api/bancoComunal/sede';
   private urlmodulo:string = 'http://localhost:9090/api/modulo/categoria';
   private urlcategoria:string = 'http://localhost:9090/api/categoria/all';
+  private urldesarrollodis:string = 'http://localhost:9090/api/reportes/desarrollodistrito';
+  private urldesarrolloban:string = 'http://localhost:9090/api/reportes/desarrollobanco';
+  private urlprogresoseminario:string = 'http://localhost:9090/api/reportes/seminarios';
+  private urlprogresoseminariobanco:string = 'http://localhost:9090/api/reportes/seminariosbanco';
+  private urlseminario:string = 'http://localhost:9090/api/seminario';
   constructor(private http: HttpClient, private router: Router) { }
   getParticipacion(banco:number, modulo:number): Observable<Participacion[]>{
     return this.http.get<Participacion[]>(`${this.urlpost}/participacion/${banco}/${modulo}`)
@@ -60,6 +67,22 @@ export class ReportesService {
   }
   insertarMasivo(modulo:String, banco:String): Observable<String>{
     return this.http.post<String>(`${this.urlpost}/insertar/${modulo}/${banco}`,null)
+  }
+  listarSocios(id:number): Observable<Socio[]>{
+    return this.http.get<Socio[]>(`${this.urlpost}/socios/${id}`);
+  }
+  DesarrolloDistrito(id:number): Observable<Socio[]>{
+    return this.http.get<Socio[]>(`${this.urldesarrollodis}/${id}`);
+  }
+  DesarrolloBanco(id:number): Observable<Socio[]>{
+    return this.http.get<Socio[]>(`${this.urldesarrolloban}/${id}`);
+  }
+  getSeminarios(fecha:String): Observable<Seminario[]>{
+    return this.http.get<Seminario[]>(`${this.urlseminario}/fecha/${fecha}`);
+  }
+
+  getProgresoSeminario(distrito:number, seminario:number): Observable<ProgresoSeminario[]>{
+    return this.http.get<ProgresoSeminario[]>(`${this.urlprogresoseminario}/${distrito}/${seminario}`)
   }
 
 }

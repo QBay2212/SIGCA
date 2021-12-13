@@ -1,1 +1,80 @@
 <h1 class="title">Controlar Modulo</h1>
+<div class="mb-4">
+  <button
+    #buttonTrue
+    class="btn btn-primary ms-4"
+    (click)="getPrograming()"
+    [disabled]="status"
+  >
+    Modulos Visibles
+  </button>
+  <button
+    #buttonFalse
+    class="btn btn-danger ms-4"
+    (click)="ListarModuloDisabled()"
+    [disabled]="status2"
+  >
+    Modulos No Visibles
+  </button>
+</div>
+
+<!-- ??TABLE -->
+
+<table class="table table-success">
+  <thead>
+    <tr>
+      <th scope="col">Modulo</th>
+      <th scope="col">Banco Comunal</th>
+      <th scope="col">Distrito</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="status">
+    <tr *ngFor="let pro of arrayProgramacionTrue">
+      <td scope="row">{{ pro.modulo.no_modulo }}</td>
+      <td>{{ pro.banco.no_bancocomunal }}</td>
+      <td>{{ pro.banco.distrito.no_distrito }}</td>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            class="btn-switch"
+            [checked]="true"
+            (change)="
+              cambiarChecked(
+                pro.id_programacion,
+                pro.banco.id_bancocomunal,
+                pro.modulo.id_modulo
+              )
+            "
+          />
+          <label class="lbl-switch"></label>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="!status">
+    <tr *ngFor="let pro of arrayProgramacionTrue">
+      <td scope="row">{{ pro.modulo.no_modulo }}</td>
+      <td>{{ pro.banco.no_bancocomunal }}</td>
+      <td>{{ pro.banco.distrito.no_distrito }}</td>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            class="btn-switch"
+            [checked]="false"
+            (change)="
+              cambiarChecked(
+                pro.id_programacion,
+                pro.banco.id_bancocomunal,
+                pro.modulo.id_modulo
+              )
+            "
+          />
+          <label class="lbl-switch"></label>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
