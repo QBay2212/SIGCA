@@ -18,9 +18,10 @@ export class SocioService {
   private urlpost:string ='http://localhost:9090/api/pedidooracion/new';
   private urlget:string ='http://localhost:9090/api/seminario/socio';
   private progres:string ='http://localhost:9090/api/reportes/progreso';
-  private asistencia:string ='http://localhost:9090/api/asistenciaseminario/new';
+  private asistencia:string ='http://localhost:9090/api/asistenciaseminario/actualizar';
   private recurso:string ='http://localhost:9090/api/reportes/asistenciaRecurso';
   private estadoAsistencia:string ='http://localhost:9090/api/AsistenciaRecurso/asistencia';
+  private valoracionRecurso: string ='http://localhost:9090/api/AsistenciaRecurso/updateVal';
   private asis:string ='http://localhost:9090/api/asistenciaseminario/validacion';
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -34,6 +35,7 @@ export class SocioService {
 
     return this.http.post(this.asistencia, obj,this.httpOptions) ;
   }
+
   getSeminarios(id:number): Observable<Seminario[]>{
     return this.http.get<Seminario[]>(`${this.urlget}/${id}`)
   }
@@ -52,6 +54,7 @@ export class SocioService {
   getRecursosS(sesion:number, socio:number): Observable<RecursoA[]>{
     return this.http.get<RecursoA[]>(`${this.recurso}/${sesion}/${socio}`)
   }
+
   getAsistencia(seminario:number, socio:number): Observable<AsisSeminario[]>{
     return this.http.get<AsisSeminario[]>(`${this.asis}/${seminario}/${socio}`)
   }
@@ -61,4 +64,8 @@ export class SocioService {
 
   }
 
+  calificarRecurso(obj: RecursoA, id: Number) {
+
+    return this.http.post(`${this.valoracionRecurso}/${id}`, obj) ;
+  }
 }

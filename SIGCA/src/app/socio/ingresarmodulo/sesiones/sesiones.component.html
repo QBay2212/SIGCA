@@ -58,11 +58,9 @@
 
   <div class="col-8" style="margin-top: 20px;">
     <iframe src="https://www.youtube.com/embed/O0nm9BC_KVM?rel=0" frameborder="0" height="500px" width="100%" name="reproduccion" style="box-shadow: 2px 2px 5px rgb(124, 124, 124); border-radius: 1%;" >
-
-  
     </iframe>
     <div class="calificacion" style="text-align: right;">
-      <button class="btn btn-danger" style="margin-right: 10px">Calificar </button>
+      <button class="btn btn-danger" (click)="calificarRecurso()" style="margin-right: 10px">Calificar </button>
       <span class="fas fa-star" id="1estrella" onclick="calificar(this)"></span>
       <span class="fas fa-star" id="2estrella" onclick="calificar(this)"></span>
       <span class="fas fa-star" id="3estrella" onclick="calificar(this)"></span>
@@ -74,9 +72,16 @@
       <mat-paginator [length]="length"
                [pageSize]="pageSize"
                aria-label="Select page">
-     </mat-paginator>-->
+     </mat-paginator>
 
-      
+      <div class="row" style="margin-top: 10px;">
+        <div class="col-6">
+            <button type="button" class="btn btn-dark"> <i class="fas fa-backward"></i> Anterior</button>
+        </div>
+        <div class="col-6" style="text-align: right;">
+          <button type="button" class="btn btn-dark" >Siguiente <i class="fas fa-forward"></i></button>
+        </div>
+      </div>-->
   </div>
 
   <!--
