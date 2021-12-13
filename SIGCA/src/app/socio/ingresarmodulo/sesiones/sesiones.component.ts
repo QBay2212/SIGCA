@@ -17,7 +17,7 @@ import { SnackBarComponentExampleComponent } from './snack-bar-component-example
 })
 export class SesionesComponent implements OnInit {
   id_modulo = Number (sessionStorage.getItem('id_modulo'))
-  sesiones : Sesion [] = [];
+  sesiones : any = [];
   recursos : any = [];
   durationInSeconds = 5;
   x=Number(sessionStorage.getItem('idusuario'));
@@ -39,7 +39,7 @@ export class SesionesComponent implements OnInit {
    }
 
    listarRecurso(i:number){
-     var id = Number(this.sesiones[i].id_SESION);
+     var id = Number(this.sesiones[i].id_sesion);
       this.pedido.getRecursosS(id,this.x).subscribe(listas=>{
       this.recursos=listas;
       console.log(this.recursos)
@@ -48,7 +48,6 @@ export class SesionesComponent implements OnInit {
    }
    guardarAsistencia(i:number){
      var xy = Number(this.recursos[i].ID_ASISTENCIA_RECURSO);
-
      var valor=Number(sessionStorage.getItem('valoracionseminario'));
      this.pedido.actualizarEstado(xy).subscribe((e) => {
 

@@ -38,6 +38,14 @@ export class ProgramasComponent implements OnInit {
    this.router.navigate(['/reporte-asesor']);
     
   }
+  pedido(i:number){
+    var  x=String(this.reportes[i].IDBANCO);
+   
+
+     sessionStorage.setItem('banco',x)
+     this.router.navigate(['/pedido']);
+      
+    }
  
 
 }

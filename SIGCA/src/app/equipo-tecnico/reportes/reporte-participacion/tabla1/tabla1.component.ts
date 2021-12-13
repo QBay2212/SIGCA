@@ -23,6 +23,17 @@ export class Tabla1Component implements OnInit {
     var y = Number(sessionStorage.getItem('modulo'));
     this.reporte.getParticipacion(x, y).subscribe((data: any[]) => {
       this.reportes = data;
+      for(let i = 0; i<this.reportes.length; i++){
+        var numero=Number(this.reportes[i].Asistencia);
+        if(numero==1){
+          this.reportes[i].Asistencia='fas fa-check'
+
+        }else{
+          this.reportes[i].Asistencia=' fas fa-times'
+        }
+       
+
+      }
       sessionStorage.removeItem('banco');
       sessionStorage.removeItem('modulo');
     });

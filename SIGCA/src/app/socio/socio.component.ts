@@ -7,6 +7,8 @@ import swal from 'sweetalert2';
 import { Seminario } from '../models/Seminario';
 import { CargarScriptsService } from '../cargar-scripts.service';
 import { Progreso } from '../models/Progreso';
+import { AsisSeminario } from '../models/AsistenciaSeminario';
+declare var $:any;
 
 
 @Component({
@@ -15,8 +17,9 @@ import { Progreso } from '../models/Progreso';
   styleUrls: ['./socio.component.css']
 })
 export class SocioComponent implements OnInit {
-
+  validacion:any=[];
   semi:Seminario[]=[];
+  semina:AsisSeminario=new AsisSeminario();
   oracion: Pedido = new Pedido();
   model:any=[];
   mo:any=[];
@@ -68,9 +71,15 @@ export class SocioComponent implements OnInit {
 
   }
   guardarasistencia(){
-
+    
     var valor=Number(sessionStorage.getItem('valoracionseminario'));
-    this.pedido.insertarasistencia(this.idusuario,this.idseminario,valor,this.mo.comentario)
+
+    this.semina.nu_VALORACION=valor;
+    this.semina.de_ASISTENCIA=this.mo.comentario;
+    this.semina.socio={id:this.idusuario};
+    this.semina.seminario={id_SEMINARIO:this.idseminario}
+  
+    this.pedido.insertarAsis(this.semina)
     .subscribe((e) => {
 
       console.log(e);
@@ -125,13 +134,53 @@ export class SocioComponent implements OnInit {
 
   Asistencia(i:number){
 
-    this.idseminario=Number(this.semi[i].id_SEMINARIO);
+   this.idseminario=Number(this.semi[i].id_SEMINARIO);
+   this.pedido.getAsistencia(this.idseminario,this.idusuario).subscribe(listas=>{
+    this.validacion=listas;
+    if(this.validacion==null){
+      
+      $("#Asistencia").modal("show");
+    }else{
+      swal.fire({
+        title: 'Solo puede registrar su asistencia una vez',
+        text: '',
+        icon: 'warning',
+        confirmButtonText: 'OK'
+      })
+    }
+    console.log(this.validacion)
+    
+    
+  });
+
+
+   
+   
 
   }
   Asis(){
 
     this.idseminario=Number(this.semi[this.pocision].id_SEMINARIO);
+    this.pedido.getAsistencia(this.idseminario,this.idusuario).subscribe(listas=>{
+      this.validacion=listas;
+      if(this.validacion==null){
+        
+        $("#Asistencia").modal("show");
+      }else{
+        swal.fire({
+          title: 'Solo puede registrar su asistencia una vez',
+          text: '',
+          icon: 'warning',
+          confirmButtonText: 'OK'
+        })
+      }
+      console.log(this.validacion)
+      
+      
+    });
+    
 
   }
 
+ 
 }

@@ -1,17 +1,22 @@
-<div class=" margenes-costado">
+
   <header class="row m-0 size-1">
-    <div class="col-xl-12 p-0">
+    <div class="col-xl-12 p-0" style="height: 65px;">
       <SIGCA-nav-top></SIGCA-nav-top>
     </div>
   </header>
-
-<body>
-<div class="container" style="height: 700px;">
+  <body>
+<div class=" margenes-costado" style="height: 671px;">
+<div class="container" >
+  <div>
+    <button routerLink="/vistaSocio" class="btn btn-success" style="margin-top: 15px;">
+      <i class="fas fa-angle-left"></i> Volver al Inicio
+    </button>
+  </div>
 <div class="row" >
 
   <div class="col-4" >
 
-      <cdk-accordion class="example-accordion" style="box-shadow: 2px 2px 5px rgb(124, 124, 124); margin-top: 20px;">
+      <cdk-accordion class="example-accordion" style="box-shadow: 2px 2px 5px rgb(124, 124, 124); margin-top: 15px;">
         <cdk-accordion-item
           *ngFor="let sesion of sesiones; let index = index;"
           #accordionItem="cdkAccordionItem"
@@ -23,13 +28,13 @@
           [attr.aria-controls]="'accordion-body-' + index">
 
           <div style="background-color: #007B5F; color: white;" class="example-accordion-item-header" (click)="accordionItem.toggle()" (click)="listarRecurso(index)">
-            <b>{{ sesion.no_SESION }}</b>
+            <b>{{ sesion.no_sesion }}</b>
             <span class="example-accordion-item-description">
               Click para {{ accordionItem.expanded ? ' cerrar ' : 'abrir' }}
             </span>
           </div>
 
-          <div
+          <div style="background-color: rgb(226, 226, 226);"
             class="example-accordion-item-body"
             role="region"
             [style.display]="accordionItem.expanded ? '' : 'none'"
@@ -111,9 +116,19 @@
 
 </div>
 </div>
+
+</div>
 </body>
-
-
+<footer>
+  <div style="background-color: #02906f; height: 45px; color: white; text-align: center;">
+<div>
+  <div style="height: 10px;"></div>
+  <b>
+    Copyright © 2021 ADRA-Perú | Área de Bienestar y Desarrollo Integral
+</b>
+</div>
+  </div>
+</footer>
 
 
 

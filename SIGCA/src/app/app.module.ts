@@ -30,6 +30,10 @@ import { SocioModule } from './socio/socio.module';
 
 import { IngresarseminarioComponent } from './socio/ingresarseminario/ingresarseminario.component';
 import { AsignarBancoModuloComponent } from './equipo-tecnico/asignacion/asignar-banco-modulo.component';
+import { PedidoComponent } from './asesor/pedido/pedido.component';
+import { DesarrollomoduloComponent } from './equipo-tecnico/reportes/desarrollomodulo/desarrollomodulo.component';
+
+
 
 
 const routes: Routes = [
@@ -42,6 +46,7 @@ const routes: Routes = [
     children: [
       { path: 'programa', component: ProgramasComponent },
       { path: 'reporte-asesor', component: ReporteComponent },
+      { path: 'pedido', component: PedidoComponent }
     ],
   },
   { path: 'dashboard/equipoTecnico', component: PrincipalComponent },
@@ -70,6 +75,7 @@ const routes: Routes = [
             component: ReporteParticipantesComponent,
           },
           { path: 'reporte-seminario', component: ReporteSeminarioComponent },
+          { path: 'desarrollo', component: DesarrollomoduloComponent }
         ],
       },
     ],
