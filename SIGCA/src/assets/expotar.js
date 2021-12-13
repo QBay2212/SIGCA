@@ -118,3 +118,35 @@ if (toastTrigger) {
     toast.show()
   })
 }
+
+
+var visibleDiv = 0;
+function showDive(){
+  $(".grid").hide();
+  $(".grid:eq("+ visibleDiv + ")").show();
+}
+showDive();
+
+function showNext(){
+  if(visibleDiv == $(".grid").length-1)
+  {
+    visibleDiv = 0;
+  }
+  else {
+    visibleDiv ++;
+  }
+  showDive();
+}
+
+function showPrev(){
+  {
+   if (visibleDiv == 0)
+   {
+     visibleDiv = $(".grid").length-1
+  }
+  else {
+    visibleDiv --;
+  }
+  showDive();
+}
+}

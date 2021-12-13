@@ -15,6 +15,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 const routes : Routes =[
   {path: 'vistaSocio', component:SocioComponent
@@ -34,7 +35,7 @@ const routes : Routes =[
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forRoot(routes),HomeModule, CdkAccordionModule, MatSnackBarModule
+    RouterModule.forRoot(routes),HomeModule, CdkAccordionModule, MatSnackBarModule, MatPaginatorModule
   ],
   providers:[],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -41,12 +41,12 @@
             [attr.id]="'accordion-body-' + index"
             [attr.aria-labelledby]="'accordion-header-' + index">
 
-            <a *ngFor="let recurso of recursos; let i = index;" href={{recurso.DESC_RECURSO}} target="reproduccion" onclick="" (click)="guardarAsistencia(i)">
+            <a *ngFor="let recurso of recursos; let i = index;" href={{recurso.DESC_RECURSO}} target="reproduccion" onclick="" (click)="guardarAsistencia(i)" (click)="show=true">
               <button id="liveToastBtn" class="btn btn-outline-success" type="button" style="width: 100%; text-align: left; margin-top: 10px;">
                 <div class="row">
                   <div class="col-1" style="color: red;"><i class="fas fa-play"></i></div>
                   <div class="col-9">{{recurso.NO_RECURSO}}</div>
-                  <div class="col-2"><i class="fas fa-check-circle" style="color: #007B5F;"></i></div>
+                  <div class="col-2"> <i *ngIf="recurso.ES_ASISTENCIA==1" class="fas fa-check-circle" style="color: #007B5F;"></i> </div>
                 </div>
               </button>
             </a>
@@ -56,27 +56,31 @@
       </cdk-accordion>
   </div>
 
-
-
-
-
-
   <div class="col-8" style="margin-top: 20px;">
     <iframe src="https://www.youtube.com/embed/O0nm9BC_KVM?rel=0" frameborder="0" height="500px" width="100%" name="reproduccion" style="box-shadow: 2px 2px 5px rgb(124, 124, 124); border-radius: 1%;" >
-    </iframe>
+
     <div class="calificacion" style="text-align: right;">
+      <button class="btn btn-danger" style="margin-right: 10px">Calificar </button>
       <span class="fas fa-star" id="1estrella" onclick="calificar(this)"></span>
       <span class="fas fa-star" id="2estrella" onclick="calificar(this)"></span>
       <span class="fas fa-star" id="3estrella" onclick="calificar(this)"></span>
       <span class="fas fa-star" id="4estrella" onclick="calificar(this)"></span>
       <span class="fas fa-star" id="5estrella" onclick="calificar(this)"></span>
+
       </div>
+    </iframe>
+<!--
+      <mat-paginator [length]="length"
+               [pageSize]="pageSize"
+               aria-label="Select page">
+     </mat-paginator>-->
+
       <div class="row" style="margin-top: 10px;">
         <div class="col-6">
-          <button type="button" class="btn btn-dark"> <i class="fas fa-backward"></i> Anterior</button>
+            <button type="button" class="btn btn-dark"> <i class="fas fa-backward"></i> Anterior</button>
         </div>
         <div class="col-6" style="text-align: right;">
-          <button type="button" class="btn btn-dark">Siguiente <i class="fas fa-forward"></i></button>
+          <button type="button" class="btn btn-dark" >Siguiente <i class="fas fa-forward"></i></button>
         </div>
       </div>
   </div>
@@ -120,15 +124,10 @@
 </div>
 </body>
 <footer>
-  <div style="background-color: #02906f; height: 45px; color: white; text-align: center;">
-<div>
-  <div style="height: 10px;"></div>
-  <b>
-    Copyright © 2021 ADRA-Perú | Área de Bienestar y Desarrollo Integral
-</b>
-</div>
-  </div>
+  <SIGCA-footer></SIGCA-footer>
 </footer>
+
+
 
 
 
