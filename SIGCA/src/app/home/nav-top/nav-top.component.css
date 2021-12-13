@@ -60,6 +60,7 @@
   background-color: #02906f;
   border-radius: 10px;
   visibility: hidden;
+  z-index: 2;
 }
 
 .perfil__container {
