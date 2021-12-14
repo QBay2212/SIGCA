@@ -42,7 +42,11 @@ export class AsignarBancoModuloComponent implements OnInit {
   }
   listarModulos():void{
     var y = Number(this.model.categoria);
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 6ec8dddeba1bd67ac9f53bcc55ffe255803161bd
     this.asignacion.getModulo(y).subscribe(listas=>{
       this.modulo=listas;
     })
