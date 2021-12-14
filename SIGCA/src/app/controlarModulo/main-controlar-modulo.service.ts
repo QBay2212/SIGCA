@@ -8,13 +8,13 @@ import { Programacion } from 'src/app/models/programacion';
 })
 export class MainControlarModuloService {
   urlTraerProgramacion: string =
-    'http://localhost:9090/api/programacion/allTrue';
+    'https://sigca-upeu.herokuapp.com/api/programacion/allTrue';
 
   urlTraerProgramacionFalse: string =
-    'http://localhost:9090/api/programacion/allFalse';
+    'https://sigca-upeu.herokuapp.com/api/programacion/allFalse';
 
   urlUpdateProgramacion: string =
-    'http://localhost:9090/api/programacion/update/';
+    'https://sigca-upeu.herokuapp.com/api/programacion/update/';
 
   constructor(private http: HttpClient) {}
 
